@@ -214,6 +214,12 @@ table {
    Base Styles
    ========================================================================== */ 
 
+/* Global Styles */
+
+* {
+	@include box-sizing("border-box");
+}
+
 /* Images */
 
 .template-content {
