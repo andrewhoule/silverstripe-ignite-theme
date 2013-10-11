@@ -1,0 +1,177 @@
+
+/* ==========================================================================
+   General Form Styles
+   ========================================================================== */
+
+form {
+	display: block;
+	margin: 0 0 20px 0;
+}
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+	background: #fff;
+	border: 1px solid $offsetcolor;
+	color: $textcolor_dark;
+	@include primaryfont();
+	@include fontsize(1.5,2.2);
+	padding: 6px;
+	outline: none;
+	@include border-radius(0);
+	@include box-shadow(none);
+}
+select {
+	border: 1px solid $offsetcolor_verydark;
+	font-size: 15px;
+	height: 34px;
+	line-height: 34px;
+	max-width: 540px;
+	width: auto;
+	-webkit-appearance: menulist-button;
+}
+select[multiple] {
+    height: auto;
+}
+input.text:focus,
+textarea:focus {
+	background: #fff;
+	border: 1px solid #555;
+	outline: 0 none;
+}
+
+/* SS Form Styles */
+
+textarea, .textarea { width: 98%; }
+input.text { width: 100%; }
+.text, .email, .password { width: 46.5%; }
+#Zip.field { width: 20%; }
+#Spam, .optionset, .checkboxset {
+	clear: both;
+	display: block;
+}
+.optionset, .checkboxset {
+	width: 100%;
+}
+.field {
+	clear: none;
+    float: left;
+    margin: 0 3% 20px 0;
+}
+.dropdown {
+	margin-bottom: 30px;
+}
+.middleColumn { 
+	clear: left;
+	width: auto;
+}
+.editable-area ul.checkboxsetfield, .editable-area ul.optionset {
+	margin: 0;
+	padding: 0;
+}
+.message {
+	color: $alertcolor;
+	display: block;
+	font-weight: 700;
+	margin-top: 5px;
+	max-width: 219px;
+}
+.optionset input, .checkboxsetfield input { 
+	border: 0;
+	display: block;
+	float: left;	
+	margin: 4px 10px 0 0;
+	padding: 0;
+}
+div.tab .field .middleColumn {
+	clear: none;
+	margin: 0;
+	width: auto;
+}
+input.action:hover,
+input.action:focus {
+	cursor: pointer;
+}
+#Remember { display: none; }
+
+/* Form Lists */
+
+form ul { margin: 0; }
+form li {
+	list-style: none;
+	margin: 0 0 5px 0;
+}
+form li:last-child { margin-bottom: 0; }
+form li:nth-child(even)	{ background: none; }
+
+/* Form Labels */
+
+form label.left {
+	color: $textcolor_meddark;
+	display: block;
+	@include primaryfont();
+	@include fontsize(1.6,2.3);
+	font-weight: 700;
+	margin: 0; 
+	padding: 0 0 10px 0;
+	clear: both;
+}
+form label.left small {
+	@include fontsize(1.4,2.1);
+	font-weight: 400;
+}
+label.right {
+	padding: 0 0 5px 0;
+	margin: 0;
+}
+.required label.left:after {
+   content:" *";
+}
+.required label.left:after, span.required {
+   	color: $alertcolor;
+   	font-weight: 700;
+}
+
+
+/* ==========================================================================
+   Form Typography
+   ========================================================================== */
+
+form h2 {
+	border-bottom: 1px solid $offsetcolor;
+	border-top: 1px solid $offsetcolor;
+	clear: both;
+	margin: 10px 0 20px; 
+	padding: 10px 0;
+	width: 100%;
+}
+.form-text { color: $textcolor; }
+
+
+/* ==========================================================================
+   Login Form
+   ========================================================================== */
+
+#ForgotPassword {
+	color: $textcolor_light;
+	float: left;
+	padding: 10px 0 0 10px;
+}
+#ForgotPassword:before {
+	content: "or ";
+}
+#MemberLoginForm_LoginForm_action_dologin {
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+

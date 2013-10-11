@@ -1,0 +1,51 @@
+.small-1,.row .small-1 { width: 5.33333%; }
+.small-2, .row .small-2 { width: 13.66667%; }
+.small-3, .row .small-3 { width: 22%; }
+.small-4, .row .small-4 { width: 30.33333%; }
+.small-5, .row .small-5 { width: 38.66667%; }
+.small-6, .row .small-6 { width: 47%; }
+.small-7, .row .small-7 { width: 55.33333%; }
+.small-8, .row .small-8 { width: 63.66667%; }
+.small-9, .row .small-9 { width: 72%; }
+.small-10, .row .small-10 { width: 80.33333%; }
+.small-11, .row .small-11 { width: 88.66667%; }
+.small-12, .row .small-12 { width: 97%; }
+
+.large-1, .row .large-1 { width: 5.33333%; }
+.large-2, .row .large-2 { width: 13.66667%; }
+.large-3, .row .large-3 { width: 22%; }
+.large-4, .row .large-4 { width: 30.33333%; }
+.large-5, .row .large-5 { width: 38.66667%; }
+.large-6, .row .large-6 { width: 47%; }
+.large-7, .row .large-7 { width: 55.33333%; } 
+.large-8, .row .large-8 { width: 63.66667%; }
+.large-9, .row .large-9 { width: 72%; }
+.large-10, .row .large-10 { width: 80.33333%; }
+.large-11, .row .large-11 { width: 88.66667%; }
+.large-12, .row .large-12 { width: 97%; }
+
+.row .small-offset-1 { margin-left: 5.33333%; }
+.row .small-offset-2 { margin-left: 13.66667%; }
+.row .small-offset-3 { margin-left: 22%; }
+.row .small-offset-4 { margin-left: 30.33333%; }
+.row .small-offset-5 { margin-left: 38.66667%; }
+.row .small-offset-6 { margin-left: 47%; }
+.row .small-offset-7 { margin-left: 55.33333%; }
+.row .small-offset-8 { margin-left: 63.66667%; }
+.row .small-offset-9 { margin-left: 72%; }
+.row .small-offset-10 { margin-left: 80.33333%; }
+
+.row .large-offset-1 { margin-left: 5.33333%; }
+.row .large-offset-2 { margin-left: 13.66667%; }
+.row .large-offset-3 { margin-left: 22%; }
+.row .large-offset-4 { margin-left: 30.33333%; }
+.row .large-offset-5 { margin-left: 38.66667%; }
+.row .large-offset-6 { margin-left: 47%; }
+.row .large-offset-7 { margin-left: 55.33333%; }
+.row .large-offset-8 { margin-left: 63.66667%; }
+.row .large-offset-9 { margin-left: 72%; }
+.row .large-offset-10 { margin-left: 80.33333%; }
+
+body {
+	font-family: arial, helvetica, sans-serif;
+}

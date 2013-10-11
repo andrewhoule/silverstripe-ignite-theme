@@ -1,0 +1,363 @@
+
+/* ==========================================================================
+   Compass Imports
+   ========================================================================== */ 
+
+@import "compass";
+
+
+/* ==========================================================================
+   Vendor Imports
+   ========================================================================== */ 
+
+@import "normalize";
+@import "grid";
+
+
+/* ==========================================================================
+   My Imports
+   ========================================================================== */ 
+
+@import "varsandmixins";
+@import "forms";
+
+
+/* ==========================================================================
+   Reusable Components
+   ========================================================================== */ 
+
+.cf:before, .cf:after {
+    content:"";
+    display:table;
+}
+.cf:after { clear:both; }
+.cf { zoom:1; }
+
+/* Lists */
+
+.template-content ul, .template-content ol {
+	margin: 0 0 20px 40px;
+	padding: 0;
+	li {
+		list-style-position: outside;
+		margin-bottom: 5px;
+	}
+}
+
+
+/* Buttons */
+
+.button, .action, input[type=submit] {
+	@include background-with-css2-fallback(linear-gradient($primarycolor,$primarycolor_dark),$primarycolor); 
+	border-top: 1px solid rgba(255,255,255,.2);
+	border-right: 1px solid transparent;
+	border-left: 1px solid transparent; 
+	color: #fff;
+	cursor: pointer;
+	display: inline-block; zoom:1; *display: inline;
+	float: left;
+	font-weight: 700;
+	@include fontsize(1.6, 2.2);
+	@include primaryfont();
+	height: auto;
+	margin: 0;
+ 	overflow: hidden;
+ 	padding: 10px 16px;
+ 	text-decoration: none;
+ 	@include border-radius(4px);
+}
+.button:hover, .action:hover, input[type=submit]:hover {
+	background: $primarycolor;
+	border: 1px solid transparent;
+	color: #fff;
+	text-decoration: none;
+	@include box-shadow(0,0,0,transparent);
+}
+.button:active, .action:active, input[type=submit]:active {
+	@include box-shadow(0,0,4px,rgba(0,0,0,.4),inset);
+	border-top: 1px solid transparent;
+}
+
+
+/* Pagination */
+
+.pagination {
+	border: 0;
+	clear: both;
+	@include fontsize(1.5, 2.1);
+	margin: 40px 0 20px 0;
+	overflow: hidden;
+	padding: 0;
+	li {
+		border: 0;
+		display: inline-block; zoom:1; *display: inline;
+		list-style: none;
+		margin: 0 4px 0 0;
+		padding: 0;
+		a {
+			border: solid 1px $offsetcolor;
+			@include border-radius(3px);
+		}
+	}
+	.previous-off, .next-off { display: none; }
+	li.active {
+		background: $primarycolor;
+		border: solid 1px transparent;
+		color: #fff;
+		padding: 6px 12px 3px 12px;
+		@include border-radius(3px);
+	}
+	a:link, a:visited {
+		background: $offsetcolor_light;
+		display: block;
+		padding: 6px 10px 3px 10px;
+		text-decoration: none;
+	}
+	a:hover {
+		background: $secondarycolor;
+		border: solid 1px transparent;
+		color: #fff;
+	}
+} 
+
+
+/* tabs */
+
+ul.tabs {
+	border-bottom: 1px solid $offsetcolor;
+	margin: 0 0 20px 0;
+	padding: 0;
+	position: relative;
+	li {
+		list-style: none;
+		margin: 0 0 0 0;
+		padding: 0;
+		a {
+			@include primaryfont();
+			background: #eee;
+			border-right: 1px solid $offsetcolor;
+			border-top: 1px solid $offsetcolor;
+			color: #656565;
+			cursor: pointer;
+			font-weight: 400;
+			float: left;
+			padding: 8px 16px;
+			position: relative;
+			top: 1px;
+		}
+		a:hover {
+			background: $primarycolor;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+	li:first-child a {
+		border-left: 1px solid $offsetcolor;
+	}
+	li.active a {
+		background: #fff;
+		color: #232323;
+		font-weight: 800;
+		position: relative;
+		top: 1px;
+	}
+}
+
+
+/* Table Styles */
+
+table {
+	border: none;
+	margin: 0 0 20px 0;
+	width: 100%;
+	th {
+		background: $primarycolor;
+		border-bottom: 1px solid $primarycolor_dark;
+		border-right: 1px solid $primarycolor_dark;
+		color: #fff;
+		font-weight: 700;
+		@include secondaryfont();
+		padding: 10px 15px;
+		text-align: left;
+		a { color: #fff; }
+		a:hover {
+			color: $primarycolor_verylight;
+			text-decoration: underline;
+		}
+		small { color: $primarycolor_verylight; }
+	}
+	th:last-child { border-right: none; }
+	tr {
+		td {
+			border-bottom: 1px solid $offsetcolor;
+			color: $textcolor;
+			padding: 10px 15px;
+			vertical-align: top;
+		}
+	}
+	tr:nth-child(even) { background: $offsetcolor_verylight; }
+	tr:nth-child(odd) { background: #fff; }
+	tr:last-child { border-bottom: none; }
+	ul { 
+		margin: 2px 0 0 0;
+		padding: 0;
+		li {
+			list-style-type: none;
+			margin: 0 0 3px 0;
+			padding: 0;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */ 
+
+/* Images */
+
+.template-content {
+	img.left {
+		float: left;
+		margin: 10px 20px 10px 0;
+	}
+	img.right {
+		float: right;
+		margin: 10px 0 10px 20px;
+	}
+	img.leftAlone {
+		display: block;
+		margin: 0 0 20px 0;
+	}
+	img.center {
+		display: block;
+		margin: 0 auto 20px auto;
+	}
+}
+
+
+/* ==========================================================================
+   Vanity Styles
+   ========================================================================== */ 
+
+::selection {
+	background: $primarycolor;
+	color: #fff;
+}
+::-moz-selection {
+	background: $primarycolor;
+	color: #fff;
+}
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */ 
+
+html {
+  	font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+body {
+	color: $textcolor;
+	@include primaryfont();
+	@include fontsize(1.6, 2.2);
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+}
+p {
+	margin: 0 0 20px 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: $textcolor_meddark;
+	@include secondaryfont();
+	font-weight: 400;
+	margin: 0 0 15px 0;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-size: 60%;
+    color: $textcolor_light;
+    line-height: 0;
+}
+h1 {
+	@include fontsize(3.2,3.9);
+}
+h2 {
+	@include fontsize(2.6, 3.3);
+}
+h3 {
+	@include fontsize(2.1,2.8);
+}
+h4 {
+	@include fontsize(1.8, 2.5);
+}
+h5 {
+	@include fontsize(1.6, 2.3);
+}
+h6 {
+	@include fontsize(1.4, 2.1);
+}
+a {
+	color: $primarycolor;
+	outline: none;
+	text-decoration: none;
+}
+a:hover {
+	color: $secondarycolor;
+	text-decoration: underline;
+}
+strong {
+	color: $textcolor_meddark;
+	font-weight: 700;
+}
+small {
+	color: $textcolor_light;
+	@include secondaryfont();
+	font-style: italic;
+}
+code {
+	font-family: Consolas, "Liberation Mono", Courier, monospace;
+	font-weight: bold;
+	color: $textcolor_light;
+}
+.center-text, .text-center {
+	text-align: center;
+}
+.right-text, .text-right {
+	text-align: right;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */ 
+
+@media only screen and (max-width: 767px) {
+
+} // MQ 767
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
