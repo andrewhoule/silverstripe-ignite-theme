@@ -24,7 +24,7 @@
 
         </header><!-- branding -->
 
-        <secion id="main-content" class="template-content">
+        <section id="main-content" class="template-content">
             $Layout
         </section><!-- main-content -->
 
