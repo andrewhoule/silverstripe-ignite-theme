@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="$ContentLocale">
     <head>
+        <% base_tag %>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><% if ID == "1" %>$SiteConfig.Title | $SiteConfig.Tagline<% else %>$SiteConfig.Title | $Title<% end_if %></title>
