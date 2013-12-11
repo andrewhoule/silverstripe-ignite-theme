@@ -48,34 +48,28 @@
 /* Buttons */
 
 .button, .action, input[type=submit] {
-	@include background-with-css2-fallback(linear-gradient($primarycolor,$primarycolor_dark),$primarycolor); 
-	border-top: 1px solid rgba(255,255,255,.2);
-	border-right: 1px solid transparent;
-	border-left: 1px solid transparent; 
+	background: $primarycolor;
+	border: none;
 	color: #fff;
 	cursor: pointer;
 	display: inline-block; zoom:1; *display: inline;
-	float: left;
 	font-weight: 700;
 	@include fontsize(1.6, 2.2);
 	@include primaryfont();
 	height: auto;
 	margin: 0;
  	overflow: hidden;
- 	padding: 10px 16px;
+ 	padding: 9px 18px;
  	text-decoration: none;
- 	@include border-radius(4px);
 }
 .button:hover, .action:hover, input[type=submit]:hover {
-	background: $primarycolor;
-	border: 1px solid transparent;
+	background: $secondarycolor;
 	color: #fff;
 	text-decoration: none;
-	@include box-shadow(0,0,0,transparent);
 }
 .button:active, .action:active, input[type=submit]:active {
-	@include box-shadow(0,0,4px,rgba(0,0,0,.4),inset);
-	border-top: 1px solid transparent;
+	@include box-shadow(inset 0 0 6px rgba(0,0,0,.5));
+	outline: none;
 }
 
 
