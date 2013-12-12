@@ -266,6 +266,8 @@ body {
 	@include fontsize(1.6, 2.2);
 	font-weight: 400;
 	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 p {
 	margin: 0 0 20px 0;
