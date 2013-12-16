@@ -77,3 +77,23 @@ $successcolor_verylight: lighten($successcolor, 55%);
 @mixin secondaryfont() {
 	font-family: georgia, times, serif;
 }
+
+/* Breakpoints */
+
+@mixin bp($point) {
+    @if $point == desktop-small {
+        @media (max-width: 1050px) { @content; }
+    }
+    @else if $point == tablet-large {
+        @media (max-width: 900px) { @content; }
+    }
+    @else if $point == tablet {
+        @media (max-width: 767px)  { @content; }
+    }
+    @else if $point == tablet-small {
+        @media (max-width: 600px)  { @content; }
+    }
+    @else if $point == mobile {
+        @media (max-width: 400px)  { @content; }
+    }
+}
