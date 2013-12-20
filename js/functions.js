@@ -1,16 +1,23 @@
 $(document).ready(function(){
 
-	// Tabs
-	$(".tab-content").hide(); //Hide all content
-	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
-	$(".tab-content:first").show(); //Show first tab content
-	$("ul.tabs li").click(function() {
-		$("ul.tabs li").removeClass("active"); //Remove any "active" class
-		$(this).addClass("active"); //Add "active" class to selected tab
-		$(".tab-content").hide(); //Hide all tab content
-		var activeTab = $(this).find("a").attr("name"); //Find the href attribute value to identify the active tab + content
-		$(activeTab).fadeIn(); //Fade in the active ID content
-		return false;
-	});
-    
+
+/* ==========================================================================
+   Tabs
+   ========================================================================== */
+
+$(".tab-content").hide(); // Hide all tab content
+$(".tabs").each(function() { // Active first tab
+	$(this).find("> ul > li:first").addClass("active").show(); //Activate first tab
+	$(this).find(".tab-content:first").show();
 });
+$(".tabs li").click(function() {
+    $(this).parent().parent().find(".tab-content").hide();
+    var selected_tab = $(this).find("a").attr("href");
+    $(selected_tab).fadeIn();
+    $(this).parent().find("li").removeClass('active');
+    $(this).addClass("active");
+    return false;
+});
+   
+
+}); // End doc ready
