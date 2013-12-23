@@ -219,23 +219,37 @@ table {
 img {
 	display: block;
 }
-.template-content {
-	img.left {
-		float: left;
-		margin: 10px 20px 10px 0;
-	}
-	img.right {
-		float: right;
-		margin: 10px 0 10px 20px;
-	}
-	img.leftAlone {
-		display: block;
-		margin: 0 0 20px 0;
-	}
-	img.center {
-		display: block;
-		margin: 0 auto 20px auto;
-	}
+img.left {
+	float: left;
+	margin: 10px 20px 10px 0;
+}
+img.right {
+	float: right;
+	margin: 10px 0 10px 20px;
+}
+img.leftAlone {
+	display: block;
+	margin: 0 0 20px 0;
+}
+img.center {
+	display: block;
+	margin: 0 auto 20px auto;
+}
+.captionImage.leftAlone, .captionImage.center, .captionImage.right, .captionImage.left {
+	max-width: 100%;
+}
+.captionImage.right {
+	margin-left: 20px;
+}
+.captionImage.left {
+	margin-right: 20px;
+}
+.captionImage .caption {
+	@include secondaryfont();
+	@include fontsize(1.5,2.2);
+	font-style: italic;
+	margin-top: -5px;
+	text-align: center;
 }
 
 
