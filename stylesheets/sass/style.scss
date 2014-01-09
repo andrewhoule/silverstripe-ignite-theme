@@ -217,15 +217,16 @@ table {
 /* Images */
 
 img {
-	display: block;
+	height: auto;
+	max-width: 100%;
 }
 img.left {
 	float: left;
-	margin: 10px 20px 10px 0;
+	margin: 0 20px 20px 0;
 }
 img.right {
 	float: right;
-	margin: 10px 0 10px 20px;
+	margin: 0 0 20px 20px;
 }
 img.leftAlone {
 	display: block;
@@ -235,21 +236,36 @@ img.center {
 	display: block;
 	margin: 0 auto 20px auto;
 }
-.captionImage.leftAlone, .captionImage.center, .captionImage.right, .captionImage.left {
-	max-width: 100%;
+.captionImage.center {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100% !important;
 }
 .captionImage.right {
-	margin-left: 20px;
+	margin-left: 30px;
+	float: right;
 }
 .captionImage.left {
-	margin-right: 20px;
+	float: left;
 }
-.captionImage .caption {
+.captionImage.left, .captionImage.leftAlone {
+	margin-right: 30px;
+}
+.captionImage {
+	margin-bottom: 30px;
+	max-width: 100%;
+}
+.caption {
 	@include secondaryfont();
-	@include fontsize(1.5,2.2);
-	font-style: italic;
-	margin-top: -5px;
+	text-align: left;
+	@include fontsize(1.6,2.2);
+	margin: 0;
+	width: 100%;
+}
+.captionImage.center .caption {
+	margin: 0 auto;
 	text-align: center;
+	width: 90%;
 }
 
 
