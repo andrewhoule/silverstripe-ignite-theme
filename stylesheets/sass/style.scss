@@ -361,6 +361,30 @@ code {
 .right-text, .text-right {
 	text-align: right;
 }
+blockquote {
+	margin: 0 0 20px 0;
+	text-align: center;
+	font-style: italic;
+	@include fontsize(1.8,2.6);
+	@include primaryfont();
+	color: $textcolor_light;
+	p:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+.caption {
+	@include secondaryfont();
+	text-align: left;
+	@include fontsize(1.6,2.2);
+	margin: 0;
+	width: 100%;
+}
+.captionImage.center .caption {
+	margin: 0 auto;
+	text-align: center;
+	width: 90%;
+}
 
 
 /* ==========================================================================
