@@ -286,6 +286,15 @@ img.center {
 	background: $primarycolor;
 	color: #fff;
 }
+a[href $='.pdf']:after {
+	content: "";
+	background: transparent url(/SiteFiles/#{$siteid}/images/pdf-icon.png) no-repeat center right;
+	display: inline-block; zoom:1; *display: inline;
+	background-size: 16px 16px;
+	height: 16px;
+	width: 16px;
+	margin-left: 3px;
+}
 
 
 /* ==========================================================================
