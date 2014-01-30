@@ -1,4 +1,4 @@
-Barebones Silverstripe Responsive HTML5/SASS Theme
+Barebones Silverstripe Responsive HTML5/SCSS Theme
 ====================
 
 ## Author
@@ -6,7 +6,7 @@ Barebones Silverstripe Responsive HTML5/SASS Theme
 * http://andyhoule.com
 
 ## About
-This is a simple HTML5/SASS/JS responsive barebones theme that uses the Foundation 4 grid. It also has some base styles that are relevant to a Silverstripe 3 site.
+This is a bare essentials HTML5/SCSS/jQuery responsive theme that uses the Foundation 4 grid. It also has some base styles and functionality that are relevant to a Silverstripe 3 site.
 
 ## Giving Credit Where It's Due
 * Foundation 4 - http://foundation.zurb.com/
