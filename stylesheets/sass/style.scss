@@ -359,10 +359,10 @@ code {
 	font-weight: bold;
 	color: $textcolor_light;
 }
-.center-text, .text-center {
+.center-text, .text-center, .ct {
 	text-align: center;
 }
-.right-text, .text-right {
+.right-text, .text-right, .rt {
 	text-align: right;
 }
 blockquote {
@@ -389,15 +389,6 @@ blockquote {
 	text-align: center;
 	width: 90%;
 }
-
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */ 
-
-@media only screen and (max-width: 767px) {
-
-} // MQ 767
 
 
 
