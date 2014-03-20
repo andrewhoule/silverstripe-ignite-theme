@@ -42,6 +42,9 @@ ul, ol {
 		list-style: disc;
 		list-style-position: outside;
 		margin-bottom: 5px;
+		ul, ol {
+			margin-top: 10px;
+		}
 	}
 }
 
