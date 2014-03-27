@@ -46,8 +46,20 @@ textarea:focus {
 
 textarea, .textarea { width: 100%; }
 input.text { width: 100%; }
-.text, .email, .password { width: 46.5%; }
-#Zip.field { width: 20%; }
+.text, .email, .password {
+	width: 46.5%;
+	@include bp("tablet") {
+		display: block;
+		width: 100%;
+	}
+}
+#Zip.field {
+	width: 20%;
+	@include bp("tablet") {
+		display: block;
+		width: 100%;
+	}
+}
 #Spam, .optionset, .checkboxset {
 	clear: both;
 	display: block;
