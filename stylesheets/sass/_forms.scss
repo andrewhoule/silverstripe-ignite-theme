@@ -14,7 +14,7 @@ fieldset {
 }
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
 	background: #fff;
-	border: 1px solid $offsetcolor;
+	border: 1px solid $offsetcolor_meddark;
 	color: $textcolor_dark;
 	@include primaryfont();
 	@include fontsize(1.5,2.2);
@@ -44,7 +44,7 @@ textarea:focus {
 
 /* SS Form Styles */
 
-textarea, .textarea { width: 98%; }
+textarea, .textarea { width: 100%; }
 input.text { width: 100%; }
 .text, .email, .password { width: 46.5%; }
 #Zip.field { width: 20%; }
@@ -72,11 +72,16 @@ input.text { width: 100%; }
 	padding: 0;
 }
 .message {
-	color: $alertcolor;
+	background: $alertcolor_dark;
+	border: 3px solid $alertcolor_meddark;
+	color: #fff;
 	display: block;
 	font-weight: 700;
 	margin-top: 5px;
-	max-width: 219px;
+	text-align: center;
+	@include fontsize(1.6,2.2);
+	@include box-sizing("border-box");
+	padding: 15px 20px;
 }
 .optionset input, .checkboxsetfield input { 
 	border: 0;
@@ -126,12 +131,45 @@ label.right {
 	padding: 0 0 5px 0;
 	margin: 0;
 }
-.required label.left:after {
+.required label.left:after, .requiredField label.left:after, .mathspamprotector label.left:after {
    content:" *";
+   color: $alertcolor;
 }
-.required label.left:after, span.required {
-   	color: $alertcolor;
+.required label.left:after, span.required, label.required {
+   	background: $alertcolor_dark;
    	font-weight: 700;
+   	color: #fff;
+   	width: 100%;
+   	display: block;
+   	@include box-sizing("border-box");
+   	padding: 10px;
+   	text-align: center;
+   	position: relative;
+}
+label.required:after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: -7px;
+	left: 50%;
+	margin-left: -7px;
+	border-right: 7px solid transparent;
+	border-left: 7px solid transparent;
+	border-bottom: 7px solid $alertcolor_dark;
+}
+.success {
+	background: $successcolor_dark;
+	border: 2px solid $successcolor_meddark;
+	text-align: center;
+	@include fontsize(1.8,2.4);
+	color: #fff;
+	@include box-sizing("border-box");
+	font-weight: 700;
+	padding: 15px;
+	p:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
 }
 
 
