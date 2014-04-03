@@ -190,12 +190,13 @@ label.required:after {
    Form Typography
    ========================================================================== */
 
-form h2 {
+form h2, form .FormHeading {
 	border-bottom: 1px solid $offsetcolor;
 	border-top: 1px solid $offsetcolor;
 	clear: both;
 	margin: 10px 0 20px; 
 	padding: 10px 0;
+	@include fontsize(1.8,2.4);
 	width: 100%;
 }
 .form-text { color: $textcolor; }

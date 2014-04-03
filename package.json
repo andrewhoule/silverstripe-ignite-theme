@@ -1,0 +1,13 @@
+{
+  "name": "namehere",
+  "title": "Title Here",
+  "url": "http://urlhere.com",
+  "author": "Andrew Houle",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "matchdep": "^0.3.0"
+  }
+}
