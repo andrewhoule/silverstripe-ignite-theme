@@ -34,6 +34,41 @@ ul, ol {
 		}
 	}
 }
+dl {
+	margin: 0 0 20px 0;
+	overflow: hidden;
+	dt, dd{
+		float: left;
+		@include box-sizing("border-box");
+	}
+	dt {
+		font-weight: 700;
+   		width: 30%;
+    	overflow: hidden;
+    	clear: both;
+    	text-align: right;
+    	margin: 0 0 7px 0;
+	}
+	dd {
+		margin: 0 0 7px 0;
+		padding-left: 20px;
+		width: 70%;
+	} 
+	@include bp("tablet") {
+		dt, dd {
+			float: none;
+			text-align: left;
+			width: 100%;
+		}
+		dt {
+			margin: 0;
+		}
+		dd {
+			margin: 0 0 7px 0;
+			padding: 0;
+		}
+	}
+} 
 
 
 /* Buttons */
