@@ -70,7 +70,7 @@ input.text { width: 100%; }
 }
 .field {
 	clear: none;
-    float: left;
+    display: inline-block; zoom:1; *display: inline;
     margin: 0 3% 20px 0;
 }
 .dropdown {
