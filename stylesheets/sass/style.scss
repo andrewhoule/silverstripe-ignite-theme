@@ -392,39 +392,50 @@ code {
 	text-align: right;
 }
 blockquote {
-	background: url(../../img/blockquote.png) no-repeat;
 	border: none;
-	margin: 0 0 20px 0;
+	margin: 0 0 15px 0;
 	padding: 5px 20px 0 20px;
 	min-height: 35px;
 	position: relative;
 	z-index: 2;
+	font-style: italic;
+	@include secondaryfont();
+	color: $textcolor;
+	@include fontsize(2.1,2.8);
+	font-weight: 400;
+	text-align: center;
+	width: 100%;
+	p {
+		display: inline-block; zoom:1; *display: inline;
+	}
 	p:last-child {
-		margin-bottom: 0;
+		margin-bottom: 0 !important;
 		padding-bottom: 0;
 	}
 }
-blockquote, blockquote p {
-	font-style: italic;
-	@include primaryfont();
-	color: $textcolor_light;
-	@include fontsize(1.8,2.6);
-	font-weight: 400;
-	text-align: center;
-}
-blockquote:after {
-	content: url(../../img/blockquote-closed.png) no-repeat;
+blockquote:before, blockquote:after {
 	display: block;
 	height: 35px;
 	width: 44px;
 	position: absolute;
 	z-index: -1;
+}
+blockquote:before {
+	content: url(../../img/blockquote.png) no-repeat;
+	top: 0;
+	left: 0;
+	// content:"\201C";
+}
+blockquote:after {
+	content: url(../../img/blockquote-closed.png) no-repeat;
 	bottom: 0;
 	right: 0;
+	// content:"\201D";
 }
 figcaption, cite {
 	color: $textcolor_light;
 	@include fontsize(1.4,2.0);
+	@include primaryfont();
 	font-style: normal;
 	display: block;
 	margin: 0 0 20px 0;
