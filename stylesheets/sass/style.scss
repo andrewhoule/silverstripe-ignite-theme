@@ -71,6 +71,24 @@ dl {
 	}
 } 
 
+/* Simple CSS3 Columns */
+
+.three-cols {
+	@include column-count(3);
+	@include column-gap(20px);
+	@include bp("tablet") {
+		@include column-count(1);
+		@include column-gap(0);
+	}
+}
+.two-cols {
+	@include column-count(2);
+	@include column-gap(20px);
+	@include bp("tablet") {
+		@include column-count(1);
+		@include column-gap(0);
+	}
+}
 
 /* Buttons */
 
@@ -344,24 +362,12 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     color: $textcolor_light;
     line-height: 0;
 }
-h1 {
-	@include fontsize(3.2,3.9);
-}
-h2 {
-	@include fontsize(2.6, 3.3);
-}
-h3 {
-	@include fontsize(2.1,2.8);
-}
-h4 {
-	@include fontsize(1.8, 2.5);
-}
-h5 {
-	@include fontsize(1.6, 2.3);
-}
-h6 {
-	@include fontsize(1.4, 2.1);
-}
+h1 { @include fontsize(3.2,3.9); }
+h2 { @include fontsize(2.6,3.3); }
+h3 { @include fontsize(2.1,2.8); }
+h4 { @include fontsize(1.8,2.5); }
+h5 { @include fontsize(1.6, 2.3); }
+h6 { @include fontsize(1.4, 2.1); }
 a {
 	color: $primarycolor;
 	outline: none;
