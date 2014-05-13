@@ -73,18 +73,22 @@ dl {
 
 /* Simple CSS3 Columns */
 
-.three-cols {
+ul.three-cols {
 	@include column-count(3);
 	@include column-gap(20px);
+	margin: 0 0 20px 0;
 	@include bp("tablet") {
+		margin: 0 0 20px 20px;
 		@include column-count(1);
 		@include column-gap(0);
 	}
 }
-.two-cols {
+ul.two-cols {
 	@include column-count(2);
 	@include column-gap(20px);
+	margin: 0 0 20px 0;
 	@include bp("tablet") {
+		margin: 0 0 20px 20px;
 		@include column-count(1);
 		@include column-gap(0);
 	}

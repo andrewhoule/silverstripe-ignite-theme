@@ -14,14 +14,20 @@ fieldset {
 }
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
 	-webkit-appearance: none;
-	background: #fff;
+	background: $offsetcolor_light;
 	border: 1px solid $offsetcolor_meddark;
 	color: $textcolor_dark;
 	@include primaryfont();
 	@include fontsize(1.5,2.2);
-	padding: 6px;
+	padding: 8px;
 	outline: none;
 	@include border-radius(0);
+	@include box-shadow(none);
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
+	background: #fff;
+	border: 1px solid $offsetcolor_verydark;
+	outline: 0 none;
 	@include box-shadow(none);
 }
 select {
@@ -35,12 +41,6 @@ select {
 }
 select[multiple] {
     height: auto;
-}
-input.text:focus,
-textarea:focus {
-	background: #fff;
-	border: 1px solid #555;
-	outline: 0 none;
 }
 
 /* SS Form Styles */
@@ -148,6 +148,7 @@ label.right {
 .required label.left:after, span.required, label.required {
    	background: $alertcolor_dark;
    	font-weight: 700;
+   	@include fontsize(1.4,1.8);
    	color: #fff;
    	width: 100%;
    	display: block;
@@ -155,6 +156,7 @@ label.right {
    	padding: 10px;
    	text-align: center;
    	position: relative;
+   	margin-top: -20px;
 }
 label.required:after {
 	display: block;
