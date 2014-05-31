@@ -67,6 +67,56 @@ $successcolor_verylight: lighten($successcolor, 55%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$IEcolor}', endColorstr='#{$IEcolor}', GradientType=0 );
 	background: $rgba;
 }
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+@mixin align-items($value: stretch) {
+    @if $value == flex-start {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+    } @else if $value == flex-end {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+    } @else {
+        -webkit-box-align: $value;
+        -ms-flex-align: $value;
+    }
+    -webkit-align-items: $value;
+    -moz-align-items: $value;
+    align-items: $value;
+}
+@mixin center($axis: "both"){
+    position:absolute;
+    @if $axis == "y"{
+        top:50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @if $axis == "x"{
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    @if $axis == "both"{
+        top:50%;
+        left:50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
 
 
 /* Fonts */
@@ -81,16 +131,16 @@ $successcolor_verylight: lighten($successcolor, 55%);
 /* Breakpoints */
 
 @mixin bp($point) {
-    @if $point == desktop-small {
+    @if $point == desktopsmall {
         @media (max-width: 1050px) { @content; }
     }
-    @else if $point == tablet-large {
+    @else if $point == tabletlarge {
         @media (max-width: 900px) { @content; }
     }
     @else if $point == tablet {
         @media (max-width: 767px)  { @content; }
     }
-    @else if $point == tablet-small {
+    @else if $point == tabletsmall {
         @media (max-width: 600px)  { @content; }
     }
     @else if $point == mobile {
