@@ -434,13 +434,11 @@ blockquote:before {
 	content: url(../../img/blockquote.png) no-repeat;
 	top: 0;
 	left: 0;
-	// content:"\201C";
 }
 blockquote:after {
 	content: url(../../img/blockquote-closed.png) no-repeat;
 	bottom: 0;
 	right: 0;
-	// content:"\201D";
 }
 figcaption, cite {
 	color: $textcolor_light;

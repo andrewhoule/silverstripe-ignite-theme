@@ -67,12 +67,18 @@ $successcolor_verylight: lighten($successcolor, 55%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$IEcolor}', endColorstr='#{$IEcolor}', GradientType=0 );
 	background: $rgba;
 }
-@mixin flexbox() {
+@mixin display-flex {
     display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
+    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+}
+@mixin display-flex-old {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 @mixin align-items($value: stretch) {
     @if $value == flex-start {
@@ -88,6 +94,37 @@ $successcolor_verylight: lighten($successcolor, 55%);
     -webkit-align-items: $value;
     -moz-align-items: $value;
     align-items: $value;
+}
+@mixin flex-direction($value: row) {
+    @if $value == row-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: horizontal;
+    } @else if $value == column {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+    } @else if $value == column-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: vertical;
+    } @else {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+    }
+    -webkit-flex-direction: $value;
+    -moz-flex-direction: $value;
+    -ms-flex-direction: $value;
+    flex-direction: $value;
+}
+@mixin flex($fg: 1, $fs: null, $fb: null) { 
+    $fg-boxflex: $fg;
+    @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+    }
+    -webkit-box-flex: $fg-boxflex;
+    -webkit-flex: $fg $fs $fb;
+    -moz-box-flex: $fg-boxflex;
+    -moz-flex: $fg $fs $fb;
+    -ms-flex: $fg $fs $fb;
+    flex: $fg $fs $fb;
 }
 @mixin center($axis: "both"){
     position:absolute;
@@ -117,7 +154,6 @@ $successcolor_verylight: lighten($successcolor, 55%);
         transform: translate(-50%, -50%);
     }
 }
-
 
 /* Fonts */
 
