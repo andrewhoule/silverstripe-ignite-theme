@@ -33,8 +33,11 @@ $offsetcolor_meddark: darken($offsetcolor, 20%);
 $offsetcolor_verydark: darken($offsetcolor, 30%);
 $darkcolor: #222222;
 $darkcolor_light: lighten($darkcolor, 10%);
+$darkcolor_medlight: lighten($darkcolor, 20%);
+$darkcolor_verylight: lighten($darkcolor, 30%);
 $darkcolor_dark: darken($darkcolor, 10%);
-$darkcolor_meddark: darken($darkcolor, 25%);
+$darkcolor_meddark: darken($darkcolor, 20%);
+$darkcolor_verydark: darken($darkcolor, 30%);
 $alertcolor: #c40000;
 $alertcolor_dark: darken($alertcolor, 10%);
 $alertcolor_meddark: darken($alertcolor, 20%);
@@ -174,7 +177,10 @@ $successcolor_verylight: lighten($successcolor, 55%);
         @media (max-width: 900px) { @content; }
     }
     @else if $point == tablet {
-        @media (max-width: 767px)  { @content; }
+        @media (max-width: 768px)  { @content; }
+    }
+    @else if $point == tabletmobilefirst {
+        @media (min-width: 767px)  { @content; }
     }
     @else if $point == tabletsmall {
         @media (max-width: 600px)  { @content; }
