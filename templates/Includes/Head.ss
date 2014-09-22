@@ -8,11 +8,9 @@
     <meta name="description" content="$SiteConfig.Title - $SiteConfig.Tagline">
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="$Themedir/stylesheets/css/style.css">
-    <!--[if IE 8]><link rel="stylesheet" href="$Themedir/stylesheets/css/ie8.css"><![endif]-->
-    <!--[if lt IE 8]><link rel="stylesheet" href="$Themedir/stylesheets/css/ie7.css"><![endif]-->
+    <link rel="stylesheet" href="$Themedir/css/style.css">
     <!-- JS -->
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <!-- Icons -->
-    <link rel="shortcut icon" href="$Themedir/img/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 </head>
