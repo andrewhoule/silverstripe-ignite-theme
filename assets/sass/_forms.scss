@@ -1,6 +1,6 @@
 
 /* ==========================================================================
-   General Form Styles
+   Forms
    ========================================================================== */
 
 form {
@@ -9,69 +9,52 @@ form {
 }
 fieldset {
 	border: 0;
-	margin: 0;
+	margin: 0 -7.5px;
 	padding: 0;
 }
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
-	-webkit-appearance: none;
 	background: $offsetcolor_light;
-	border: 1px solid $offsetcolor_meddark;
-	color: $textcolor_dark;
-	height: auto;
+	border: 1px solid $offsetcolor_verydark;
+	color: $textcolor;
 	@include primaryfont();
-	@include fontsize(1.5,2.2);
+	@include fontsize(1.4,2.1);
+	height: auto;
 	margin: 0;
-	padding: 8px;
+	padding: 5px;
 	outline: none;
 	@include border-radius(0);
 	@include box-shadow(none);
 }
-input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
-	background: #fff;
-	border: 1px solid $offsetcolor_verydark;
-	outline: 0 none;
-	@include box-shadow(none);
-}
 select {
 	border: 1px solid $offsetcolor_verydark;
-	font-size: 15px;
+	@include fontsize(1.4,2.1);
 	height: 34px;
-	line-height: 34px;
-	max-width: 540px;
-	width: auto;
 	-webkit-appearance: menulist-button;
 }
 select[multiple] {
     height: auto;
 }
-
-/* SS Form Styles */
-
-textarea, .textarea  { width: 100%; } 
-input.text { width: 100%; }
-input.action {
-	@extend .button;
+input.text:focus,
+textarea:focus {
+	background: #fff;
+	border: 1px solid #555;
+	outline: 0 none;
 }
-.text, .email, .password, .mathspamprotector {
-	clear: none;
-    display: inline-block; zoom:1; *display: inline;
-    margin: 0 -2px;
-    padding: 0 3% 0 0;
+textarea, .textarea {
+	width: 100%;
+	@include bp("tablet") {
+		width: 100%;
+	}
+}
+input.text { width: 100%; }
+.text, .email {
 	width: 50%;
 	@include bp("tablet") {
-		display: block;
 		width: 100%;
 	}
 }
-#Zip.field {
-	width: 20%;
-	@include bp("tablet") {
-		display: block;
-		width: 100%;
-	}
-}
-.field {
-	margin-bottom: 30px;
+.literal {
+	width: 100%;
 }
 #Spam, .optionset, .checkboxset {
 	clear: both;
@@ -79,6 +62,45 @@ input.action {
 }
 .optionset, .checkboxset {
 	width: 100%;
+}
+.field {
+   margin: 0 -2px 20px -2px;
+   padding: 0 7.5px;
+   display: inline-block; zoom:1; *display: inline;
+   vertical-align: bottom;
+   font-size: 0;
+   @include bp("tablet") {
+    	margin-right: 0;
+   }
+}
+.field.checkbox {
+	input.checkbox {
+		float: left;
+		margin: 6px 6px 0 0;
+	}
+	label.right {
+		float: left;
+	}
+}
+.field.mathspamprotector {
+	display: block;
+	width: 100%;
+	input.mathspamprotector {
+		width: 100px;
+	}
+}
+form label.left {
+	color: #fff;
+	@include primaryfont();
+	@include fontsize(1.6,2.3);
+	font-weight: 700;
+	margin: 0 !important; 
+	padding: 0 0 10px 0 !important;
+	clear: both;
+}
+form label.left small {
+	@include fontsize(1.4,2.1);
+	font-weight: 400;
 }
 .middleColumn { 
 	clear: left;
@@ -88,18 +110,20 @@ input.action {
 	margin: 0;
 	padding: 0;
 }
-.message {
-	background: $alertcolor_dark;
-	border: 3px solid $alertcolor_meddark;
-	color: #fff;
-	display: block;
-	font-weight: 700;
-	margin-top: 5px;
-	text-align: center;
-	@include fontsize(1.6,2.2);
-	@include box-sizing("border-box");
-	padding: 15px 20px;
+form ul, form ol {
+	@include fontsize(1.6,2.2); 
+	margin: 0;
+	padding: 0 0 20px 30px;
+	li { margin-bottom: 5px; }
+	li:last-child { margin-bottom: 0; }
 }
+form ul.optionset, form ul.checkboxset {
+	padding: 0 10px 20px 10px;
+	li {
+		list-style: none;
+	}
+}
+form li.even { background: none !important; }
 .optionset input, .checkboxsetfield input { 
 	border: 0;
 	display: block;
@@ -107,128 +131,82 @@ input.action {
 	margin: 4px 10px 0 0;
 	padding: 0;
 }
-div.tab .field .middleColumn {
-	clear: none;
-	margin: 0;
+div.tab .field .middleColumn { clear: none !important; margin: 0 !important; width: auto; }
+select { 
+	max-width: 540px;
 	width: auto;
 }
+input:focus span,
+textarea:focus span { border: 3px solid #000; }
 input.action:hover,
-input.action:focus {
-	cursor: pointer;
-}
-#Remember { display: none; }
-
-/* Form Lists */
-
-form ul { margin: 0; }
-form ul li {
-	list-style: none;
-	margin: 0 0 5px 0;
-}
-form li:last-child { margin-bottom: 0; }
-form li:nth-child(even)	{ background: none; }
-
-/* Form Labels */
-
-form label.left {
-	color: $textcolor_meddark;
-	display: block;
-	@include primaryfont();
-	@include fontsize(1.6,2.3);
-	font-weight: 700;
-	margin: 0; 
-	padding: 0 0 10px 0;
-	clear: both;
-}
-form label.left small {
-	@include fontsize(1.4,2.1);
-	font-weight: 400;
-}
+input.action:focus { cursor: pointer; }
+input#Search_Form_SearchForm_Search { width: 110px; padding: 3px 3px 3px 3px; margin-left: -4px; }
 label.right {
-	padding: 0 0 5px 0;
-	margin: 0;
+	padding: 0 0 5px 0 !important;
+	margin: 0 !important;
+	text-align: left;
 }
 .required label.left:after, .requiredField label.left:after, .mathspamprotector label.left:after {
    content:" *";
    color: $alertcolor;
+   font-weight: 400;
 }
-.required label.left:after, span.required, label.required {
-   	background: $alertcolor_dark;
-   	font-weight: 700;
-   	@include fontsize(1.4,1.8);
-   	color: #fff;
-   	width: 100%;
-   	display: block;
-   	@include box-sizing("border-box");
-   	padding: 10px;
-   	text-align: center;
-   	position: relative;
+#ContactForm_ContactForm span.required {
+	color: $alertcolor;
 }
-label.required:after {
+#Form_Form span.required {
+	background: $alertcolor_dark;
+	color: #fff;
+	padding: 10px 15px;
+	width: 100%;
+	font-weight: 700;
+   @include fontsize(1.6,2.2);
+   display: block;
+   position: relative;
+   text-align: center;
+}
+#Form_Form span.required:before {
 	display: block;
 	content: "";
-	position: absolute;
+	@include absolutecenter(x);
 	top: -7px;
-	left: 50%;
 	margin-left: -7px;
 	border-right: 7px solid transparent;
 	border-left: 7px solid transparent;
 	border-bottom: 7px solid $alertcolor_dark;
 }
-.success {
-	background: $successcolor_dark;
-	border: 2px solid $successcolor_meddark;
-	text-align: center;
-	@include fontsize(1.8,2.4);
-	color: #fff;
-	@include box-sizing("border-box");
+#Form_Form span.message.error {
+	margin-top: 10px;
+	color: $alertcolor_dark;
 	font-weight: 700;
-	padding: 15px;
-	p:last-child {
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
+   @include fontsize(1.6,2.2);
+   display: block;
 }
 
 
 /* ==========================================================================
-   Form Typography
+   Typography
    ========================================================================== */
 
-form h2, form .FormHeading {
+form h2, .FormHeading {
+	@include fontsize(2.2,2.9);
 	border-bottom: 1px solid $offsetcolor;
 	border-top: 1px solid $offsetcolor;
 	clear: both;
 	margin: 10px 0 20px; 
-	padding: 10px 0;
-	@include fontsize(1.8,2.4);
+	padding: 10px 0 !important;
 	width: 100%;
+}
+.login-logo {
+	margin: 0 auto 10px auto;
 }
 .form-text { color: $textcolor; }
 
 
 /* ==========================================================================
-   Login Form
+   User Forms Page
    ========================================================================== */
 
-#ForgotPassword {
-	color: $textcolor_light;
-	float: left;
-	padding: 10px 0 0 10px;
+.ui-datepicker th {
+	color: #fff;
 }
-#ForgotPassword:before {
-	content: "or ";
-}
-#MemberLoginForm_LoginForm_action_dologin {
-	float: left;
-}
-
-
-
-
-
-
-
-
-
-
