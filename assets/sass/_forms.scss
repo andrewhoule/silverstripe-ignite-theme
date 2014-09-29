@@ -204,6 +204,36 @@ form h2, .FormHeading {
 
 
 /* ==========================================================================
+   Login Form
+   ========================================================================== */
+
+#Remember {
+	display: none;
+}
+#ForgotPassword {
+	color: $textcolor_light;
+	float: left;
+	padding: 4px 0 0 10px;
+}
+#ForgotPassword:before {
+	content: "or ";
+}
+#MemberLoginForm_LoginForm_action_dologin {
+	float: left;
+}
+#MemberLoginForm_LoginForm {
+	text-align: center;
+	label.left {
+		display: block;
+		text-align: left;
+	}
+	.Actions {
+		display: inline-block; zoom:1; *display: inline;
+	}
+}
+
+
+/* ==========================================================================
    User Forms Page
    ========================================================================== */
 
