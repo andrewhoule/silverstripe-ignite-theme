@@ -13,8 +13,8 @@ fieldset {
 	padding: 0;
 }
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
-	background: $offsetcolor_light;
-	border: 1px solid $offsetcolor_verydark;
+	background: $offsetcolor_subtle;
+	border: 1px solid $offsetcolor_verystrong;
 	color: $textcolor;
 	@include primaryfont();
 	@include fontsize(1.4,2.1);
@@ -26,7 +26,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 	@include box-shadow(none);
 }
 select {
-	border: 1px solid $offsetcolor_verydark;
+	border: 1px solid $offsetcolor_verystrong;
 	@include fontsize(1.4,2.1);
 	height: 34px;
 	-webkit-appearance: menulist-button;
@@ -222,7 +222,7 @@ form h2, .FormHeading {
 	display: none;
 }
 #ForgotPassword {
-	color: $textcolor_light;
+	color: $textcolor_subtle;
 	float: left;
 	padding: 4px 0 0 10px;
 }
