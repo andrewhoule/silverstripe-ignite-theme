@@ -129,7 +129,7 @@ $successcolor_verylight: lighten($successcolor, 55%);
     -ms-flex: $fg $fs $fb;
     flex: $fg $fs $fb;
 }
-@mixin center($axis: "both"){
+@mixin absolutecenter($axis: "both"){
     position:absolute;
     @if $axis == "y"{
         top:50%;
