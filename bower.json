@@ -1,0 +1,21 @@
+{
+  "name": "projectnamehere",
+  "version": "0.0.1",
+  "authors": [
+    "Author Name and Email Here"
+  ],
+  "license": "MIT",
+  "homepage": "homeurlhere",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~1.*",
+    "respond": "~1.4.2",
+    "normalize-scss": "~3.0.1",
+    "jeet": "~6.1.2"
+  }
+}

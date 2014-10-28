@@ -90,7 +90,7 @@ input.text { width: 100%; }
 	}
 }
 form label.left {
-	color: #fff;
+	color: $textcolor_strong;
 	@include primaryfont();
 	@include fontsize(1.6,2.3);
 	font-weight: 700;
