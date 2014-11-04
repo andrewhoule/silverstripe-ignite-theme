@@ -3,6 +3,8 @@
   Variables
    ========================================================================== */ 
 
+/* Colors */
+
 $primarycolor: #4f2683;
 $primarycolor_dark: darken($primarycolor, 6%);
 $primarycolor_meddark: darken($primarycolor, 15%);
@@ -52,6 +54,10 @@ $successcolor_verydark: darken($successcolor, 30%);
 $successcolor_light: lighten($successcolor, 20%);
 $successcolor_medlight: lighten($successcolor, 35%);
 $successcolor_verylight: lighten($successcolor, 55%);
+
+/* Functionality / Structure */
+
+$transitionduration: .3s;
 
 
 /* ==========================================================================
