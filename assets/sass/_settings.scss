@@ -70,11 +70,15 @@ $transitionduration: .3s;
     font-size:   $size + rem;
   	line-height: $line + rem;
 }
-@mixin rgba-background($color, $opacity) {
-	$rgba: rgba($color, $opacity);
-	$IEcolor: ie_hex_str($rgba);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$IEcolor}', endColorstr='#{$IEcolor}', GradientType=0 );
-	background: $rgba;
+@mixin rgba($type, $color, $percentage) {
+    @if $type == color {
+      color: transd($color, $percentage);
+      color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+      background-color: transd($color, $percentage);
+      background-color: rgba($color, $percentage);
+    }
 }
 @mixin display-flex {
     display: -webkit-box;
