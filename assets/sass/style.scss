@@ -11,13 +11,6 @@
    Reusable Components
    ========================================================================== */ 
 
-.cf:before, .cf:after {
-    content:"";
-    display:table;
-}
-.cf:after { clear:both; }
-.cf { zoom:1; }
-
 /* Lists */
 
 ul, ol {
