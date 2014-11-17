@@ -88,28 +88,10 @@ ul.two-cols {
 /* Buttons */
 
 .button, .action, input[type=submit] {
-	background: $primarycolor;
-	border: none;
-	color: #fff;
-	cursor: pointer;
-	display: inline-block; zoom:1; *display: inline;
-	font-weight: 700;
-	@include fontsize(1.6, 2.2);
-	@include primaryfont();
-	height: auto;
-	margin: 0;
- 	overflow: hidden;
- 	padding: 9px 18px;
- 	text-decoration: none;
+	@include button(1.8, $primarycolor, #fff, 20px 50px)
 }
-.button:hover, .action:hover, input[type=submit]:hover {
-	background: $secondarycolor;
-	color: #fff;
-	text-decoration: none;
-}
-.button:active, .action:active, input[type=submit]:active {
-	@include box-shadow(inset 0 0 6px rgba(0,0,0,.5));
-	outline: none;
+.secondary-button {
+	@include button(1.8, $secondarycolor, #fff, 20px 50px)
 }
 
 
