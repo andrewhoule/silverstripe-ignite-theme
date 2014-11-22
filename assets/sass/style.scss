@@ -445,6 +445,10 @@ figcaption:before, cite:before {
 	text-align: center;
 	width: 90%;
 }
+.primary-color { color: $primarycolor; }
+.secondary-color { color: $secondarycolor; }
+.reversed { color: #fff; }
+.allcaps { text-transform: uppercase; }
 
 
 
