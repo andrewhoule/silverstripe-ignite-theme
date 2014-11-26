@@ -31,7 +31,8 @@ grunt.initConfig({
 	  	dev: {
 	    	options: {
 	      	style: 'compressed',
-	      	compass: true
+	      	compass: true,
+	      	sourcemap: 'none'
 	    	},
 	    	files: {
 	      	'<%= project.css %>/style.css': '<%= project.assets %>/sass/style.scss'
