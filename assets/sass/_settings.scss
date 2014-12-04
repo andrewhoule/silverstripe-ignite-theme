@@ -88,20 +88,32 @@ $transitionduration: .3s;
    filter: alpha(opacity=($opacity * 100));
 }
 @mixin absolutecenter($axis: "both"){
-   position:absolute;
-   @if $axis == "y"{
-      top: 50%;
-      @include translateY(-50%);
-   }
-   @if $axis == "x"{
-      left: 50%;
-      @include translateX(-50%);
-   }
-   @if $axis == "both"{
-      top: 50%;
-      left: 50%;
-      @include translate(-50%,-50%);
-   }
+    position:absolute;
+    @if $axis == "y"{
+        top:50%;
+        @include translateY(-50%);
+    }
+    @if $axis == "x"{
+        left:50%;
+        @include translateX(-50%);
+    }
+    @if $axis == "both"{
+        top:50%;
+        left:50%;
+        @include translate(-50%,-50%);
+    }
+}
+@mixin ctr($args...) {
+  @include absolutecenter($args...);
+}
+@mixin unabsolutecenter() {
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  @include translate(0,0);
+}
+@mixin unctr($args...) {
+  @include unabsolutecenter($args...);
 }
 @mixin triangle($direction, $size: 6px, $color: #222){
    content: '';
