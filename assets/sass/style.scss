@@ -355,10 +355,10 @@ a {
 	color: $primarycolor;
 	outline: none;
 	text-decoration: none;
+	@include transition-duration($transitionduration);
 }
 a:hover {
 	color: $secondarycolor;
-	text-decoration: underline;
 }
 strong {
 	color: $textcolor_medstrong;
