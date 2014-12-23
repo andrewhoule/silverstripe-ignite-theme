@@ -237,6 +237,17 @@ table {
 	}
 }
 
+/* Breaks */
+
+hr {
+  @include cf();
+  margin: 30px 0;
+  width: 100%;
+  display: block;
+  height: 1px;
+  background: $offsetcolor;
+}
+
 
 /* ==========================================================================
    Base Styles
