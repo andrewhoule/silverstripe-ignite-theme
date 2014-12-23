@@ -214,30 +214,34 @@ $transitionduration: .4s;
 /* Buttons */
 
 @mixin button($fontsize, $bgcolor, $fontcolor, $padding) {
-   background: $bgcolor;
-   border: none;
-   cursor: pointer;
-   display: block;
-   height: auto;
-   margin: 0;
-   overflow: hidden;
-   text-decoration: none;
-   text-decoration: none;
-   text-transform: uppercase;
-   @include secondaryfont();
-   @include fontsize($fontsize,$fontsize);
-   color: $fontcolor;
-   padding: $padding;
-   @include transition-duration($transitionduration);
-   &:hover {
-      background: lighten($bgcolor, 6%);
-      color: $fontcolor;
-      text-decoration: none;
-   }
-   &:active {
-      @include box-shadow(inset 0 0 6px rgba(0,0,0,.5));
-      outline: none;
-   }
+  background: $bgcolor;
+  border: none;
+  cursor: pointer;
+  display: block;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  @include secondaryfont();
+  @include fontsize($fontsize,$fontsize);
+  color: $fontcolor;
+  padding: $padding;
+  @include transition-duration($transitionduration);
+  &:hover {
+    background: lighten($bgcolor, 6%);
+    color: $fontcolor;
+    text-decoration: none;
+  }
+  &:active {
+    @include box-shadow(inset 0 0 6px rgba(0,0,0,.5));
+    outline: none;
+  }
+  @include bp(md) {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* Fonts */
