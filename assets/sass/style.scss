@@ -61,15 +61,18 @@ dl {
 	}
 } 
 
-/* Simple CSS3 Columns */
+/* Column Lists */
 
-ul.three-col-list {
+ul.two-col-list {
   margin: 0 -10px 40px -10px;
   padding: 0;
   @include cf();
+  @include font-size(0);
   li {
-    float: left;
-    width: 33.3333333%;
+    display: inline-block;
+    @include font-size(1.6);
+    @include line-height(2.2);
+    width: 50%;
     list-style: none;
     margin: 0 0 10px 0;
     padding: 0 10px;
@@ -80,13 +83,16 @@ ul.three-col-list {
   }
 }
 
-ul.two-col-list {
+ul.three-col-list {
   margin: 0 -10px 40px -10px;
   padding: 0;
   @include cf();
+  @include font-size(0);
   li {
-    float: left;
-    width: 50%;
+    display: inline-block;
+    @include font-size(1.6);
+    @include line-height(2.2);
+    width: 33.33333333%;
     list-style: none;
     margin: 0 0 10px 0;
     padding: 0 10px;
@@ -112,7 +118,8 @@ ul.two-col-list {
 .pagination {
 	border: 0;
 	clear: both;
-	@include fontsize(1.5, 2.1);
+	@include font-size(1.5);
+  @include line-height(2.1);
 	margin: 40px 0 20px 0;
 	overflow: hidden;
 	padding: 0;
@@ -314,7 +321,8 @@ img.center {
 .caption {
 	@include secondaryfont();
 	text-align: left;
-	@include fontsize(1.6,2.2);
+	@include font-size(1.6);
+  @include line-height(2.2);
 	margin: 0;
 	width: 100%;
 }
@@ -349,7 +357,8 @@ html {
 body {
 	color: $textcolor;
 	@include primaryfont();
-	@include fontsize(1.6, 2.2);
+	@include font-size(1.6);
+  @include line-height(2.2);
 	font-weight: 400;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -369,12 +378,30 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     color: $textcolor_subtle;
     line-height: 0;
 }
-h1 { @include fontsize(3.2,3.9); }
-h2 { @include fontsize(2.6,3.3); }
-h3 { @include fontsize(2.1,2.8); }
-h4 { @include fontsize(1.8,2.5); }
-h5 { @include fontsize(1.6, 2.3); }
-h6 { @include fontsize(1.4, 2.1); }
+h1 {
+  @include font-size(3.2);
+  @include line-height(3.9);
+}
+h2 {
+  @include font-size(2.6);
+  @include line-height(3.3);
+}
+h3 {
+  @include font-size(2.1);
+  @include line-height(2.8);
+}
+h4 {
+  @include font-size(1.8);
+  @include line-height(2.5);
+}
+h5 { 
+  @include font-size(1.6);
+  @include line-height(2.3);
+}
+h6 {
+  @include font-size(1.4);
+  @include line-height(2.1);
+}
 a {
 	color: $primarycolor;
 	outline: none;
@@ -414,7 +441,8 @@ blockquote {
 	font-style: italic;
 	@include secondaryfont();
 	color: $textcolor;
-	@include fontsize(2.1,2.8);
+  @include font-size(2.1);
+  @include line-height(2.8);
 	font-weight: 400;
 	text-align: center;
 	width: 100%;
@@ -445,7 +473,8 @@ blockquote:after {
 }
 figcaption, cite {
 	color: $textcolor_subtle;
-	@include fontsize(1.4,2.0);
+  @include font-size(1.4);
+  @include line-height(2.0);
 	@include primaryfont();
 	font-style: normal;
 	display: block;
@@ -460,7 +489,8 @@ figcaption:before, cite:before {
 .caption {
 	@include secondaryfont();
 	text-align: left;
-	@include fontsize(1.6,2.2);
+  @include font-size(1.6);
+  @include line-height(2.2);
 	margin: 0;
 	width: 100%;
 }

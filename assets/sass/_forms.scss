@@ -17,7 +17,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 	border: 1px solid $offsetcolor_verystrong;
 	color: $textcolor;
 	@include primaryfont();
-	@include fontsize(1.4,2.1);
+  @include font-size(1.4);
+  @include line-height(2.1);
 	height: auto;
 	margin: 0;
 	padding: 5px;
@@ -27,7 +28,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 }
 select {
 	border: 1px solid $offsetcolor_verystrong;
-	@include fontsize(1.4,2.1);
+  @include font-size(1.4);
+  @include line-height(2.1);
 	height: 34px;
 	-webkit-appearance: menulist-button;
 }
@@ -92,14 +94,16 @@ input.text { width: 100%; }
 form label.left {
 	color: $textcolor_strong;
 	@include primaryfont();
-	@include fontsize(1.6,2.3);
+	@include font-size(1.6);
+  @include line-height(2.3);
 	font-weight: 700;
 	margin: 0 !important; 
 	padding: 0 0 10px 0 !important;
 	clear: both;
 }
 form label.left small {
-	@include fontsize(1.4,2.1);
+	@include font-size(1.4);
+  @include line-height(2.1);
 	font-weight: 400;
 }
 .middleColumn { 
@@ -111,7 +115,8 @@ form label.left small {
 	padding: 0;
 }
 form ul, form ol {
-	@include fontsize(1.6,2.2); 
+	@include font-size(1.6);
+  @include line-height(2.2);
 	margin: 0;
 	padding: 0 0 20px 30px;
 	li { margin-bottom: 5px; }
@@ -147,9 +152,9 @@ label.right {
 	text-align: left;
 }
 .required label.left:after, .requiredField label.left:after, .mathspamprotector label.left:after {
-   content:" *";
-   color: $alertcolor;
-   font-weight: 400;
+  content:" *";
+  color: $alertcolor;
+  font-weight: 400;
 }
 #ContactForm_ContactForm span.required {
 	color: $alertcolor;
@@ -160,10 +165,11 @@ label.right {
 	padding: 10px 15px;
 	width: 100%;
 	font-weight: 700;
-   @include fontsize(1.6,2.2);
-   display: block;
-   position: relative;
-   text-align: center;
+  @include font-size(1.6);
+  @include line-height(2.2);
+  display: block;
+  position: relative;
+  text-align: center;
 }
 #Form_Form span.required:before {
 	display: block;
@@ -179,12 +185,14 @@ label.right {
 	margin-top: 10px;
 	color: $alertcolor_dark;
 	font-weight: 700;
-   @include fontsize(1.6,2.2);
-   display: block;
+  @include font-size(1.6);
+  @include line-height(2.2);
+  display: block;
 }
 .success {
 	color: #fff;
-	@include fontsize(1.8,2.3);
+	@include font-size(1.8);
+  @include line-height(2.3);
 	font-weight: 700;
 	text-align: center;
 	padding: 20px;
@@ -200,7 +208,8 @@ label.right {
    ========================================================================== */
 
 form h2, .FormHeading {
-	@include fontsize(2.2,2.9);
+	@include font-size(2.2);
+  @include line-height(2.9);
 	border-bottom: 1px solid $offsetcolor;
 	border-top: 1px solid $offsetcolor;
 	clear: both;

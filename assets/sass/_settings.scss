@@ -64,44 +64,46 @@ $transitionduration: .4s;
    Mixins
    ========================================================================== */ 
 
-@mixin fontsize($size:1.6, $line: $size * 1.5){
-   font-size:   ($size * 10) + px;
-   line-height: ($line * 10) + px;
-   font-size:   $size + rem;
-  	line-height: $line + rem;
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+@mixin line-height($sizeValue: 1.6) {
+  line-height: ($sizeValue * 10) + px;
+  line-height: $sizeValue + rem;
 }
 @mixin rgba($type, $color, $percentage) {
-   @if $type == color {
-      color: transd($color, $percentage);
-      color: rgba($color, $percentage);
-    }
-   @if $type == bg {
-      background-color: transd($color, $percentage);
-      background-color: rgba($color, $percentage);
-   }
+  @if $type == color {
+    color: transd($color, $percentage);
+    color: rgba($color, $percentage);
+  }
+  @if $type == bg {
+    background-color: transd($color, $percentage);
+    background-color: rgba($color, $percentage);
+  }
 }
 @mixin circle {
-   @include border-radius(100%);
+  @include border-radius(50%);
 }
 @mixin opacity($opacity) {
-   opacity: $opacity;
-   filter: alpha(opacity=($opacity * 100));
+  opacity: $opacity;
+  filter: alpha(opacity=($opacity * 100));
 }
 @mixin absolutecenter($axis: "both"){
-    position:absolute;
-    @if $axis == "y"{
-        top:50%;
-        @include translateY(-50%);
-    }
-    @if $axis == "x"{
-        left:50%;
-        @include translateX(-50%);
-    }
-    @if $axis == "both"{
-        top:50%;
-        left:50%;
-        @include translate(-50%,-50%);
-    }
+  position:absolute;
+  @if $axis == "y"{
+    top:50%;
+    @include translateY(-50%);
+  }
+  @if $axis == "x"{
+    left:50%;
+    @include translateX(-50%);
+  }
+  @if $axis == "both"{
+    top:50%;
+    left:50%;
+    @include translate(-50%,-50%);
+  }
 }
 @mixin ctr($args...) {
   @include absolutecenter($args...);
@@ -116,99 +118,40 @@ $transitionduration: .4s;
   @include unabsolutecenter($args...);
 }
 @mixin triangle($direction, $size: 6px, $color: #222){
-   content: '';
-   display: block;
-   position: absolute;
-   height: 0; width: 0;
-   @if ($direction == 'up'){
-      border-bottom: $size solid $color;
-      border-left: $size solid transparent;
-      border-right: $size solid transparent;
-   }
-   @else if ($direction == 'down'){
-      border-top: $size solid $color;
-      border-left: $size solid transparent;
-      border-right: $size solid transparent;
-   }
-   @else if ($direction == 'left'){
-      border-top: $size solid transparent;
-      border-bottom: $size solid transparent;
-      border-right: $size solid $color;
-   }
-   @else if ($direction == 'right'){
-      border-top: $size solid transparent;
-      border-bottom: $size solid transparent;
-      border-left: $size solid $color;
-   }
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0; width: 0;
+  @if ($direction == 'up'){
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+  @else if ($direction == 'down'){
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+  @else if ($direction == 'left'){
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  }
+  @else if ($direction == 'right'){
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  }
 }
 @mixin cf() {
-   *zoom: 1;
-   &:before, &:after {
-      content: '';
-      display: table;
-   }
-   &:after {
-      clear: both;
-   }
-}
-@mixin display-flex {
-   display: -webkit-box;
-   display: -moz-box;
-   display: -ms-flexbox;
-   display: -webkit-flex;
-   display: flex;
-}
-@mixin display-flex-old {
-   -webkit-box-orient: vertical;
-   -webkit-flex-direction: column;
-   -ms-flex-direction: column;
-   flex-direction: column;
-}
-@mixin align-items($value: stretch) {
-   @if $value == flex-start {
-      -webkit-box-align: start;
-      -ms-flex-align: start;
-    } @else if $value == flex-end {
-      -webkit-box-align: end;
-      -ms-flex-align: end;
-    } @else {
-      -webkit-box-align: $value;
-      -ms-flex-align: $value;
-    }
-    -webkit-align-items: $value;
-    -moz-align-items: $value;
-    align-items: $value;
-}
-@mixin flex-direction($value: row) {
-   @if $value == row-reverse {
-      -webkit-box-direction: reverse;
-      -webkit-box-orient: horizontal;
-   } @else if $value == column {
-      -webkit-box-direction: normal;
-      -webkit-box-orient: vertical;
-   } @else if $value == column-reverse {
-      -webkit-box-direction: reverse;
-      -webkit-box-orient: vertical;
-   } @else {
-      -webkit-box-direction: normal;
-      -webkit-box-orient: horizontal;
-    }
-    -webkit-flex-direction: $value;
-    -moz-flex-direction: $value;
-    -ms-flex-direction: $value;
-    flex-direction: $value;
-}
-@mixin flex($fg: 1, $fs: null, $fb: null) { 
-   $fg-boxflex: $fg;
-   @if type-of($fg) == 'list' {
-      $fg-boxflex: nth($fg, 1);
-   }
-   -webkit-box-flex: $fg-boxflex;
-   -webkit-flex: $fg $fs $fb;
-   -moz-box-flex: $fg-boxflex;
-   -moz-flex: $fg $fs $fb;
-   -ms-flex: $fg $fs $fb;
-   flex: $fg $fs $fb;
+  *zoom: 1;
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }
 
 /* Buttons */
@@ -252,19 +195,19 @@ $transitionduration: .4s;
 /* Breakpoints */
 
 @mixin bp($point) {
-   @if $point == xl {
-      @media (max-width: 1050px) { @content; }
-   }
-   @else if $point == lg {
-      @media (max-width: 900px) { @content; }
-   }
-   @else if $point == md {
-      @media (max-width: 768px)  { @content; }
-   }
-   @else if $point == sm {
-      @media (max-width: 600px)  { @content; }
-   }
-   @else if $point == xs {
-      @media (max-width: 400px)  { @content; }
-   }
+  @if $point == xl {
+    @media (max-width: 1050px) { @content; }
+  }
+  @else if $point == lg {
+    @media (max-width: 900px) { @content; }
+  }
+  @else if $point == md {
+    @media (max-width: 768px)  { @content; }
+  }
+  @else if $point == sm {
+    @media (max-width: 600px)  { @content; }
+  }
+  @else if $point == xs {
+    @media (max-width: 400px)  { @content; }
+  }
 }
