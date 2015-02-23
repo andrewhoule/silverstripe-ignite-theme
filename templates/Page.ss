@@ -1,9 +1,9 @@
 <% include Head %>
 <body>
     <% include Header %>
-    <section class="main-content">
+    <main class="main" role="main">
         $Layout
-    </section><!-- .main-content -->
+    </main><!-- .main-content -->
     <% include Footer %>
 </body>
 </html>

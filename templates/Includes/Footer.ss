@@ -1,3 +1,3 @@
-<footer class="site-info">
+<footer class="contentinfo" role="contentinfo">
 
-</footer><!-- .site-info -->
+</footer><!-- .contentinfo -->
