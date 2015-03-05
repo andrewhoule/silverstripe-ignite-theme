@@ -119,14 +119,14 @@ ul.three-col-list {
 
 /* Buttons */
 
-.button, .action, input[type=submit] {
+.button, .action, input[type=submit], button a {
 	@include button(1.8, $primarycolor, #fff, 20px 50px);
 }
 .secondary-button {
 	@include button(1.8, $secondarycolor, #fff, 20px 50px);
 }
 .ghost-button {
-  @include ghostbutton(1.7, $primarycolor, 16px 40px)
+  @include ghostbutton(1.7, $primarycolor, 16px 40px);
 }
 
 /* Pagination */
