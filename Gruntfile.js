@@ -18,9 +18,10 @@ grunt.initConfig({
 	   ========================================================================== */
 
 	project: {
-	  	assets: 'assets',
-	  	css: 'css',
-	  	js: 'js'
+  	theme: 'themes/themenamehere',
+    assets: '<%= project.theme %>/assets',
+    css: '<%= project.theme %>/css',
+    js: '<%= project.theme %>/js'
 	},
 
 	/* ==========================================================================
@@ -28,16 +29,16 @@ grunt.initConfig({
 	   ========================================================================== */
 
 	sass: {
-	  	dev: {
-	    	options: {
-	      	style: 'compressed',
-	      	compass: true,
-	      	sourcemap: 'none'
-	    	},
-	    	files: {
-	      	'<%= project.css %>/style.css': '<%= project.assets %>/sass/style.scss'
-	    	}
-	  	}
+  	dev: {
+    	options: {
+      	style: 'compressed',
+      	compass: true,
+      	sourcemap: 'none'
+    	},
+    	files: {
+      	'<%= project.css %>/style.css': '<%= project.assets %>/scss/style.scss'
+    	}
+  	}
 	},
 
 	/* ==========================================================================
@@ -45,10 +46,10 @@ grunt.initConfig({
 	   ========================================================================== */
 
 	watch: {
-	  	sass: {
-	    	files: '<%= project.assets %>/sass/{,*/}*.{scss,sass}',
-	    	tasks: ['sass:dev']
-	  	}
+  	sass: {
+    	files: '<%= project.assets %>/scss/{,*/}*.{scss,sass}',
+    	tasks: ['sass:dev']
+  	}
 	}	
 
 });
