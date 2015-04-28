@@ -25,10 +25,34 @@ html {
    Reusable Components
    ========================================================================== */ 
 
+/* Grid Helpers */
+
+.wrapper {
+  margin: auto;
+  max-width: $maxwidth;
+  padding: 0 $spacing;
+  @include bp(md) {
+    padding: 0 $spacing-fixed-sm;
+  }
+}
+.wrapper-sm {
+  margin: auto;
+  max-width: $maxwidth-sm;
+  padding: 0 $spacing;
+  @include bp(md) {
+    padding: 0 $spacing-fixed-sm;
+  }
+}
+.wrapper-lg {
+  margin: auto;
+  max-width: $maxwidth-lg;
+  padding: 0 $spacing-fixed-sm;
+}
+
 /* Lists */
 
 ul, ol {
-	margin: 0 0 20px 40px;
+	margin: 0 0 $spacing-fixed 40px;
 	padding: 0;
 	li {
 		list-style-position: outside;
@@ -41,18 +65,18 @@ ul, ol {
 ul li { list-style: disc; }
 ol li { list-style: decimal; }
 dl {
-	margin: 0 0 20px 0;
+	margin: 0 0 $spacing-fixed 0;
 	overflow: hidden;
 	dt, dd{
 		float: left;
 	}
 	dt {
 		font-weight: 700;
-   		width: 30%;
-    	overflow: hidden;
-    	clear: both;
-    	text-align: right;
-    	margin: 0 0 7px 0;
+ 		width: 30%;
+  	overflow: hidden;
+  	clear: both;
+  	text-align: right;
+  	margin: 0 0 7px 0;
 	}
 	dd {
 		margin: 0 0 7px 0;
@@ -78,7 +102,7 @@ dl {
 /* Column Lists */
 
 ul.two-col-list {
-  margin: 0 -10px 40px -10px;
+  margin: 0 -10px $spacing-fixed -10px;
   padding: 0;
   @include cf();
   @include font-size(0);
@@ -98,7 +122,7 @@ ul.two-col-list {
 }
 
 ul.three-col-list {
-  margin: 0 -10px 40px -10px;
+  margin: 0 -10px $spacing-fixed -10px;
   padding: 0;
   @include cf();
   @include font-size(0);
@@ -119,15 +143,9 @@ ul.three-col-list {
 
 /* Buttons */
 
-.button, .action, input[type=submit], button a {
-	@include button(1.8, $primarycolor, #fff, 20px 50px);
-}
-.secondary-button {
-	@include button(1.8, $secondarycolor, #fff, 20px 50px);
-}
-.ghost-button {
-  @include ghostbutton(1.7, $primarycolor, 16px 40px);
-}
+.button, .action, input[type=submit], button a { @include button(1.8, $primarycolor, #fff, 20px 50px); }
+.secondary-button { @include button(1.8, $secondarycolor, #fff, 20px 50px); }
+.ghost-button { @include ghostbutton(1.7, $primarycolor, 16px 40px); }
 
 /* Pagination */
 
@@ -136,7 +154,7 @@ ul.three-col-list {
 	clear: both;
 	@include font-size(1.5);
   @include line-height(2.1);
-	margin: 40px 0 20px 0;
+	margin: 40px 0 $spacing-fixed 0;
 	overflow: hidden;
 	padding: 0;
 	li {
@@ -176,7 +194,7 @@ ul.three-col-list {
 
 ul.tabs {
 	border-bottom: 1px solid $offsetcolor;
-	margin: 0 0 20px 0;
+	margin: 0 0 $spacing-fixed 0;
 	padding: 0;
 	position: relative;
 	li {
@@ -218,57 +236,70 @@ ul.tabs {
 /* Table Styles */
 
 table {
-	border: none;
-	margin: 0 0 20px 0;
-	width: 100%;
-	th {
-		background: $primarycolor;
-		border-bottom: 1px solid $primarycolor_dark;
-		border-right: 1px solid $primarycolor_dark;
-		color: #fff;
-		font-weight: 700;
-		@include secondaryfont();
-		padding: 10px 15px;
-		text-align: left;
-		a { color: #fff; }
-		a:hover {
-			color: $primarycolor_verylight;
-			text-decoration: underline;
-		}
-		small { color: $primarycolor_verylight; }
-	}
-	th:last-child { border-right: none; }
-	tr {
-		td {
-			border-bottom: 1px solid $offsetcolor;
-			color: $textcolor;
-			padding: 10px 15px;
-			vertical-align: top;
-		}
-	}
-	tr:nth-child(even) { background: $offsetcolor_verysubtle; }
-	tr:nth-child(odd) { background: #fff; }
-	tr:last-child { border-bottom: none; }
-	ul { 
-		margin: 2px 0 0 0;
-		padding: 0;
-		li {
-			list-style-type: none;
-			margin: 0 0 3px 0;
-			padding: 0;
-		}
-	}
+  border: none;
+  margin: 0 0 $spacing-fixed 0;
+  width: 100%;
+  th {
+    background: $primarycolor;
+    border-bottom: 1px solid $primarycolor_dark;
+    border-right: 1px solid $primarycolor_dark;
+    color: #fff;
+    font-weight: 700;
+    @include secondaryfont();
+    padding: 10px 15px;
+    text-align: left;
+    a { color: #fff; }
+    a:hover {
+      color: $primarycolor_verylight;
+      text-decoration: underline;
+    }
+    small { color: $primarycolor_verylight; }
+  }
+  tbody th {
+    background: $offsetcolor_subtle;
+    color: $textcolor;
+    border-right: none;
+    border-bottom: 1px solid $offsetcolor_strong;
+  }
+  th:last-child { border-right: none; }
+  tr {
+    td {
+      border-bottom: 1px solid $offsetcolor;
+      color: $textcolor;
+      padding: 10px 15px;
+      vertical-align: top;
+    }
+  }
+  tr:nth-child(even) { background: $offsetcolor_verysubtle; }
+  tr:nth-child(odd) { background: #fff; }
+  tr:last-child { border-bottom: none; }
+  ul { 
+    margin: 2px 0 0 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+      margin: 0 0 3px 0;
+      padding: 0;
+    }
+  }
+  tfoot {
+    td {
+      background: $darkcolor;
+      color: $textcolor_reversed;
+    }
+  }
 }
 
 /* Breaks */
 
 hr {
   @include cf();
-  margin: 30px 0;
+  margin: $spacing-fixed 0;
   width: 100%;
   display: block;
   height: 1px;
   background: $offsetcolor;
+  border: none;
 }
 
 
@@ -292,19 +323,19 @@ img {
 }
 img.left {
 	float: left;
-	margin: 0 20px 20px 0;
+	margin: 0 $spacing-fixed $spacing-fixed 0;
 }
 img.right {
 	float: right;
-	margin: 0 0 20px 20px;
+	margin: 0 0 $spacing-fixed $spacing-fixed;
 }
 img.leftAlone {
 	display: block;
-	margin: 0 0 20px 0;
+	margin: 0 0 $spacing-fixed 0;
 }
 img.center {
 	display: block;
-	margin: 0 auto 20px auto;
+	margin: 0 auto $spacing-fixed auto;
 }
 .captionImage img {
 	margin-bottom: 10px;
@@ -315,17 +346,17 @@ img.center {
 	width: 100% !important;
 }
 .captionImage.right {
-	margin-left: 30px;
+	margin-left: $spacing-fixed;
 	float: right;
 }
 .captionImage.left {
 	float: left;
 }
 .captionImage.left, .captionImage.leftAlone {
-	margin-right: 30px;
+	margin-right: $spacing-fixed;
 }
 .captionImage {
-	margin-bottom: 30px;
+	margin-bottom: $spacing-fixed;
 	max-width: 100%;
 }
 .caption {
@@ -374,14 +405,12 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-p {
-	margin: 0 0 20px 0;
-}
+p, pre, address { margin: 0 0 $spacing-fixed 0; }
 h1, h2, h3, h4, h5, h6 {
 	color: $textcolor_medstrong;
 	@include secondaryfont();
 	font-weight: 400;
-	margin: 0 0 15px 0;
+	margin: 0 0 $spacing-fixed-sm 0;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-size: 60%;
@@ -418,9 +447,7 @@ a {
 	text-decoration: none;
 	@include transition-duration($transitionduration);
 }
-a:hover {
-	color: $secondarycolor;
-}
+a:hover, a:visited { color: $secondarycolor; }
 strong {
 	color: $textcolor_medstrong;
 	font-weight: 700;
@@ -435,16 +462,12 @@ code {
 	font-weight: bold;
 	color: $textcolor_subtle;
 }
-.center-text, .text-center, .ct {
-	text-align: center;
-}
-.right-text, .text-right, .rt {
-	text-align: right;
-}
+.center-text, .text-center, .ct { text-align: center; }
+.right-text, .text-right, .rt { text-align: right; }
 blockquote {
 	border: none;
-	margin: 0 0 15px 0;
-	padding: 5px 20px 0 20px;
+	margin: 0 0 $spacing-fixed-sm 0;
+	padding: 5px $spacing 0 $spacing;
 	min-height: 35px;
 	position: relative;
 	z-index: 2;
@@ -456,11 +479,9 @@ blockquote {
 	font-weight: 400;
 	text-align: center;
 	width: 100%;
-	p {
-		display: inline-block; zoom:1; *display: inline;
-	}
+	p { display: inline-block; }
 	p:last-child {
-		margin-bottom: 0 !important;
+		margin-bottom: 0;
 		padding-bottom: 0;
 	}
 }
@@ -481,6 +502,11 @@ blockquote:after {
 	bottom: 0;
 	right: 0;
 }
+q {
+  font-style: italic;
+  @include secondaryfont();
+  font-weight: 400;
+}
 figcaption, cite {
 	color: $textcolor_subtle;
   @include font-size(1.4);
@@ -488,7 +514,7 @@ figcaption, cite {
 	@include primaryfont();
 	font-style: normal;
 	display: block;
-	margin: 0 0 20px 0;
+	margin: 0 0 $spacing-fixed 0;
 	font-weight: 300;
 	text-align: right;
 }
