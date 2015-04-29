@@ -13,12 +13,8 @@
    Reset Stuff
    ========================================================================== */ 
 
-html {
-  @include box-sizing(border-box);
-}
-*, *:before, *:after {
-  @include box-sizing(inherit);
-}
+html { @include box-sizing(border-box); }
+*, *:before, *:after { @include box-sizing(inherit); }
 
 
 /* ==========================================================================
