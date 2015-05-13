@@ -23,6 +23,13 @@ html { @include box-sizing(border-box); }
 
 /* Grid Helpers */
 
+.row {
+  @include cf();
+  margin-bottom: $spacing;
+  @include bp(md) {
+    margin-bottom: 0;
+  }
+}
 .wrapper {
   margin: auto;
   max-width: $maxwidth;
@@ -43,6 +50,35 @@ html { @include box-sizing(border-box); }
   margin: auto;
   max-width: $maxwidth-lg;
   padding: 0 $spacing-fixed-sm;
+}
+}
+.one-third {
+  @include col(1/3);
+  @include bp(md) {
+    @include stack();
+    margin-bottom: $spacing-fixed-sm;
+  }
+}
+.two-thirds {
+  @include col(2/3);
+  @include bp(md) {
+    @include stack();
+    margin-bottom: $spacing-fixed-sm;
+  }
+}
+.one-fourth {
+  @include col(1/4);
+  @include bp(md) {
+    @include stack();
+    margin-bottom: $spacing-fixed-sm;
+  }
+}
+.three-fourths {
+  @include col(3/4);
+  @include bp(md) {
+    @include stack();
+    margin-bottom: $spacing-fixed-sm;
+  }
 }
 
 /* Lists */
@@ -303,6 +339,13 @@ hr {
    Base Styles
    ========================================================================== */ 
 
+/* Structure */
+
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
 /* Embeds */
 
 object, embed {
@@ -388,9 +431,7 @@ img.center {
    Typography
    ========================================================================== */ 
 
-html {
-  	font-size: 62.5%; /* Sets up the Base 10 stuff */
-}
+html { font-size: 62.5%; /* Sets up the Base 10 stuff */ }
 body {
 	color: $textcolor;
 	@include primaryfont();
@@ -398,8 +439,6 @@ body {
   @include line-height(2.2);
 	font-weight: 400;
 	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 p, pre, address { margin: 0 0 $spacing-fixed 0; }
 h1, h2, h3, h4, h5, h6 {
@@ -409,9 +448,9 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 $spacing-fixed-sm 0;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    font-size: 60%;
-    color: $textcolor_subtle;
-    line-height: 0;
+  font-size: 60%;
+  color: $textcolor_subtle;
+  line-height: 0;
 }
 h1 {
   @include font-size(3.2);
@@ -443,7 +482,7 @@ a {
 	text-decoration: none;
 	@include transition-duration($transitionduration);
 }
-a:hover, a:visited { color: $secondarycolor; }
+a:hover { color: $secondarycolor; }
 strong {
 	color: $textcolor_medstrong;
 	font-weight: 700;
