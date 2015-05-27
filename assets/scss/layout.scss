@@ -49,8 +49,10 @@ html { @include box-sizing(border-box); }
 .wrapper-lg {
   margin: auto;
   max-width: $maxwidth-lg;
-  padding: 0 $spacing-fixed-sm;
-}
+  padding: 0 $spacing;
+  @include bp(md) {
+    padding: 0 $spacing-fixed-sm;
+  }
 }
 .one-third {
   @include col(1/3);
