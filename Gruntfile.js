@@ -36,7 +36,7 @@ grunt.initConfig({
       	sourcemap: 'none'
     	},
     	files: {
-      	'<%= project.css %>/style.css': '<%= project.assets %>/scss/style.scss'
+      	'<%= project.css %>/layout.css': '<%= project.assets %>/scss/layout.scss'
     	}
   	}
 	},
