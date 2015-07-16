@@ -197,7 +197,7 @@ ul.three-col-list {
     padding: 0;
   }
   a {
-    @include primarybackground();
+    background: $primarycolor;
     display: block;
     padding: 6px 12px;
     text-decoration: none;

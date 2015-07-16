@@ -4,66 +4,67 @@
    ========================================================================== */
 
 form {
-	display: block;
-	margin: 0 0 $spacing-fixed 0;
+  display: block;
+  margin: 0 0 $spacing-fixed 0;
 }
 fieldset {
-	border: 0;
-	margin: 0 -7.5px;
-	padding: 0;
+  border: 0;
+  margin: 0 -7.5px;
+  padding: 0;
 }
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
-	background: $offsetcolor_subtle;
-	border: 1px solid $offsetcolor_verystrong;
-	color: $textcolor;
-	@include primaryfont();
-  @include font-size(1.4);
-  @include line-height(2.1);
-	height: auto;
-	margin: 0;
-	padding: 5px;
-	outline: none;
-	@include border-radius(0);
-	@include box-shadow(none);
+  background: $offsetcolor;
+  border: 1px solid $offsetcolor_verystrong;
+  color: $textcolor;
+  @include primaryfont();
+  @include font-size(1.6);
+  @include line-height(2.3);
+  height: auto;
+  margin: 0;
+  padding: 6px;
+  outline: none;
+  @include border-radius(0);
+  @include box-shadow(none);
 }
 select {
-	border: 1px solid $offsetcolor_verystrong;
+  border: 1px solid $offsetcolor_verystrong;
   @include font-size(1.4);
   @include line-height(2.1);
-	height: 34px;
-	-webkit-appearance: menulist-button;
+  height: 34px;
+  -webkit-appearance: menulist-button;
 }
 select[multiple] {
     height: auto;
 }
 input.text:focus,
 textarea:focus {
-	background: #fff;
-	border: 1px solid #555;
-	outline: 0 none;
+  background: #fff;
+  border: 1px solid #555;
+  outline: 0 none;
 }
 textarea, .textarea {
-	width: 100%;
-	@include bp(md) {
-		width: 100%;
-	}
+  display: block;
+  width: 100%;
+  @include bp(md) {
+    width: 100%;
+  }
 }
 input.text { width: 100%; }
 .text, .email {
-	width: 50%;
-	@include bp(md) {
-		width: 100%;
-	}
+  width: 50%;
+  @include bp(md) {
+    width: 100%;
+  }
 }
 .literal {
-	width: 100%;
+  width: 100%;
 }
 #Spam, .optionset, .checkboxset {
-	clear: both;
-	display: block;
+  clear: both;
+  display: block;
 }
 .optionset, .checkboxset {
-	width: 100%;
+  width: 100%;
 }
 .field {
    margin: 0 -2px 20px -2px;
@@ -72,74 +73,75 @@ input.text { width: 100%; }
    vertical-align: bottom;
    font-size: 0;
    @include bp(md) {
-    	margin-right: 0;
+      margin-right: 0;
    }
 }
 .field.checkbox {
-	input.checkbox {
-		float: left;
-		margin: 6px 6px 0 0;
-	}
-	label.right {
-		float: left;
-	}
+  input.checkbox {
+    float: left;
+    margin: 6px 6px 0 0;
+  }
+  label.right {
+    float: left;
+  }
 }
 .field.mathspamprotector {
-	display: block;
-	width: 100%;
-	input.mathspamprotector {
-		width: 100px;
-	}
+  display: block;
+  width: 100%;
+  input.mathspamprotector {
+    width: 100px;
+  }
 }
 form label.left {
-	color: $textcolor_strong;
-	@include primaryfont();
-	@include font-size(1.6);
-  @include line-height(2.3);
-	font-weight: 700;
-	margin: 0 !important; 
-	padding: 0 0 10px 0 !important;
-	clear: both;
+  color: $textcolor_strong;
+  @include primaryfont();
+  @include font-size(1.8);
+  @include line-height(2.5);
+  font-weight: 700;
+  margin: 0 !important; 
+  padding: 0 0 10px 0 !important;
+  clear: both;
 }
 form label.left small {
-	@include font-size(1.4);
+  @include font-size(1.4);
   @include line-height(2.1);
-	font-weight: 400;
+  font-weight: 400;
 }
 .middleColumn { 
-	clear: left;
-	width: auto;
+  clear: left;
+  position: relative;
+  width: auto;
 }
 .editable-area ul.checkboxsetfield, .editable-area ul.optionset {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 form ul, form ol {
-	@include font-size(1.6);
+  @include font-size(1.6);
   @include line-height(2.2);
-	margin: 0;
-	padding: 0 0 20px 30px;
-	li { margin-bottom: 5px; }
-	li:last-child { margin-bottom: 0; }
+  margin: 0;
+  padding: 0 0 20px 30px;
+  li { margin-bottom: 5px; }
+  li:last-child { margin-bottom: 0; }
 }
 form ul.optionset, form ul.checkboxset {
-	padding: 0 10px 20px 10px;
-	li {
-		list-style: none;
-	}
+  padding: 0 10px 20px 10px;
+  li {
+    list-style: none;
+  }
 }
 form li.even { background: none !important; }
 .optionset input, .checkboxsetfield input { 
-	border: 0;
-	display: block;
-	float: left;	
-	margin: 4px 10px 0 0;
-	padding: 0;
+  border: 0;
+  display: block;
+  float: left;  
+  margin: 4px 10px 0 0;
+  padding: 0;
 }
 div.tab .field .middleColumn { clear: none !important; margin: 0 !important; width: auto; }
 select { 
-	max-width: 540px;
-	width: auto;
+  max-width: 540px;
+  width: auto;
 }
 input:focus span,
 textarea:focus span { border: 3px solid #000; }
@@ -147,9 +149,9 @@ input.action:hover,
 input.action:focus { cursor: pointer; }
 input#Search_Form_SearchForm_Search { width: 110px; padding: 3px 3px 3px 3px; margin-left: -4px; }
 label.right {
-	padding: 0 0 5px 0 !important;
-	margin: 0 !important;
-	text-align: left;
+  padding: 0 0 5px 0 !important;
+  margin: 0 !important;
+  text-align: left;
 }
 .required label.left:after, .requiredField label.left:after, .mathspamprotector label.left:after {
   content:" *";
@@ -157,49 +159,50 @@ label.right {
   font-weight: 400;
 }
 #ContactForm_ContactForm span.required {
-	color: $alertcolor;
+  color: $alertcolor;
 }
 #Form_Form span.required {
-	background: $alertcolor_dark;
-	color: #fff;
-	padding: 10px 15px;
-	width: 100%;
-	font-weight: 700;
+  background: $alertcolor_dark;
+  color: #fff;
+  padding: 10px 15px;
+  width: 100%;
+  font-weight: 700;
   @include font-size(1.6);
   @include line-height(2.2);
   display: block;
   position: relative;
   text-align: center;
+  top: -2px;
 }
 #Form_Form span.required:before {
-	display: block;
-	content: "";
-	@include absolutecenter(x);
-	top: -7px;
-	margin-left: -7px;
-	border-right: 7px solid transparent;
-	border-left: 7px solid transparent;
-	border-bottom: 7px solid $alertcolor_dark;
+  display: block;
+  content: "";
+  @include absolutecenter(x);
+  top: -7px;
+  margin-left: -7px;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-bottom: 7px solid $alertcolor_dark;
 }
 #Form_Form span.message.error {
-	margin-top: 10px;
-	color: $alertcolor_dark;
-	font-weight: 700;
+  margin-top: 10px;
+  color: $alertcolor_dark;
+  font-weight: 700;
   @include font-size(1.6);
   @include line-height(2.2);
   display: block;
 }
 .success {
-	color: #fff;
-	@include font-size(1.8);
+  color: #fff;
+  @include font-size(1.8);
   @include line-height(2.3);
-	font-weight: 700;
-	text-align: center;
-	padding: 20px;
-	background: $successcolor_dark;
-	border: 3px solid $successcolor_meddark;
-	display: block;
-	margin: 0 0 20px 0;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  background: $successcolor_dark;
+  border: 3px solid $successcolor_meddark;
+  display: block;
+  margin: 0 0 20px 0;
 }
 
 
@@ -208,17 +211,17 @@ label.right {
    ========================================================================== */
 
 form h2, .FormHeading {
-	@include font-size(2.2);
+  @include font-size(2.2);
   @include line-height(2.9);
-	border-bottom: 1px solid $offsetcolor;
-	border-top: 1px solid $offsetcolor;
-	clear: both;
-	margin: 10px 0 20px; 
-	padding: 10px 0 !important;
-	width: 100%;
+  border-bottom: 1px solid $offsetcolor;
+  border-top: 1px solid $offsetcolor;
+  clear: both;
+  margin: 10px 0 20px; 
+  padding: 10px 0 !important;
+  width: 100%;
 }
 .login-logo {
-	margin: 0 auto 10px auto;
+  margin: 0 auto 10px auto;
 }
 .form-text { color: $textcolor; }
 
@@ -228,25 +231,25 @@ form h2, .FormHeading {
    ========================================================================== */
 
 #Remember {
-	display: none;
+  display: none;
 }
 #ForgotPassword {
-	color: $textcolor_subtle;
-	float: left;
-	padding: 4px 0 0 10px;
+  color: $textcolor_subtle;
+  float: left;
+  padding: 4px 0 0 10px;
 }
 #ForgotPassword:before {
-	content: "or ";
+  content: "or ";
 }
 #MemberLoginForm_LoginForm_action_dologin {
-	float: left;
+  float: left;
 }
 #MemberLoginForm_LoginForm {
-	text-align: center;
-	label.left {
-		display: block;
-		text-align: left;
-	}
+  text-align: center;
+  label.left {
+    display: block;
+    text-align: left;
+  }
 }
 
 
@@ -255,5 +258,5 @@ form h2, .FormHeading {
    ========================================================================== */
 
 .ui-datepicker th {
-	color: #fff;
+  color: #fff;
 }
