@@ -1,3 +1,3 @@
-<header class="banner" role="banner">
+<header class="branding" role="banner">
 
-</header><!-- .banner -->
+</header><!-- .branding -->

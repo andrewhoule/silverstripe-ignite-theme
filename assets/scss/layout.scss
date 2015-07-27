@@ -34,6 +34,8 @@ html { @include box-sizing(border-box); }
   margin: auto;
   max-width: $maxwidth;
   padding: 0 $spacing;
+  position: relative;
+  @include cf();
   @include bp(md) {
     padding: 0 $spacing-fixed-sm;
   }
@@ -42,6 +44,8 @@ html { @include box-sizing(border-box); }
   margin: auto;
   max-width: $maxwidth-sm;
   padding: 0 $spacing;
+  position: relative;
+  @include cf();
   @include bp(md) {
     padding: 0 $spacing-fixed-sm;
   }
@@ -50,6 +54,8 @@ html { @include box-sizing(border-box); }
   margin: auto;
   max-width: $maxwidth-lg;
   padding: 0 $spacing;
+  position: relative;
+  @include cf();
   @include bp(md) {
     padding: 0 $spacing-fixed-sm;
   }
@@ -473,7 +479,6 @@ a {
 	color: $primarycolor;
 	outline: none;
 	text-decoration: none;
-	@include transition-duration($transitionduration);
 }
 a:hover { color: $secondarycolor; }
 strong {
@@ -513,22 +518,13 @@ blockquote {
 		padding-bottom: 0;
 	}
 }
-blockquote:before, blockquote:after {
-	display: block;
-	height: 35px;
-	width: 44px;
-	position: absolute;
-	z-index: -1;
-}
 blockquote:before {
-	content: url(../../img/blockquote.png) no-repeat;
-	top: 0;
-	left: 0;
+  content: "\201C";
+  @include secondaryfont();
 }
 blockquote:after {
-	content: url(../../img/blockquote-closed.png) no-repeat;
-	bottom: 0;
-	right: 0;
+  content: "\201D";
+  @include secondaryfont();
 }
 q {
   font-style: italic;
