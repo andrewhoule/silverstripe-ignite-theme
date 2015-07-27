@@ -21,7 +21,7 @@ html { @include box-sizing(border-box); }
    Typography
    ========================================================================== */ 
 
-html { font-size: 16px; /* Document level font size */ }
+html { font-size: 100%; /* Document level font size */ }
 body {
   color: $textcolor;
   @include primaryfont();
