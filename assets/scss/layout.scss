@@ -18,6 +18,169 @@ html { @include box-sizing(border-box); }
 
 
 /* ==========================================================================
+   Typography
+   ========================================================================== */ 
+
+html { font-size: 16px; /* Document level font size */ }
+body {
+  color: $textcolor;
+  @include primaryfont();
+  @include rem(font-size, 16px);
+  @include rem(line-height, 22px);
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+p, pre, address { @include rem(margin, 0 0 $spacing-fixed 0); }
+h1, h2, h3, h4, h5, h6 {
+  color: $textcolor_medstrong;
+  @include secondaryfont();
+  font-weight: 700;
+  @include rem(margin, 0 0 $spacing-fixed-sm 0);
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-size: 60%;
+  color: $textcolor_subtle;
+  line-height: 0;
+}
+h1 {
+  @include rem(font-size, 32px);
+  @include rem(line-height, 39px);
+}
+h2 {
+  @include rem(font-size, 26px);
+  @include rem(line-height, 33px);
+}
+h3 {
+  @include rem(font-size, 21px);
+  @include rem(line-height, 28px);
+}
+h4 {
+  @include rem(font-size, 18px);
+  @include rem(line-height, 25px);
+}
+h5 { 
+  @include rem(font-size, 16px);
+  @include rem(line-height, 23px);
+}
+h6 {
+  @include rem(font-size, 14px);
+  @include rem(line-height, 21px);
+}
+a {
+  color: $primarycolor;
+  outline: none;
+  text-decoration: none;
+  @include transition-duration($transitionduration);
+}
+a:hover { color: $secondarycolor; }
+strong {
+  color: $textcolor_medstrong;
+  font-weight: 700;
+}
+small {
+  color: $textcolor_subtle;
+  @include secondaryfont();
+  font-style: italic;
+  @include rem(font-size, 14px);
+  @include rem(line-height, 21px);
+}
+code {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-weight: 400;
+  color: $textcolor_subtle;
+}
+.center-text, .text-center, .ct { text-align: center; }
+.right-text, .text-right, .rt { text-align: right; }
+blockquote {
+  border: none;
+  @include rem(margin, 0 0 $spacing-fixed-sm 0);
+  @include rem(padding, 5px $spacing 0 $spacing);
+  @include rem(min-height, 35px);
+  position: relative;
+  z-index: 2;
+  font-style: italic;
+  @include secondaryfont();
+  color: $textcolor;
+  @include rem(font-size, 21px);
+  @include rem(line-height, 28px);
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  p { display: inline-block; }
+  p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+blockquote:before, blockquote:after {
+  display: block;
+  @include rem(height, 35px);
+  @include rem(width, 44px);
+  position: absolute;
+  z-index: -1;
+}
+blockquote:before {
+  content: "\201C";
+  @include secondaryfont();
+}
+blockquote:after {
+  content: "\201D";
+  @include secondaryfont();
+}
+q {
+  font-style: italic;
+  @include secondaryfont();
+  font-weight: 400;
+}
+figcaption, cite {
+  color: $textcolor_subtle;
+  @include rem(font-size, 14px);
+  @include rem(line-height, 20px);
+  @include primaryfont();
+  font-style: normal;
+  display: block;
+  @include rem(margin, 0 0 $spacing-fixed 0);
+  font-weight: 300;
+  text-align: right;
+}
+figcaption:before, cite:before {
+  content: "\2014\00a0";
+  display: inline-block;
+}
+.caption {
+  @include secondaryfont();
+  text-align: left;
+  @include rem(font-size, 16px);
+  @include rem(line-height, 22px);
+  margin: 0;
+  width: 100%;
+}
+.captionImage.center .caption {
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+}
+.primary-color { color: $primarycolor; }
+.secondary-color { color: $secondarycolor; }
+.reversed { color: #fff; }
+.allcaps { text-transform: uppercase; }
+
+
+/* ==========================================================================
+   Vanity Styles
+   ========================================================================== */ 
+
+::selection {
+  background: $primarycolor;
+  color: #fff;
+}
+::-moz-selection {
+  background: $primarycolor;
+  color: #fff;
+}
+
+
+/* ==========================================================================
    Reusable Components
    ========================================================================== */ 
 
@@ -25,135 +188,151 @@ html { @include box-sizing(border-box); }
 
 .row {
   @include cf();
-  margin-bottom: $spacing;
   @include bp(md) {
     margin-bottom: 0;
   }
 }
 .wrapper {
   margin: auto;
-  max-width: $maxwidth;
-  padding: 0 $spacing;
+  @include rem(max-width,$maxwidth);
+  @include rem(padding, 0 $spacing-fixed);
   position: relative;
   @include cf();
   @include bp(md) {
-    padding: 0 $spacing-fixed-sm;
+    @include rem(padding, 0 $spacing-fixed-sm);
   }
 }
 .wrapper-sm {
   margin: auto;
-  max-width: $maxwidth-sm;
-  padding: 0 $spacing;
+  @include rem(max-width,$maxwidth-sm);
+  @include rem(padding, 0 $spacing-fixed);
   position: relative;
   @include cf();
   @include bp(md) {
-    padding: 0 $spacing-fixed-sm;
+    @include rem(padding, 0 $spacing-fixed-sm);
   }
 }
 .wrapper-lg {
   margin: auto;
-  max-width: $maxwidth-lg;
-  padding: 0 $spacing;
+  @include rem(max-width,$maxwidth-lg);
+  @include rem(padding, 0 $spacing-fixed);
   position: relative;
   @include cf();
   @include bp(md) {
-    padding: 0 $spacing-fixed-sm;
+    @include rem(padding, 0 $spacing-fixed-sm);
+  }
+}
+.wrapper-xl {
+  margin: auto;
+  @include rem(max-width,$maxwidth-xl);
+  @include rem(padding, 0 $spacing-fixed);
+  position: relative;
+  @include cf();
+  @include bp(md) {
+    @include rem(padding, 0 $spacing-fixed-sm);
+  }
+}
+.half {
+  @include col(1/2);
+  @include bp(md) {
+    @include stack();
+    @include rem(margin-bottom, $spacing-fixed-sm);
   }
 }
 .one-third {
   @include col(1/3);
   @include bp(md) {
     @include stack();
-    margin-bottom: $spacing-fixed-sm;
+    @include rem(margin-bottom, $spacing-fixed-sm);
   }
 }
 .two-thirds {
   @include col(2/3);
   @include bp(md) {
     @include stack();
-    margin-bottom: $spacing-fixed-sm;
+    @include rem(margin-bottom, $spacing-fixed-sm);
   }
 }
 .one-fourth {
   @include col(1/4);
   @include bp(md) {
     @include stack();
-    margin-bottom: $spacing-fixed-sm;
+    @include rem(margin-bottom, $spacing-fixed-sm);
   }
 }
 .three-fourths {
   @include col(3/4);
   @include bp(md) {
     @include stack();
-    margin-bottom: $spacing-fixed-sm;
+    @include rem(margin-bottom, $spacing-fixed-sm);
   }
 }
 
 /* Lists */
 
 ul, ol {
-	margin: 0 0 $spacing-fixed 40px;
-	padding: 0;
-	li {
-		list-style-position: outside;
-		margin-bottom: 5px;
-		ul, ol {
-			margin-top: 10px;
-		}
-	}
+  @include rem(margin, 0 0 $spacing-fixed $spacing-fixed-lg);
+  padding: 0;
+  li {
+    list-style-position: outside;
+    @include rem(margin-bottom, 5px);
+    ul, ol {
+      @include rem(margin-top, 10px);
+    }
+  }
 }
 ul li { list-style: disc; }
 ol li { list-style: decimal; }
 dl {
-	margin: 0 0 $spacing-fixed 0;
-	overflow: hidden;
-	dt, dd{
-		float: left;
-	}
-	dt {
-		font-weight: 700;
- 		width: 30%;
-  	overflow: hidden;
-  	clear: both;
-  	text-align: right;
-  	margin: 0 0 7px 0;
-	}
-	dd {
-		margin: 0 0 7px 0;
-		padding-left: 20px;
-		width: 70%;
-	} 
-	@include bp(md) {
-		dt, dd {
-			float: none;
-			text-align: left;
-			width: 100%;
-		}
-		dt {
-			margin: 0;
-		}
-		dd {
-			margin: 0 0 7px 0;
-			padding: 0;
-		}
-	}
+  @include rem(margin, 0 0 $spacing-fixed 0);
+  overflow: hidden;
+  dt, dd{
+    float: left;
+  }
+  dt {
+    font-weight: 700;
+    width: 30%;
+    overflow: hidden;
+    clear: both;
+    text-align: right;
+    @include rem(margin, 0 0 7px 0);
+  }
+  dd {
+    @include rem(margin, 0 0 7px 0);
+    @include rem(padding-left, $spacing-fixed-sm);
+    width: 70%;
+  } 
+  @include bp(md) {
+    dt, dd {
+      float: none;
+      text-align: left;
+      width: 100%;
+    }
+    dt {
+      margin: 0;
+    }
+    dd {
+      @include rem(margin, 0 0 7px 0);
+      padding: 0;
+    }
+  }
 } 
 
 /* Column Lists */
 
 ul.two-col-list {
-  margin: 0 -10px $spacing-fixed -10px;
+  @include rem(margin, 0 -$spacing-fixed-xs $spacing-fixed -$spacing-fixed-xs);
   padding: 0;
   @include cf();
-  @include font-size(0);
+  font-size: 0;
   li {
     display: inline-block;
-    @include font-size(1.6);
-    @include line-height(2.2);
+    @include rem(font-size, 16px);
+    @include rem(line-height, 22px);
     width: 50%;
     list-style: none;
-    margin: 0 0 10px 0;
-    padding: 0 10px;
+    @include rem(margin, 0 0 $spacing-fixed-xs 0);
+    @include rem(padding, 0 $spacing-fixed-xs);
     @include bp(md) {
       float: none;
       width: 100%;
@@ -162,18 +341,18 @@ ul.two-col-list {
 }
 
 ul.three-col-list {
-  margin: 0 -10px $spacing-fixed -10px;
+  @include rem(margin, 0 -$spacing-fixed-xs $spacing-fixed -$spacing-fixed-xs);
   padding: 0;
   @include cf();
-  @include font-size(0);
+  font-size: 0;
   li {
     display: inline-block;
-    @include font-size(1.6);
-    @include line-height(2.2);
+    @include rem(font-size, 16px);
+    @include rem(line-height, 22px);
     width: 33.33333333%;
     list-style: none;
-    margin: 0 0 10px 0;
-    padding: 0 10px;
+    @include rem(margin, 0 0 $spacing-fixed-xs 0);
+    @include rem(padding, 0 $spacing-fixed-xs);
     @include bp(md) {
       float: none;
       width: 100%;
@@ -183,29 +362,29 @@ ul.three-col-list {
 
 /* Buttons */
 
-.button, .action, input[type=submit], button a { @include button(1.8, $primarycolor, #fff, 20px 50px); }
-.secondary-button { @include button(1.8, $secondarycolor, #fff, 20px 50px); }
-.ghost-button { @include ghostbutton(1.7, $primarycolor, 16px 40px); }
+.button, .action, input[type=submit], button a { @include button(18px, $primarycolor, #fff, 20px 50px); }
+.secondary-button { @include button(18px, $secondarycolor, #fff, 20px 50px); }
+.ghost-button { @include ghostbutton(17px, $primarycolor, 16px 40px); }
 
 /* Pagination */
 
 .pagination {
   @include cf();
-  @include font-size(1.5);
-  @include line-height(2.1);
-  margin: 40px 0 ($spacing-fixed-lg - 6px) 0;
+  @include rem(font-size, 15px);
+  @include rem(line-height, 21px);
+  @include rem(margin, $spacing-fixed-lg 0 ($spacing-fixed-lg - 6px) 0);
   overflow: hidden;
   padding: 0;
   li {
     display: inline-block;
     list-style: none;
-    margin: 0 2px 6px 0;
+    @include rem(margin, 0 2px 6px 0);
     padding: 0;
   }
   a {
     background: $primarycolor;
     display: block;
-    padding: 6px 12px;
+    @include rem(padding, 6px 12px);
     text-decoration: none;
     color: $textcolor_subtle;
     @include border-radius(3px);
@@ -224,43 +403,43 @@ ul.three-col-list {
 /* tabs */
 
 ul.tabs {
-	border-bottom: 1px solid $offsetcolor;
-	margin: 0 0 $spacing-fixed 0;
-	padding: 0;
-	position: relative;
-	li {
-		list-style: none;
-		margin: 0 0 0 0;
-		padding: 0;
-		a {
-			@include primaryfont();
-			background: #eee;
-			border-right: 1px solid $offsetcolor;
-			border-top: 1px solid $offsetcolor;
-			color: #656565;
-			cursor: pointer;
-			font-weight: 400;
-			float: left;
-			padding: 8px 16px;
-			position: relative;
-			top: 1px;
-		}
-		a:hover {
-			background: $primarycolor;
-			color: #fff;
-			text-decoration: none;
-		}
-	}
-	li:first-child a {
-		border-left: 1px solid $offsetcolor;
-	}
-	li.active a {
-		background: #fff;
-		color: #232323;
-		font-weight: 800;
-		position: relative;
-		top: 1px;
-	}
+  border-bottom: 1px solid $offsetcolor;
+  @include rem(margin, 0 0 $spacing-fixed 0);
+  padding: 0;
+  position: relative;
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    a {
+      @include primaryfont();
+      background: #eee;
+      border-right: 1px solid $offsetcolor;
+      border-top: 1px solid $offsetcolor;
+      color: $textcolor_subtle;
+      cursor: pointer;
+      font-weight: 400;
+      float: left;
+      @include rem(padding, 8px 16px);
+      position: relative;
+      @include rem(top, 1px);
+    }
+    a:hover {
+      background: $primarycolor;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  li:first-child a {
+    border-left: 1px solid $offsetcolor;
+  }
+  li.active a {
+    background: #fff;
+    color: #232323;
+    font-weight: 800;
+    position: relative;
+    @include rem(top, 1px);
+  }
 }
 
 
@@ -268,7 +447,7 @@ ul.tabs {
 
 table {
   border: none;
-  margin: 0 0 $spacing-fixed 0;
+  @include rem(margin, 0 0 $spacing-fixed 0);
   width: 100%;
   th {
     background: $primarycolor;
@@ -277,7 +456,7 @@ table {
     color: #fff;
     font-weight: 700;
     @include secondaryfont();
-    padding: 10px 15px;
+    @include rem(padding, 10px 15px);
     text-align: left;
     a { color: #fff; }
     a:hover {
@@ -297,7 +476,7 @@ table {
     td {
       border-bottom: 1px solid $offsetcolor;
       color: $textcolor;
-      padding: 10px 15px;
+      @include rem(padding, 10px 15px);
       vertical-align: top;
     }
   }
@@ -305,11 +484,11 @@ table {
   tr:nth-child(odd) { background: #fff; }
   tr:last-child { border-bottom: none; }
   ul { 
-    margin: 2px 0 0 0;
+    @include rem(margin, 2px 0 0 0);
     padding: 0;
     li {
       list-style-type: none;
-      margin: 0 0 3px 0;
+      @include rem(margin, 0 0 3px 0);
       padding: 0;
     }
   }
@@ -325,7 +504,7 @@ table {
 
 hr {
   @include cf();
-  margin: $spacing-fixed 0;
+  @include rem(margin, $spacing-fixed 0);
   width: 100%;
   display: block;
   height: 1px;
@@ -344,6 +523,13 @@ hr {
   height: 100%;
   overflow: hidden;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
+.header-and-main {
+  @include cf();
+}
 
 /* Embeds */
 
@@ -354,236 +540,62 @@ object, embed {
 /* Images */
 
 img {
-	display: block;
-	height: auto;
-	max-width: 100%;
-	-ms-interpolation-mode: bicubic;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  -ms-interpolation-mode: bicubic;
 }
 img.left {
-	float: left;
-	margin: 0 $spacing-fixed $spacing-fixed 0;
+  float: left;
+  @include rem(margin, 0 $spacing-fixed $spacing-fixed 0);
 }
 img.right {
-	float: right;
-	margin: 0 0 $spacing-fixed $spacing-fixed;
+  float: right;
+  @include rem(margin, 0 0 $spacing-fixed $spacing-fixed);
 }
 img.leftAlone {
-	display: block;
-	margin: 0 0 $spacing-fixed 0;
+  display: block;
+  @include rem(margin, 0 0 $spacing-fixed 0);
 }
 img.center {
-	display: block;
-	margin: 0 auto $spacing-fixed auto;
+  display: block;
+  @include rem(margin, 0 auto $spacing-fixed auto);
 }
 .captionImage img {
-	margin-bottom: 10px;
+  @include rem(margin-bottom, $spacing-fixed-xs);
 }
 .captionImage.center {
-	margin-left: auto;
-	margin-right: auto;
-	width: 100% !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100% !important;
 }
 .captionImage.right {
-	margin-left: $spacing-fixed;
-	float: right;
+  @include rem(margin-left, $spacing-fixed);
+  float: right;
 }
 .captionImage.left {
-	float: left;
+  float: left;
 }
 .captionImage.left, .captionImage.leftAlone {
-	margin-right: $spacing-fixed;
+  @include rem(margin-right, $spacing-fixed);
 }
 .captionImage {
-	margin-bottom: $spacing-fixed;
-	max-width: 100%;
+  @include rem(margin-bottom, $spacing-fixed);
+  max-width: 100%;
 }
 .caption {
-	@include secondaryfont();
-	text-align: left;
-	@include font-size(1.6);
-  @include line-height(2.2);
-	margin: 0;
-	width: 100%;
+  @include secondaryfont();
+  text-align: left;
+  @include rem(font-size, 16px);
+  @include rem(line-height, 22px);
+  margin: 0;
+  width: 100%;
 }
 .captionImage.center .caption {
-	margin: 0 auto;
-	text-align: center;
-	width: 90%;
+  @include rem(margin, 0 auto);
+  text-align: center;
+  width: 90%;
 }
-
-
-/* ==========================================================================
-   Vanity Styles
-   ========================================================================== */ 
-
-::selection {
-	background: $primarycolor;
-	color: #fff;
-}
-::-moz-selection {
-	background: $primarycolor;
-	color: #fff;
-}
-
-
-/* ==========================================================================
-   Typography
-   ========================================================================== */ 
-
-html { font-size: 62.5%; /* Sets up the Base 10 stuff */ }
-body {
-	color: $textcolor;
-	@include primaryfont();
-	@include font-size(1.6);
-  @include line-height(2.2);
-	font-weight: 400;
-	text-rendering: optimizeLegibility;
-}
-p, pre, address { margin: 0 0 $spacing-fixed 0; }
-h1, h2, h3, h4, h5, h6 {
-	color: $textcolor_medstrong;
-	@include secondaryfont();
-	font-weight: 400;
-	margin: 0 0 $spacing-fixed-sm 0;
-}
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  font-size: 60%;
-  color: $textcolor_subtle;
-  line-height: 0;
-}
-h1 {
-  @include font-size(3.2);
-  @include line-height(3.9);
-}
-h2 {
-  @include font-size(2.6);
-  @include line-height(3.3);
-}
-h3 {
-  @include font-size(2.1);
-  @include line-height(2.8);
-}
-h4 {
-  @include font-size(1.8);
-  @include line-height(2.5);
-}
-h5 { 
-  @include font-size(1.6);
-  @include line-height(2.3);
-}
-h6 {
-  @include font-size(1.4);
-  @include line-height(2.1);
-}
-a {
-	color: $primarycolor;
-	outline: none;
-	text-decoration: none;
-}
-a:hover { color: $secondarycolor; }
-strong {
-	color: $textcolor_medstrong;
-	font-weight: 700;
-}
-small {
-	color: $textcolor_subtle;
-	@include secondaryfont();
-	font-style: italic;
-}
-code {
-	font-family: Consolas, "Liberation Mono", Courier, monospace;
-	font-weight: bold;
-	color: $textcolor_subtle;
-}
-.center-text, .text-center, .ct { text-align: center; }
-.right-text, .text-right, .rt { text-align: right; }
-blockquote {
-	border: none;
-	margin: 0 0 $spacing-fixed-sm 0;
-	padding: 5px $spacing 0 $spacing;
-	min-height: 35px;
-	position: relative;
-	z-index: 2;
-	font-style: italic;
-	@include secondaryfont();
-	color: $textcolor;
-  @include font-size(2.1);
-  @include line-height(2.8);
-	font-weight: 400;
-	text-align: center;
-	width: 100%;
-	p { display: inline-block; }
-	p:last-child {
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
-}
-blockquote:before {
-  content: "\201C";
-  @include secondaryfont();
-}
-blockquote:after {
-  content: "\201D";
-  @include secondaryfont();
-}
-q {
-  font-style: italic;
-  @include secondaryfont();
-  font-weight: 400;
-}
-figcaption, cite {
-	color: $textcolor_subtle;
-  @include font-size(1.4);
-  @include line-height(2.0);
-	@include primaryfont();
-	font-style: normal;
-	display: block;
-	margin: 0 0 $spacing-fixed 0;
-	font-weight: 300;
-	text-align: right;
-}
-figcaption:before, cite:before {
-	content: "\2014\00a0";
-	display: inline-block;
-}
-.caption {
-	@include secondaryfont();
-	text-align: left;
-  @include font-size(1.6);
-  @include line-height(2.2);
-	margin: 0;
-	width: 100%;
-}
-.captionImage.center .caption {
-	margin: 0 auto;
-	text-align: center;
-	width: 90%;
-}
-.primary-color { color: $primarycolor; }
-.secondary-color { color: $secondarycolor; }
-.reversed { color: #fff; }
-.allcaps { text-transform: uppercase; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
