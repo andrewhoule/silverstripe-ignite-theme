@@ -98,7 +98,7 @@ input.text { width: 100%; }
     @include rem(width, 100px);
   }
 }
-form label.left {
+form label.left, legend.left {
   color: $textcolor_strong;
   @include primaryfont();
   @include rem(font-size, 18px);
