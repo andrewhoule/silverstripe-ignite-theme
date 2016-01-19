@@ -146,19 +146,6 @@ figcaption:before, cite:before {
   content: "\2014\00a0";
   display: inline-block;
 }
-.caption {
-  @include secondaryfont();
-  text-align: left;
-  @include rem(font-size, 16px);
-  @include rem(line-height, 22px);
-  margin: 0;
-  width: 100%;
-}
-.captionImage.center .caption {
-  margin: 0 auto;
-  text-align: center;
-  width: 90%;
-}
 .primary-color { color: $primarycolor; }
 .secondary-color { color: $secondarycolor; }
 .reversed { color: #fff; }

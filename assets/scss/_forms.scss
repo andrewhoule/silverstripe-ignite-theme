@@ -166,7 +166,7 @@ label.right {
 #ContactForm_ContactForm span.required {
   color: $alertcolor;
 }
-#Form_Form span.required {
+#Form_Form span.required, p.message.bad {
   background: $alertcolor_dark;
   color: #fff;
   @include rem(padding, $spacing-fixed-xs $spacing-fixed-sm);
