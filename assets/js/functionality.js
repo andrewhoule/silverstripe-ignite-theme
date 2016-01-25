@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 /* ==========================================================================
-   Adding some logic to deal with wrapping text around floating image on responsive design. AKA Breathing room.
+   Adding logic for SS images on responsive design. AKA Breathing room.
    ========================================================================== */
 
 function imageBreathingRoom() {
