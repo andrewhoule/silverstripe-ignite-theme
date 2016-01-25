@@ -539,8 +539,9 @@ img.right {
   float: right;
   @include rem(margin, 0 0 $spacing-fixed $spacing-fixed);
 }
-img.leftAlone {
+img.leftAlone, img.left-alone {
   display: block;
+  float: none;
   @include rem(margin, 0 0 $spacing-fixed 0);
 }
 img.center {
