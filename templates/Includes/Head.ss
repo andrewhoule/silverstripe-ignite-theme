@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><% if ID == "1" %>$SiteConfig.Title<% if $SiteConfig.Tagline %> | $SiteConfig.Tagline<% end_if %><% else %>$Title | $SiteConfig.Title<% end_if %></title>
-  <meta name="description" content="$SiteConfig.Title - $SiteConfig.Tagline">
+  <meta name="description" content="<% if $MetaDescription %>$MetaDescription<% else %>$SiteConfig.Title - $SiteConfig.Tagline<% end_if %>">
   <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
   <!-- CSS -->
   <link rel="stylesheet" href="$Themedir/css/layout.css">
