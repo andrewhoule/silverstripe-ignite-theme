@@ -124,14 +124,32 @@ $maxwidth-xl: $maxwidth * 1.4;
   #{$property}: $px-values;
   #{$property}: $rem-values;
 }
-@mixin rgba($type, $color, $percentage) {
-  @if $type == color {
-    color: transd($color, $percentage);
-    color: rgba($color, $percentage);
+@function solid-lighten($color, $percentage) {
+  @return lighten($color, (1-$percentage)*5%);
+}
+@function solid-darken($color, $percentage) {
+  @return darken($color, (1-$percentage)*5%);
+}
+@mixin rgba($type, $color, $percentage, $shade: ligthen) {
+  @if $shade == lighten {
+    @if $type == color {
+      color: solid-lighten($color, $percentage);
+      color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+      background-color: solid-lighten($color, $percentage);
+      background-color: rgba($color, $percentage);
+    }
   }
-  @if $type == bg {
-    background-color: transd($color, $percentage);
-    background-color: rgba($color, $percentage);
+  @else {
+     @if $type == color {
+      color: solid-darken($color, $percentage);
+      color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+      background-color: solid-darken($color, $percentage);
+      background-color: rgba($color, $percentage);
+    }
   }
 }
 @mixin circle {
@@ -193,16 +211,6 @@ $maxwidth-xl: $maxwidth * 1.4;
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
-  }
-}
-@mixin cf() {
-  *zoom: 1;
-  &:before, &:after {
-    content: '';
-    display: table;
-  }
-  &:after {
-    clear: both;
   }
 }
 
@@ -298,5 +306,21 @@ $maxwidth-xl: $maxwidth * 1.4;
   }
   @else if $point == xs { // 400px
     @media (max-width: 25rem)  { @content; }
+  }
+}
+
+
+/* ==========================================================================
+   Placeholder Selectors
+   ========================================================================== */
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
   }
 }
