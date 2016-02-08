@@ -173,7 +173,7 @@ figcaption:before, cite:before {
 /* Grid Helpers */
 
 .row {
-  @include cf();
+  @extend %clearfix;
   @include bp(md) {
     margin-bottom: 0;
   }
@@ -183,7 +183,7 @@ figcaption:before, cite:before {
   @include rem(max-width,$maxwidth);
   @include rem(padding, 0 $spacing-fixed);
   position: relative;
-  @include cf();
+  @extend %clearfix;
   @include bp(md) {
     @include rem(padding, 0 $spacing-fixed-sm);
   }
@@ -193,7 +193,7 @@ figcaption:before, cite:before {
   @include rem(max-width,$maxwidth-sm);
   @include rem(padding, 0 $spacing-fixed);
   position: relative;
-  @include cf();
+  @extend %clearfix;
   @include bp(md) {
     @include rem(padding, 0 $spacing-fixed-sm);
   }
@@ -203,7 +203,7 @@ figcaption:before, cite:before {
   @include rem(max-width,$maxwidth-lg);
   @include rem(padding, 0 $spacing-fixed);
   position: relative;
-  @include cf();
+  @extend %clearfix;
   @include bp(md) {
     @include rem(padding, 0 $spacing-fixed-sm);
   }
@@ -213,7 +213,7 @@ figcaption:before, cite:before {
   @include rem(max-width,$maxwidth-xl);
   @include rem(padding, 0 $spacing-fixed);
   position: relative;
-  @include cf();
+  @extend %clearfix;
   @include bp(md) {
     @include rem(padding, 0 $spacing-fixed-sm);
   }
@@ -309,7 +309,7 @@ dl {
 ul.two-col-list {
   @include rem(margin, 0 -$spacing-fixed-xs $spacing-fixed -$spacing-fixed-xs);
   padding: 0;
-  @include cf();
+  @extend %clearfix;
   font-size: 0;
   li {
     display: inline-block;
@@ -329,7 +329,7 @@ ul.two-col-list {
 ul.three-col-list {
   @include rem(margin, 0 -$spacing-fixed-xs $spacing-fixed -$spacing-fixed-xs);
   padding: 0;
-  @include cf();
+  @extend %clearfix;
   font-size: 0;
   li {
     display: inline-block;
@@ -355,7 +355,7 @@ ul.three-col-list {
 /* Pagination */
 
 .pagination {
-  @include cf();
+  @extend %clearfix;
   @include rem(font-size, 15px);
   @include rem(line-height, 21px);
   @include rem(margin, $spacing-fixed-lg 0 ($spacing-fixed-lg - 6px) 0);
@@ -489,7 +489,7 @@ table {
 /* Breaks */
 
 hr {
-  @include cf();
+  @extend %clearfix;
   @include rem(margin, $spacing-fixed 0);
   width: 100%;
   display: block;
@@ -514,7 +514,7 @@ html {
   min-height: 100%;
 }
 .header-and-main {
-  @include cf();
+  @extend %clearfix;
 }
 
 /* Embeds */
