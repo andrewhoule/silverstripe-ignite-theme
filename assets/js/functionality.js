@@ -8,11 +8,17 @@ $(document).ready(function(){
 function imageBreathingRoom() {
   var colsize = $('.main-content').width();
   $('.main-content img').each(function() { 
-      if(($(this).width() + 400) >= colsize ) {
+    if(($(this).width() + 300) >= colsize ) {
       $(this).addClass('left-alone');
+      if($(this).parent().hasClass('captionImage')) {
+        $(this).parent().addClass('left-alone');
+      }
     }
     else {
       $(this).removeClass('left-alone');
+      if($(this).parent().hasClass('captionImage')) {
+        $(this).parent().removeClass('left-alone');
+      }
     }
   });
 }
