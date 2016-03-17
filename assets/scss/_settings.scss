@@ -109,16 +109,16 @@ $maxwidth-xl: $maxwidth * 1.4;
     } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
       $new-rem-value: $value / $font-size;
       $px-values: join($px-values, round($value));
-      $rem-values: join($rem-values, #{$new-rem-value}rem);
+      $rem-values: join($rem-values, unquote("#{$new-rem-value}rem"));
     } @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
-      $px-values: join($px-values, #{$value});
-      $rem-values: join($rem-values, #{$value});
+      $px-values: join($px-values, unquote("#{$value}"));
+      $rem-values: join($rem-values, unquote("#{$value}"));
     } @else if $value == auto {
       $px-values: join($px-values, auto);
       $rem-values: join($rem-values, auto);
     } @else {
       $px-values: join($px-values, round($value * $font-size));
-      $rem-values: join($rem-values, #{$value}rem);
+      $rem-values: join($rem-values, unquote("#{$value}rem"));
     }
   }
   #{$property}: $px-values;
@@ -212,6 +212,12 @@ $maxwidth-xl: $maxwidth * 1.4;
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
   }
+}
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder {@content}
+  &::-moz-placeholder {@content}
+  &:-ms-input-placeholder {@content}  
 }
 
 /* Buttons */

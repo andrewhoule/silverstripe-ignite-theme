@@ -14,6 +14,7 @@
   <meta property="og:title" content="$MenuTitle">
   <meta property="og:url" content="$AbsoluteLink">
   <meta property="og:description" content="<% if $MetaDescription %>$MetaDescription<% else %>$SiteConfig.Title - $SiteConfig.Tagline<% end_if %>">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@andrewhoule">
   <meta name="twitter:title" content="$MenuTitle">
