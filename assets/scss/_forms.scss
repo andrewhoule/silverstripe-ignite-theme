@@ -5,7 +5,7 @@
 
 form {
   display: block;
-  @include rem(margin, 0 0 $spacing-fixed 0);
+  @include rem(margin, 0 0 $gap-fixed 0);
 }
 fieldset {
   border: 0;
@@ -22,7 +22,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   background: $offsetcolor;
   border: 1px solid $offsetcolor_verystrong;
   color: $textcolor;
-  @include primaryfont();
+  @extend %primaryfont;
   @include rem(font-size, 16px);
   @include rem(line-height, 23px);
   height: auto;
@@ -73,7 +73,7 @@ input.text { width: 100%; }
   width: 100%;
 }
 .field {
-  @include rem(margin, 0 -2px $spacing-fixed-sm -2px);
+  @include rem(margin, 0 -2px $gap-fixed-sm -2px);
   @include rem(padding, 0 7.5px);
   display: inline-block;
   vertical-align: bottom;
@@ -100,12 +100,12 @@ input.text { width: 100%; }
 }
 form label.left, legend.left {
   color: $textcolor_strong;
-  @include primaryfont();
+  @extend %primaryfont;
   @include rem(font-size, 18px);
   @include rem(line-height, 25px);
   font-weight: 700;
   margin: 0; 
-  @include rem(padding, 0 0 $spacing-fixed-xs 0);
+  @include rem(padding, 0 0 $gap-fixed-xs 0);
   clear: both;
 }
 form label.left small {
@@ -126,12 +126,12 @@ form ul, form ol {
   @include rem(font-size, 16px);
   @include rem(line-height, 22px);
   margin: 0;
-  @include rem(padding, 0 0 $spacing-fixed-sm $spacing-fixed);
+  @include rem(padding, 0 0 $gap-fixed-sm $gap-fixed);
   li { @include rem(margin-bottom, 5px); }
   li:last-child { margin-bottom: 0; }
 }
 form ul.optionset, form ul.checkboxset {
-  @include rem(padding, 0 $spacing-fixed-xs $spacing-fixed-sm $spacing-fixed-xs);
+  @include rem(padding, 0 $gap-fixed-xs $gap-fixed-sm $gap-fixed-xs);
   li {
     list-style: none;
   }
@@ -141,7 +141,7 @@ form li.even { background: none; }
   border: 0;
   display: block;
   float: left;  
-  @include rem(margin, 4px $spacing-fixed-xs 0 0);
+  @include rem(margin, 4px $gap-fixed-xs 0 0);
   padding: 0;
 }
 div.tab .field .middleColumn { clear: none !important; margin: 0 !important; width: auto; }
@@ -169,7 +169,7 @@ label.right {
 #Form_Form span.required, p.message.bad {
   background: $alertcolor_dark;
   color: #fff;
-  @include rem(padding, $spacing-fixed-xs $spacing-fixed-sm);
+  @include rem(padding, $gap-fixed-xs $gap-fixed-sm);
   width: 100%;
   font-weight: 700;
   @include rem(font-size, 16px);
@@ -201,11 +201,11 @@ label.right {
   @include rem(line-height, 23px);
   font-weight: 700;
   text-align: center;
-  @include rem(padding, $spacing-fixed-sm);
+  @include rem(padding, $gap-fixed-sm);
   background: $successcolor_dark;
   border: 3px solid $successcolor_meddark;
   display: block;
-  @include rem(margin, 0 0 $spacing-fixed-sm 0);
+  @include rem(margin, 0 0 $gap-fixed-sm 0);
 }
 
 
@@ -219,12 +219,12 @@ form h2, .FormHeading {
   border-bottom: 1px solid $offsetcolor;
   border-top: 1px solid $offsetcolor;
   clear: both;
-  @include rem(margin, $spacing-fixed-xs 0 $spacing-fixed-sm); 
-  @include rem(padding, $spacing-fixed-xs 0);
+  @include rem(margin, $gap-fixed-xs 0 $gap-fixed-sm); 
+  @include rem(padding, $gap-fixed-xs 0);
   width: 100%;
 }
 .login-logo {
-  @include rem(margin, 0 auto $spacing-fixed-xs auto);
+  @include rem(margin, 0 auto $gap-fixed-xs auto);
 }
 .form-text { color: $textcolor; }
 
@@ -239,7 +239,7 @@ form h2, .FormHeading {
 #ForgotPassword {
   color: $textcolor_subtle;
   float: left;
-  @include rem(padding, 4px 0 0 $spacing-fixed-xs);
+  @include rem(padding, 4px 0 0 $gap-fixed-xs);
 }
 #ForgotPassword:before {
   content: "or ";

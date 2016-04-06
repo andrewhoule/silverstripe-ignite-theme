@@ -66,16 +66,16 @@ $successcolor_verylight: lighten($successcolor, 55%);
 
 $transitionduration: .4s;
 $borderradius: 0.1875rem;
-$spacing: 5%;
-$spacing-xs: $spacing * .5;
-$spacing-sm: $spacing * .75;
-$spacing-lg: $spacing * 2;
-$spacing-xl: $spacing * 3;
-$spacing-fixed: 30px;
-$spacing-fixed-xs: $spacing-fixed * .4;
-$spacing-fixed-sm: $spacing-fixed * .7;
-$spacing-fixed-lg: $spacing-fixed * 1.5;
-$spacing-fixed-xl: $spacing-fixed * 2.0;
+$gap: 5%;
+$gap-xs: $gap * .5;
+$gap-sm: $gap * .75;
+$gap-lg: $gap * 2;
+$gap-xl: $gap * 3;
+$gap-fixed: 30px;
+$gap-fixed-xs: $gap-fixed * .4;
+$gap-fixed-sm: $gap-fixed * .7;
+$gap-fixed-lg: $gap-fixed * 1.5;
+$gap-fixed-xl: $gap-fixed * 2.0;
 $maxwidth: 1200px;
 $maxwidth-xs: $maxwidth * .4;
 $maxwidth-sm: $maxwidth * .8;
@@ -233,7 +233,7 @@ $maxwidth-xl: $maxwidth * 1.4;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  @include secondaryfont();
+  @extend %secondaryfont;
   @include rem(font-size, $fontsize);
   @include rem(line-height, $fontsize);
   color: $fontcolor;
@@ -256,7 +256,7 @@ $maxwidth-xl: $maxwidth * 1.4;
     width: 100%;
   }
 }
-@mixin ghostbutton($fontsize, $bordercolor, $spacing) {
+@mixin ghostbutton($fontsize, $bordercolor, $gap) {
   border: 1px solid $bordercolor;
   @include border-radius($borderradius);
   cursor: pointer;
@@ -266,11 +266,11 @@ $maxwidth-xl: $maxwidth * 1.4;
   overflow: hidden;
   text-decoration: none;
   text-align: center;
-  @include secondaryfont();
+  @extend %secondaryfont;
   @include rem(font-size, $fontsize);
   @include rem(line-height, $fontsize);
   color: $bordercolor;
-  @include rem(padding, $spacing);
+  @include rem(padding, $gap);
   @include transition-duration($transitionduration);
   &:hover {
     background: $bordercolor;
@@ -289,11 +289,6 @@ $maxwidth-xl: $maxwidth * 1.4;
     width: 100%;
   }
 }
-
-/* Fonts */
-
-@mixin primaryfont() { font-family: arial, helvetica, sans-serif; }
-@mixin secondaryfont() { font-family: georgia, times, serif; }
 
 /* Breakpoints */
 
@@ -330,3 +325,8 @@ $maxwidth-xl: $maxwidth * 1.4;
     clear: both;
   }
 }
+
+/* Fonts */
+
+%primaryfont { font-family: arial, helvetica, sans-serif; }
+%secondaryfont { font-family: georgia, times, serif; }

@@ -24,18 +24,18 @@ html { @include box-sizing(border-box); }
 html { font-size: 100%; /* Document level font size */ }
 body {
   color: $textcolor;
-  @include primaryfont();
+  @extend %primaryfont;
   @include rem(font-size, 16px);
   @include rem(line-height, 22px);
   font-weight: 400;
   text-rendering: optimizeLegibility;
 }
-p, pre, address { @include rem(margin, 0 0 $spacing-fixed 0); }
+p, pre, address { @include rem(margin, 0 0 $gap-fixed 0); }
 h1, h2, h3, h4, h5, h6 {
   color: $textcolor_medstrong;
-  @include secondaryfont();
+  @extend %secondaryfont;
   font-weight: 700;
-  @include rem(margin, 0 0 $spacing-fixed-sm 0);
+  @include rem(margin, 0 0 $gap-fixed-sm 0);
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 60%;
@@ -78,7 +78,7 @@ strong {
 }
 small {
   color: $textcolor_subtle;
-  @include secondaryfont();
+  @extend %secondaryfont;
   font-style: italic;
   @include rem(font-size, 14px);
   @include rem(line-height, 21px);
@@ -92,13 +92,13 @@ code {
 .right-text, .text-right, .rt { text-align: right; }
 blockquote {
   border: none;
-  @include rem(margin, 0 0 $spacing-fixed-sm 0);
-  @include rem(padding, 5px $spacing 0 $spacing);
+  @include rem(margin, 0 0 $gap-fixed-sm 0);
+  @include rem(padding, 5px $gap 0 $gap);
   @include rem(min-height, 35px);
   position: relative;
   z-index: 2;
   font-style: italic;
-  @include secondaryfont();
+  @extend %secondaryfont;
   color: $textcolor;
   @include rem(font-size, 21px);
   @include rem(line-height, 28px);
@@ -120,25 +120,25 @@ blockquote:before, blockquote:after {
 }
 blockquote:before {
   content: "\201C";
-  @include secondaryfont();
+  @extend %secondaryfont;
 }
 blockquote:after {
   content: "\201D";
-  @include secondaryfont();
+  @extend %secondaryfont;
 }
 q {
   font-style: italic;
-  @include secondaryfont();
+  @extend %secondaryfont;
   font-weight: 400;
 }
 figcaption, cite {
   color: $textcolor_subtle;
   @include rem(font-size, 14px);
   @include rem(line-height, 20px);
-  @include primaryfont();
+  @extend %primaryfont;
   font-style: normal;
   display: block;
-  @include rem(margin, 0 0 $spacing-fixed 0);
+  @include rem(margin, 0 0 $gap-fixed 0);
   font-weight: 300;
   text-align: right;
 }
@@ -181,83 +181,83 @@ figcaption:before, cite:before {
 .wrapper {
   margin: auto;
   @include rem(max-width,$maxwidth);
-  @include rem(padding, 0 $spacing-fixed);
+  @include rem(padding, 0 $gap-fixed);
   position: relative;
   @extend %clearfix;
   @include bp(md) {
-    @include rem(padding, 0 $spacing-fixed-sm);
+    @include rem(padding, 0 $gap-fixed-sm);
   }
 }
 .wrapper-sm {
   margin: auto;
   @include rem(max-width,$maxwidth-sm);
-  @include rem(padding, 0 $spacing-fixed);
+  @include rem(padding, 0 $gap-fixed);
   position: relative;
   @extend %clearfix;
   @include bp(md) {
-    @include rem(padding, 0 $spacing-fixed-sm);
+    @include rem(padding, 0 $gap-fixed-sm);
   }
 }
 .wrapper-lg {
   margin: auto;
   @include rem(max-width,$maxwidth-lg);
-  @include rem(padding, 0 $spacing-fixed);
+  @include rem(padding, 0 $gap-fixed);
   position: relative;
   @extend %clearfix;
   @include bp(md) {
-    @include rem(padding, 0 $spacing-fixed-sm);
+    @include rem(padding, 0 $gap-fixed-sm);
   }
 }
 .wrapper-xl {
   margin: auto;
   @include rem(max-width,$maxwidth-xl);
-  @include rem(padding, 0 $spacing-fixed);
+  @include rem(padding, 0 $gap-fixed);
   position: relative;
   @extend %clearfix;
   @include bp(md) {
-    @include rem(padding, 0 $spacing-fixed-sm);
+    @include rem(padding, 0 $gap-fixed-sm);
   }
 }
 .half {
   @include col(1/2);
   @include bp(md) {
     @include stack();
-    @include rem(margin-bottom, $spacing-fixed-sm);
+    @include rem(margin-bottom, $gap-fixed-sm);
   }
 }
 .one-third {
   @include col(1/3);
   @include bp(md) {
     @include stack();
-    @include rem(margin-bottom, $spacing-fixed-sm);
+    @include rem(margin-bottom, $gap-fixed-sm);
   }
 }
 .two-thirds {
   @include col(2/3);
   @include bp(md) {
     @include stack();
-    @include rem(margin-bottom, $spacing-fixed-sm);
+    @include rem(margin-bottom, $gap-fixed-sm);
   }
 }
 .one-fourth {
   @include col(1/4);
   @include bp(md) {
     @include stack();
-    @include rem(margin-bottom, $spacing-fixed-sm);
+    @include rem(margin-bottom, $gap-fixed-sm);
   }
 }
 .three-fourths {
   @include col(3/4);
   @include bp(md) {
     @include stack();
-    @include rem(margin-bottom, $spacing-fixed-sm);
+    @include rem(margin-bottom, $gap-fixed-sm);
   }
 }
 
 /* Lists */
 
 ul, ol {
-  @include rem(margin, 0 0 $spacing-fixed $spacing-fixed-lg);
+  @include rem(margin, 0 0 $gap-fixed $gap-fixed-lg);
   padding: 0;
   li {
     list-style-position: outside;
@@ -270,7 +270,7 @@ ul, ol {
 ul li { list-style: disc; }
 ol li { list-style: decimal; }
 dl {
-  @include rem(margin, 0 0 $spacing-fixed 0);
+  @include rem(margin, 0 0 $gap-fixed 0);
   overflow: hidden;
   dt, dd{
     float: left;
@@ -285,7 +285,7 @@ dl {
   }
   dd {
     @include rem(margin, 0 0 7px 0);
-    @include rem(padding-left, $spacing-fixed-sm);
+    @include rem(padding-left, $gap-fixed-sm);
     width: 70%;
   } 
   @include bp(md) {
@@ -307,7 +307,7 @@ dl {
 /* Column Lists */
 
 ul.two-col-list {
-  @include rem(margin, 0 -$spacing-fixed-xs $spacing-fixed -$spacing-fixed-xs);
+  @include rem(margin, 0 -$gap-fixed-xs $gap-fixed -$gap-fixed-xs);
   padding: 0;
   @extend %clearfix;
   font-size: 0;
@@ -317,8 +317,8 @@ ul.two-col-list {
     @include rem(line-height, 22px);
     width: 50%;
     list-style: none;
-    @include rem(margin, 0 0 $spacing-fixed-xs 0);
-    @include rem(padding, 0 $spacing-fixed-xs);
+    @include rem(margin, 0 0 $gap-fixed-xs 0);
+    @include rem(padding, 0 $gap-fixed-xs);
     @include bp(md) {
       float: none;
       width: 100%;
@@ -327,7 +327,7 @@ ul.two-col-list {
 }
 
 ul.three-col-list {
-  @include rem(margin, 0 -$spacing-fixed-xs $spacing-fixed -$spacing-fixed-xs);
+  @include rem(margin, 0 -$gap-fixed-xs $gap-fixed -$gap-fixed-xs);
   padding: 0;
   @extend %clearfix;
   font-size: 0;
@@ -337,8 +337,8 @@ ul.three-col-list {
     @include rem(line-height, 22px);
     width: 33.33333333%;
     list-style: none;
-    @include rem(margin, 0 0 $spacing-fixed-xs 0);
-    @include rem(padding, 0 $spacing-fixed-xs);
+    @include rem(margin, 0 0 $gap-fixed-xs 0);
+    @include rem(padding, 0 $gap-fixed-xs);
     @include bp(md) {
       float: none;
       width: 100%;
@@ -358,7 +358,7 @@ ul.three-col-list {
   @extend %clearfix;
   @include rem(font-size, 15px);
   @include rem(line-height, 21px);
-  @include rem(margin, $spacing-fixed-lg 0 ($spacing-fixed-lg - 6px) 0);
+  @include rem(margin, $gap-fixed-lg 0 ($gap-fixed-lg - 6px) 0);
   overflow: hidden;
   padding: 0;
   li {
@@ -390,7 +390,7 @@ ul.three-col-list {
 
 ul.tabs {
   border-bottom: 1px solid $offsetcolor;
-  @include rem(margin, 0 0 $spacing-fixed 0);
+  @include rem(margin, 0 0 $gap-fixed 0);
   padding: 0;
   position: relative;
   li {
@@ -398,7 +398,7 @@ ul.tabs {
     margin: 0;
     padding: 0;
     a {
-      @include primaryfont();
+      @extend %primaryfont;
       background: #eee;
       border-right: 1px solid $offsetcolor;
       border-top: 1px solid $offsetcolor;
@@ -433,7 +433,7 @@ ul.tabs {
 
 table {
   border: none;
-  @include rem(margin, 0 0 $spacing-fixed 0);
+  @include rem(margin, 0 0 $gap-fixed 0);
   width: 100%;
   th {
     background: $primarycolor;
@@ -441,7 +441,7 @@ table {
     border-right: 1px solid $primarycolor_dark;
     color: #fff;
     font-weight: 700;
-    @include secondaryfont();
+    @extend %secondaryfont;
     @include rem(padding, 10px 15px);
     text-align: left;
     a { color: #fff; }
@@ -490,7 +490,7 @@ table {
 
 hr {
   @extend %clearfix;
-  @include rem(margin, $spacing-fixed 0);
+  @include rem(margin, $gap-fixed 0);
   width: 100%;
   display: block;
   height: 1px;
@@ -533,23 +533,23 @@ img {
 }
 img.left {
   float: left;
-  @include rem(margin, 0 $spacing-fixed $spacing-fixed 0);
+  @include rem(margin, 0 $gap-fixed $gap-fixed 0);
 }
 img.right {
   float: right;
-  @include rem(margin, 0 0 $spacing-fixed $spacing-fixed);
+  @include rem(margin, 0 0 $gap-fixed $gap-fixed);
 }
 img.leftAlone, img.left-alone {
   display: block;
   float: none;
-  @include rem(margin, 0 0 $spacing-fixed 0);
+  @include rem(margin, 0 0 $gap-fixed 0);
 }
 img.center {
   display: block;
-  @include rem(margin, 0 auto $spacing-fixed auto);
+  @include rem(margin, 0 auto $gap-fixed auto);
 }
 .captionImage img {
-  @include rem(margin-bottom, $spacing-fixed-xs);
+  @include rem(margin-bottom, $gap-fixed-xs);
 }
 .captionImage.center {
   margin-left: auto;
@@ -557,21 +557,21 @@ img.center {
   width: 100% !important;
 }
 .captionImage.right {
-  @include rem(margin-left, $spacing-fixed);
+  @include rem(margin-left, $gap-fixed);
   float: right;
 }
 .captionImage.left {
   float: left;
 }
 .captionImage.left, .captionImage.leftAlone {
-  @include rem(margin-right, $spacing-fixed);
+  @include rem(margin-right, $gap-fixed);
 }
 .captionImage {
-  @include rem(margin-bottom, $spacing-fixed);
+  @include rem(margin-bottom, $gap-fixed);
   max-width: 100%;
 }
 .caption {
-  @include secondaryfont();
+  @extend %secondaryfont;
   text-align: left;
   @include rem(font-size, 16px);
   @include rem(line-height, 22px);
