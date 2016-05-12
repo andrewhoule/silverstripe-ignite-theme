@@ -23,7 +23,8 @@ var gulp = require('gulp'),
         'assets/img/**/*.jpeg',
         'assets/img/**/*.gif'
       ],
-      icons: 'assets/icons/**/*.svg'
+      icons: 'assets/icons/**/*.svg',
+      templates: 'templates/**/*.ss'
     };
 
 
@@ -66,7 +67,7 @@ gulp.task('images', function() {
     .pipe(livereload());
 });
 
-// Build and Minify SVG Sprite
+/* Build and Minify SVG Sprite */
 
 gulp.task('icons', function () {
   return gulp
@@ -85,6 +86,14 @@ gulp.task('icons', function () {
     .pipe(livereload());
 });
 
+/* Template Tasks */
+
+gulp.task('templates', function() {
+  return gulp
+    .src(paths.templates)
+    .pipe(livereload());
+});
+
 
 /* ==========================================================================
    Watch & Default Stuff
@@ -98,6 +107,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.icons, ['icons']);
+  gulp.watch(paths.templates, ['templates']);
 });
 
 /* Default */
