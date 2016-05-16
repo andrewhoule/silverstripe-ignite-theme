@@ -16,6 +16,6 @@ This is a bare essentials HTML5/SCSS/jQuery responsive theme. It's meant as a st
 ## Installation
 * Download and add to your theme folder. Then rename and point to the new theme.
 * If not setup on your local machine, then setup Bower (http://bower.io/) for frontend dependencies. Update bower.json and run 'bower init' at the command line of the theme directory.
-* Hook up to functionality.js, jquery and respond via SS requirements or in templates.
+* Hook up to functionality.js, jquery, modernizr and respond via SS requirements or in templates.
 * Hook up to normalize and jeet via SASS imports.
 * If not setup on your local machine, then setup Gulp (http://gulpjs.com/) for tasks. Update gulpfile.js and package.json then run 'npm install' at the command line of the theme directory.
