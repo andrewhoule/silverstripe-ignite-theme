@@ -43,7 +43,7 @@
   }
   .flex__items--fill {
     > * {
-      @include flex(1);
+      @include flex(1 0 0);
       white-space: nowrap;
     }
   }
