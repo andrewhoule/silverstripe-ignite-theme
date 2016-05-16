@@ -1,0 +1,135 @@
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */ 
+
+%primaryfont { font-family: arial, helvetica, sans-serif; }
+%secondaryfont { font-family: georgia, times, serif; }
+html { font-size: 100%; /* Document level font size */ }
+body {
+  color: $textcolor;
+  @extend %primaryfont;
+  @include rem(font-size, $base-font-size);
+  @include rem(line-height, $base-font-size * 1.7);
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+p, pre, address { @include rem(margin, 0 0 $gap-fixed 0); }
+h1, h2, h3, h4, h5, h6 {
+  color: $textcolor-medstrong;
+  @extend %secondaryfont;
+  font-weight: 700;
+  @include rem(margin, 0 0 $gap-fixed-sm 0);
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-size: 60%;
+  color: $textcolor-subtle;
+  line-height: 0;
+}
+h1 {
+  @include rem(font-size, 32px);
+  @include rem(line-height, 39px);
+}
+h2 {
+  @include rem(font-size, 26px);
+  @include rem(line-height, 33px);
+}
+h3 {
+  @include rem(font-size, 21px);
+  @include rem(line-height, 28px);
+}
+h4 {
+  @include rem(font-size, 18px);
+  @include rem(line-height, 25px);
+}
+h5 { 
+  @include rem(font-size, 16px);
+  @include rem(line-height, 23px);
+}
+h6 {
+  @include rem(font-size, 14px);
+  @include rem(line-height, 21px);
+}
+a {
+  color: $primarycolor;
+  outline: none;
+  text-decoration: none;
+}
+a:hover { color: $secondarycolor; }
+strong {
+  color: $textcolor-medstrong;
+  font-weight: 700;
+}
+small {
+  color: $textcolor-subtle;
+  @extend %secondaryfont;
+  font-style: italic;
+  @include rem(font-size, $base-font-size * .8);
+}
+code {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-weight: 400;
+  color: $textcolor-subtle;
+}
+.center-text, .text-center, .ct { text-align: center; }
+.right-text, .text-right, .rt { text-align: right; }
+blockquote {
+  border: none;
+  @include rem(margin, 0 0 $gap-fixed-sm 0);
+  @include rem(padding, 5px $gap 0 $gap);
+  @include rem(min-height, 35px);
+  position: relative;
+  z-index: 2;
+  font-style: italic;
+  @extend %secondaryfont;
+  color: $textcolor;
+  @include rem(font-size, 21px);
+  @include rem(line-height, 28px);
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  p { display: inline-block; }
+  p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+blockquote:before, blockquote:after {
+  display: block;
+  @include rem(height, 35px);
+  @include rem(width, 44px);
+  position: absolute;
+  z-index: -1;
+}
+blockquote:before {
+  content: "\201C";
+  @extend %secondaryfont;
+}
+blockquote:after {
+  content: "\201D";
+  @extend %secondaryfont;
+}
+q {
+  font-style: italic;
+  @extend %secondaryfont;
+  font-weight: 400;
+}
+figcaption, cite {
+  color: $textcolor-subtle;
+  @include rem(font-size, 14px);
+  @include rem(line-height, 20px);
+  @extend %primaryfont;
+  font-style: normal;
+  display: block;
+  @include rem(margin, 0 0 $gap-fixed 0);
+  font-weight: 300;
+  text-align: right;
+}
+figcaption:before, cite:before {
+  content: "\2014\00a0";
+  display: inline-block;
+}
+.primary-color { color: $primarycolor; }
+.secondary-color { color: $secondarycolor; }
+.reversed { color: #fff; }
+.allcaps { text-transform: uppercase; }

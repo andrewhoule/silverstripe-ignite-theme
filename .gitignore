@@ -1,8 +1,1 @@
-/assets/*
 .DS_Store
-.sass-cache/
-beam.json
-node_modules/
-sftp-config.json
-silverstripe-cache
-/vendor/

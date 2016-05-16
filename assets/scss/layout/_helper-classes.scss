@@ -1,0 +1,85 @@
+
+/* ==========================================================================
+   Helper Classes
+   ========================================================================== */
+
+.gutter {
+  width: $jeet-gutter + unquote("%");
+}
+.inline {
+  display: inline;
+}
+.circle {
+  @include border-radius(50%);
+}
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+.block__full {
+  display: block;
+  width: 100%;
+}
+.block__full--xs {
+  @include bp(xs) {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Flex Stuff */
+
+.flexbox {
+  .flex {
+    @include display-flex(flex);
+    &--center-y {
+      @include align-items(center);
+    }
+  }
+  .flex__last-item--omega {
+    > *:last-child {
+      margin-left: auto;
+    }
+  }
+  .flex__items--fill {
+    > * {
+      @include flex(1);
+      white-space: nowrap;
+    }
+  }
+}
+.no-flexbox {
+  .flex {
+    display: block;
+    width: 100%;
+    > * {
+      display: inline-block;
+    }
+    &--center-y {
+      > * {
+        vertical-align: middle;
+      }
+    }
+  }
+  .flex__last-item--omega {
+    > *:not(:last-child) {
+      float: left;
+    }
+    > *:last-child {
+      float: right;
+    }
+  }
+}
+
+/* Clearfix */
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

@@ -1,0 +1,56 @@
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  @include rem(font-size, $base-font-size);
+  line-height: 1;
+  @include rem(padding, 7px 15px);
+  color: $textcolor;
+  @include transition-duration($transitionduration);
+}
+.btn__default {
+  background: $offsetcolor-subtle;
+  border: 1px solid $offsetcolor-strong;
+  color: $textcolor;
+  &:hover {
+    background: $offsetcolor;
+  }
+}
+.btn__primary {
+  background: $primarycolor;
+  color: #fff;
+  &:hover {
+    background: $primarycolor-dark;
+  }
+}
+.btn__secondary {
+  background: $secondarycolor;
+  color: #fff;
+  &:hover {
+    background: $secondarycolor-dark;
+  }
+}
+.btn__ghost {
+  border: 1px solid $primarycolor;
+  color: $primarycolor;
+  &:hover {
+    background: $primarycolor;
+    color: #fff;
+    border: 1px solid transparent;
+  }
+}
+.btn--lg {
+  @include rem(font-size, $base-font-size * 1.2);
+}
+.btn--sm {
+  @include rem(font-size, $base-font-size * .8);
+}
