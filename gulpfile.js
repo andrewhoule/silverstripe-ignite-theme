@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     svgmin = require('gulp-svgmin');
     cheerio = require('gulp-cheerio');
     rename = require('gulp-rename');
+    modernizr = require('gulp-modernizr');
     paths = {
       scripts: 'assets/js/**/*.js',
       styles: 'assets/scss/**/*.scss',
@@ -93,6 +94,20 @@ gulp.task('templates', function() {
     .src(paths.templates)
     .pipe(livereload());
 });
+
+/* Customize Modernizr */
+
+gulp.task('modernizr', function() {
+  gulp.src(paths.scripts)
+    .pipe(modernizr({
+      options: [
+        'setClasses',
+        'test/css/flexbox'
+      ]
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest('assets/js'))
+  });
 
 
 /* ==========================================================================

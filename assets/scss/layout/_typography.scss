@@ -71,8 +71,9 @@ code {
   font-weight: 400;
   color: $textcolor-subtle;
 }
-.center-text, .text-center, .ct { text-align: center; }
-.right-text, .text-right, .rt { text-align: right; }
+.text__center { text-align: center; }
+.text__right { text-align: right; }
+.text__left { text-align: left; }
 blockquote {
   border: none;
   @include rem(margin, 0 0 $gap-fixed-sm 0);

@@ -36,6 +36,12 @@
       @include align-items(center);
     }
   }
+  .flex__center-y {
+    @include align-items(center);
+  }
+  .flex__center-x {
+    @include justify-content(center);
+  }
   .flex__last-item--omega {
     > *:last-child {
       margin-left: auto;
@@ -59,6 +65,17 @@
       > * {
         vertical-align: middle;
       }
+    }
+  }
+  .flex__center-y {
+    > * {
+      vertical-align: middle;
+    }
+  }
+  .flex__center-x {
+    text-align: center;
+    > * {
+      display: inline-block;
     }
   }
   .flex__last-item--omega {
