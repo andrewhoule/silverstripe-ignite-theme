@@ -1,136 +1,193 @@
 
-/* ==========================================================================
-   Typography
-   ========================================================================== */ 
+// Typography
 
-%primaryfont { font-family: arial, helvetica, sans-serif; }
-%secondaryfont { font-family: georgia, times, serif; }
-html { font-size: 100%; /* Document level font size */ }
+html {
+  font-size: 100%; // Document level font size
+}
+
 body {
-  color: $textcolor;
-  @extend %primaryfont;
   @include rem(font-size, $base-font-size);
   @include rem(line-height, $base-font-size * 1.7);
+  color: $textcolor;
+  font-family: $primary-font;
   font-weight: 400;
   text-rendering: optimizeLegibility;
 }
-p, pre, address { @include rem(margin, 0 0 $gap-fixed 0); }
-h1, h2, h3, h4, h5, h6 {
-  color: $textcolor-medstrong;
-  @extend %secondaryfont;
-  font-weight: 700;
+
+p,
+pre,
+address {
+  @include rem(margin, 0 0 $gap-fixed 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @include rem(margin, 0 0 $gap-fixed-sm 0);
+  color: $textcolor-medstrong;
+  font-family: $secondary-font;
+  font-weight: 700;
+
+  small {
+    color: $textcolor-subtle;
+    font-size: 60%;
+  }
 }
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  font-size: 60%;
-  color: $textcolor-subtle;
-  line-height: 0;
-}
+
 h1 {
   @include rem(font-size, 32px);
   @include rem(line-height, 39px);
 }
+
 h2 {
   @include rem(font-size, 26px);
   @include rem(line-height, 33px);
 }
+
 h3 {
   @include rem(font-size, 21px);
   @include rem(line-height, 28px);
 }
+
 h4 {
   @include rem(font-size, 18px);
   @include rem(line-height, 25px);
 }
-h5 { 
+
+h5 {
   @include rem(font-size, 16px);
   @include rem(line-height, 23px);
 }
+
 h6 {
   @include rem(font-size, 14px);
   @include rem(line-height, 21px);
 }
+
 a {
   color: $primarycolor;
   outline: none;
   text-decoration: none;
+
+  &:hover {
+    color: $secondarycolor;
+  }
 }
-a:hover { color: $secondarycolor; }
+
 strong {
   color: $textcolor-medstrong;
   font-weight: 700;
 }
+
 small {
-  color: $textcolor-subtle;
-  @extend %secondaryfont;
-  font-style: italic;
   @include rem(font-size, $base-font-size * .8);
-}
-code {
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: 400;
   color: $textcolor-subtle;
+  font-family: $secondaryfont;
+  font-style: italic;
 }
-.text__center { text-align: center; }
-.text__right { text-align: right; }
-.text__left { text-align: left; }
+
+code {
+  color: $textcolor-subtle;
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  font-weight: 400;
+}
+
+.text__center {
+  text-align: center;
+}
+
+.text__right {
+  text-align: right;
+}
+
+.text__left {
+  text-align: left;
+}
+
 blockquote {
-  border: none;
   @include rem(margin, 0 0 $gap-fixed-sm 0);
   @include rem(padding, 5px $gap 0 $gap);
   @include rem(min-height, 35px);
-  position: relative;
-  z-index: 2;
-  font-style: italic;
-  @extend %secondaryfont;
-  color: $textcolor;
   @include rem(font-size, 21px);
   @include rem(line-height, 28px);
+  border: 0;
+  color: $textcolor;
+  font-family: $secondary-font;
+  font-style: italic;
   font-weight: 400;
+  position: relative;
   text-align: center;
   width: 100%;
-  p { display: inline-block; }
-  p:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  z-index: 2;
+
+  p {
+    display: inline-block;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+  }
+
+  &:before,
+  &:after {
+    @include rem(height, 35px);
+    @include rem(width, 44px);
+    display: block;
+    font-family: $secondary-font;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &:before {
+    content: '\201C';
+  }
+
+  &:after {
+    content: '\201D';
   }
 }
-blockquote:before, blockquote:after {
-  display: block;
-  @include rem(height, 35px);
-  @include rem(width, 44px);
-  position: absolute;
-  z-index: -1;
-}
-blockquote:before {
-  content: "\201C";
-  @extend %secondaryfont;
-}
-blockquote:after {
-  content: "\201D";
-  @extend %secondaryfont;
-}
+
 q {
+  font-family: $secondaryfont;
   font-style: italic;
-  @extend %secondaryfont;
   font-weight: 400;
 }
-figcaption, cite {
-  color: $textcolor-subtle;
+
+figcaption,
+cite {
   @include rem(font-size, 14px);
   @include rem(line-height, 20px);
-  @extend %primaryfont;
-  font-style: normal;
-  display: block;
   @include rem(margin, 0 0 $gap-fixed 0);
+  color: $textcolor-subtle;
+  display: block;
+  font-family: $primary-font;
+  font-style: normal;
   font-weight: 300;
   text-align: right;
+
+  &:before {
+    content: '\2014\00a0';
+    display: inline-block;
+  }
 }
-figcaption:before, cite:before {
-  content: "\2014\00a0";
-  display: inline-block;
+
+.primary-color {
+  color: $primarycolor;
 }
-.primary-color { color: $primarycolor; }
-.secondary-color { color: $secondarycolor; }
-.reversed { color: #fff; }
-.allcaps { text-transform: uppercase; }
+
+.secondary-color {
+  color: $secondarycolor;
+}
+
+.reversed {
+  color: $white;
+}
+
+.all-caps {
+  text-transform: uppercase;
+}

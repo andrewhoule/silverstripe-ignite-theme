@@ -1,9 +1,7 @@
 
-/* ==========================================================================
-  Settings
-   ========================================================================== */ 
+// Settings
 
-/* Colors */
+// Colors
 
 $primarycolor: #444;
 $primarycolor-dark: darken($primarycolor, 6%);
@@ -33,14 +31,14 @@ $textcolor-reversed-verystrong: lighten($textcolor-reversed, 30%);
 $textcolor-reversed-subtle: darken($textcolor-reversed, 10%);
 $textcolor-reversed-medsubtle: darken($textcolor-reversed, 25%);
 $textcolor-reversed-verysubtle: darken($textcolor-reversed, 40%);
-$offsetcolor: #cccccc;
+$offsetcolor: #ccc;
 $offsetcolor-subtle: lighten($offsetcolor, 5%);
 $offsetcolor-medsubtle: lighten($offsetcolor, 10%);
 $offsetcolor-verysubtle: lighten($offsetcolor, 20%);
 $offsetcolor-strong: darken($offsetcolor, 10%);
 $offsetcolor-medstrong: darken($offsetcolor, 20%);
 $offsetcolor-verystrong: darken($offsetcolor, 30%);
-$darkcolor: #222222;
+$darkcolor: #222;
 $darkcolor-light: lighten($darkcolor, 10%);
 $darkcolor-medlight: lighten($darkcolor, 20%);
 $darkcolor-verylight: lighten($darkcolor, 30%);
@@ -61,11 +59,12 @@ $successcolor-verydark: darken($successcolor, 30%);
 $successcolor-light: lighten($successcolor, 20%);
 $successcolor-medlight: lighten($successcolor, 35%);
 $successcolor-verylight: lighten($successcolor, 55%);
+$white: #fff;
 
-/* Functionality / Structure */
+// Functionality / Structure
 
 $transitionduration: .4s;
-$borderradius: 0.1875rem;
+$borderradius: .1875rem;
 $gap: 5%;
 $gap-xs: $gap * .5;
 $gap-sm: $gap * .75;
@@ -75,10 +74,12 @@ $gap-fixed: 30px;
 $gap-fixed-xs: $gap-fixed * .4;
 $gap-fixed-sm: $gap-fixed * .7;
 $gap-fixed-lg: $gap-fixed * 1.5;
-$gap-fixed-xl: $gap-fixed * 2.0;
+$gap-fixed-xl: $gap-fixed * 2;
 $maxwidth: 1200px;
 $maxwidth-xs: $maxwidth * .4;
 $maxwidth-sm: $maxwidth * .8;
 $maxwidth-lg: $maxwidth * 1.2;
 $maxwidth-xl: $maxwidth * 1.4;
 $base-font-size: 16px;
+$primary-font: 'font-family: arial, helvetica, sans-serif';
+$secondary-font: 'font-family: georgia, times, serif';

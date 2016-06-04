@@ -1,0 +1,27 @@
+
+// Login Page
+
+#ForgotPassword {
+  @include rem(padding, 4px 0 0 $gap-fixed-xs);
+  color: $textcolor-subtle;
+  float: left;
+
+  &:before {
+    content: 'or ';
+  }
+}
+
+#MemberLoginForm_LoginForm_action_dologin {
+  float: left;
+}
+
+#MemberLoginForm_LoginForm {
+  text-align: center;
+
+  label {
+    &.left {
+      display: block;
+      text-align: left;
+    }
+  }
+}

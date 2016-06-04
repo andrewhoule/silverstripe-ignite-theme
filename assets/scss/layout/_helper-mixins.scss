@@ -1,7 +1,5 @@
 
-/* ==========================================================================
-   Helper Mixins
-   ========================================================================== */ 
+// Helper Mixins
 
 @function _true-is-equal($one, $two) {
   @if type-of($one) == number and type-of($two) == number {
@@ -14,6 +12,7 @@
     @return $one == $two;
   }
 }
+
 @mixin rem($property, $values) {
   $font-size: $base-font-size;
   $px-values: ();
@@ -25,27 +24,30 @@
     } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
       $new-rem-value: $value / $font-size;
       $px-values: join($px-values, round($value));
-      $rem-values: join($rem-values, unquote("#{$new-rem-value}rem"));
-    } @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
-      $px-values: join($px-values, unquote("#{$value}"));
-      $rem-values: join($rem-values, unquote("#{$value}"));
+      $rem-values: join($rem-values, unquote('#{$new-rem-value}rem'));
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == '%') {
+      $px-values: join($px-values, unquote('#{$value}'));
+      $rem-values: join($rem-values, unquote('#{$value}'));
     } @else if $value == auto {
       $px-values: join($px-values, auto);
       $rem-values: join($rem-values, auto);
     } @else {
       $px-values: join($px-values, round($value * $font-size));
-      $rem-values: join($rem-values, unquote("#{$value}rem"));
+      $rem-values: join($rem-values, unquote('#{$value}rem'));
     }
   }
   #{$property}: $px-values;
   #{$property}: $rem-values;
 }
+
 @function solid-lighten($color, $percentage) {
   @return lighten($color, (1-$percentage)*5%);
 }
+
 @function solid-darken($color, $percentage) {
   @return darken($color, (1-$percentage)*5%);
 }
+
 @mixin rgba($type, $color, $percentage, $shade: ligthen) {
   @if $shade == lighten {
     @if $type == color {
@@ -56,9 +58,8 @@
       background-color: solid-lighten($color, $percentage);
       background-color: rgba($color, $percentage);
     }
-  }
-  @else {
-     @if $type == color {
+  } @else {
+    @if $type == color {
       color: solid-darken($color, $percentage);
       color: rgba($color, $percentage);
     }
@@ -68,70 +69,69 @@
     }
   }
 }
+
 @mixin circle {
   @include border-radius(50%);
 }
+
 @mixin opacity($opacity) {
-  opacity: $opacity;
   filter: alpha(opacity=($opacity * 100));
+  opacity: $opacity;
 }
-@mixin absolutecenter($axis: "both"){
-  position:absolute;
-  @if $axis == "y"{
-    top:50%;
+
+@mixin absolutecenter($axis: 'both') {
+  position: absolute;
+  @if $axis == 'y' {
     @include translateY(-50%);
+    top: 50%;
   }
-  @if $axis == "x"{
-    left:50%;
+  @if $axis == 'x' {
     @include translateX(-50%);
+    left: 50%;
   }
-  @if $axis == "both"{
-    top:50%;
-    left:50%;
-    @include translate(-50%,-50%);
+  @if $axis == 'both' {
+    @include translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
   }
 }
+
 @mixin ctr($args...) {
   @include absolutecenter($args...);
 }
-@mixin unabsolutecenter() {
+
+@mixin unabsolutecenter {
+  @include translate(0, 0);
+  left: inherit;
   position: inherit;
   top: inherit;
-  left: inherit;
-  @include translate(0,0);
 }
+
 @mixin unctr($args...) {
   @include unabsolutecenter($args...);
 }
-@mixin triangle($direction, $size: 0.375rem, $color: #222){
+
+@mixin triangle($direction, $size: .375rem, $color: #222) {
   content: '';
   display: block;
+  height: 0;
   position: absolute;
-  height: 0; width: 0;
-  @if ($direction == 'up'){
+  width: 0;
+  @if ($direction == 'up') {
     border-bottom: $size solid $color;
     border-left: $size solid transparent;
     border-right: $size solid transparent;
-  }
-  @else if ($direction == 'down'){
-    border-top: $size solid $color;
+  } @else if ($direction == 'down') {
     border-left: $size solid transparent;
     border-right: $size solid transparent;
-  }
-  @else if ($direction == 'left'){
-    border-top: $size solid transparent;
+    border-top: $size solid $color;
+  } @else if ($direction == 'left') {
     border-bottom: $size solid transparent;
     border-right: $size solid $color;
-  }
-  @else if ($direction == 'right'){
     border-top: $size solid transparent;
+  } @else if ($direction == 'right') {
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
+    border-top: $size solid transparent;
   }
-}
-@mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &:-moz-placeholder {@content}
-  &::-moz-placeholder {@content}
-  &:-ms-input-placeholder {@content}  
 }

@@ -1,25 +1,28 @@
 
-/* ==========================================================================
-   Helper Classes
-   ========================================================================== */
+// Helper Classes
 
 .gutter {
-  width: $jeet-gutter + unquote("%");
+  width: $jeet-gutter + unquote('%');
 }
+
 .inline {
   display: inline;
 }
+
 .circle {
-  @include border-radius(50%);
+  @include circle;
 }
+
 .no-scroll {
   height: 100%;
   overflow: hidden;
 }
+
 .block__full {
   display: block;
   width: 100%;
 }
+
 .block__full--xs {
   @include bp(xs) {
     display: block;
@@ -27,26 +30,33 @@
   }
 }
 
-/* Flex Stuff */
+// Flex Stuff
 
 .flexbox {
   .flex {
     @include display-flex(flex);
+
     &--center-y {
       @include align-items(center);
     }
   }
+
   .flex__center-y {
     @include align-items(center);
   }
+
   .flex__center-x {
     @include justify-content(center);
   }
+
   .flex__last-item--omega {
-    > *:last-child {
-      margin-left: auto;
+    > * {
+      &:last-child {
+        margin-left: auto;
+      }
     }
   }
+
   .flex__items--fill {
     > * {
       @include flex(1 0 0);
@@ -54,48 +64,61 @@
     }
   }
 }
+
 .no-flexbox {
   .flex {
     display: block;
     width: 100%;
+
     > * {
       display: inline-block;
     }
+
     &--center-y {
       > * {
         vertical-align: middle;
       }
     }
   }
+
   .flex__center-y {
     > * {
       vertical-align: middle;
     }
   }
+
   .flex__center-x {
     text-align: center;
+
     > * {
       display: inline-block;
     }
   }
+
   .flex__last-item--omega {
-    > *:not(:last-child) {
-      float: left;
-    }
-    > *:last-child {
-      float: right;
+    > * {
+      &:not(:last-child) {
+        float: left;
+      }
+
+      &:last-child {
+        float: right;
+      }
     }
   }
 }
 
-/* Clearfix */
+// Clearfix
 
 %clearfix {
   *zoom: 1;
-  &:before, &:after {
+
+  &:before,
+  &:after {
     content: '';
     display: table;
   }
+
   &:after {
     clear: both;
   }

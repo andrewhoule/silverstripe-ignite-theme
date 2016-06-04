@@ -15,6 +15,7 @@ var gulp = require('gulp'),
     cheerio = require('gulp-cheerio');
     rename = require('gulp-rename');
     modernizr = require('gulp-modernizr');
+    sasslint = require('gulp-sass-lint');
     paths = {
       scripts: 'assets/js/**/*.js',
       styles: 'assets/scss/**/*.scss',
@@ -95,6 +96,16 @@ gulp.task('templates', function() {
     .pipe(livereload());
 });
 
+/* SASS Lint Task */
+
+gulp.task('sasslint', function() {
+  return gulp
+    .src(paths.styles)
+    .pipe(sasslint({ options: { 'config-file': '.sass-lint.yml' } }))
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError());
+});
+
 /* Customize Modernizr */
 
 gulp.task('modernizr', function() {
@@ -118,6 +129,7 @@ gulp.task('modernizr', function() {
 
 gulp.task('watch', function() {
   livereload.listen();
+  gulp.watch(paths.styles, ['styles','sasslint']);
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.images, ['images']);

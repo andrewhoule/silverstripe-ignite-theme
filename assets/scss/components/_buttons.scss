@@ -1,56 +1,64 @@
 
-/* ==========================================================================
-   Buttons
-   ========================================================================== */
+// Buttons
 
 .btn {
+  @include rem(font-size, $base-font-size);
+  @include rem(padding, 7px 15px);
+  @include transition-duration($transitionduration);
+  border: 1px solid transparent;
+  color: $textcolor;
   cursor: pointer;
   display: inline-block;
+  line-height: 1;
   margin-bottom: 0;
   text-align: center;
   vertical-align: middle;
-  border: 1px solid transparent;
   white-space: nowrap;
-  @include rem(font-size, $base-font-size);
-  line-height: 1;
-  @include rem(padding, 7px 15px);
-  color: $textcolor;
-  @include transition-duration($transitionduration);
-}
-.btn__default {
-  background: $offsetcolor-subtle;
-  border: 1px solid $offsetcolor-strong;
-  color: $textcolor;
-  &:hover {
-    background: $offsetcolor;
+
+  &__default {
+    background: $offsetcolor-subtle;
+    border: 1px solid $offsetcolor-strong;
+    color: $textcolor;
+
+    &:hover {
+      background: $offsetcolor;
+    }
   }
-}
-.btn__primary {
-  background: $primarycolor;
-  color: #fff;
-  &:hover {
-    background: $primarycolor-dark;
-  }
-}
-.btn__secondary {
-  background: $secondarycolor;
-  color: #fff;
-  &:hover {
-    background: $secondarycolor-dark;
-  }
-}
-.btn__ghost {
-  border: 1px solid $primarycolor;
-  color: $primarycolor;
-  &:hover {
+
+  &__primary {
     background: $primarycolor;
-    color: #fff;
-    border: 1px solid transparent;
+    color: $white;
+
+    &:hover {
+      background: $primarycolor-dark;
+    }
   }
-}
-.btn--lg {
-  @include rem(font-size, $base-font-size * 1.2);
-}
-.btn--sm {
-  @include rem(font-size, $base-font-size * .8);
+
+  &__secondary {
+    background: $secondarycolor;
+    color: $white;
+
+    &:hover {
+      background: $secondarycolor-dark;
+    }
+  }
+
+  &__ghost {
+    border: 1px solid $primarycolor;
+    color: $primarycolor;
+
+    &:hover {
+      background: $primarycolor;
+      border: 1px solid transparent;
+      color: $white;
+    }
+  }
+
+  &--lg {
+    @include rem(font-size, $base-font-size * 1.2);
+  }
+
+  &--sm {
+    @include rem(font-size, $base-font-size * .8);
+  }
 }

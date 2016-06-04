@@ -1,7 +1,5 @@
 
-/* ==========================================================================
-   Pagination
-   ========================================================================== */
+// Pagination
 
 .pagination {
   @extend %clearfix;
@@ -10,26 +8,32 @@
   @include rem(margin, $gap-fixed-lg 0 ($gap-fixed-lg - 6px) 0);
   overflow: hidden;
   padding: 0;
+
   li {
+    @include rem(margin, 0 2px 6px 0);
     display: inline-block;
     list-style: none;
-    @include rem(margin, 0 2px 6px 0);
     padding: 0;
-    &.active a {
-      background: $primarycolor;
-      color: #fff;
+
+    &.active {
+      a {
+        background: $primarycolor;
+        color: $white;
+      }
     }
   }
+
   a {
-    background: $primarycolor;
-    display: block;
     @include rem(padding, 6px 12px);
-    text-decoration: none;
-    color: $textcolor-subtle;
     @include border-radius(3px);
     @include transition-duration($transitionduration);
+    background: $primarycolor;
+    color: $textcolor-subtle;
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+      color: $textcolor-medstrong;
+    }
   }
-  a:hover {
-    color: $textcolor-medstrong;
-  }
-} 
+}

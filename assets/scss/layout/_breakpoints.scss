@@ -1,22 +1,16 @@
 
-/* ==========================================================================
-   Breakpoints
-   ========================================================================== */
+// Breakpoints
 
 @mixin bp($point) {
   @if $point == xl { // 1050px
     @media (max-width: 65.625rem) { @content; }
-  }
-  @else if $point == lg { // 900px
+  } @else if $point == lg { // 900px
     @media (max-width: 56.25rem) { @content; }
-  }
-  @else if $point == md { // 768px
+  } @else if $point == md { // 768px
     @media (max-width: 48rem)  { @content; }
-  }
-  @else if $point == sm { // 600px
+  } @else if $point == sm { // 600px
     @media (max-width: 37.5rem)  { @content; }
-  }
-  @else if $point == xs { // 400px
+  } @else if $point == xs { // 400px
     @media (max-width: 25rem)  { @content; }
   }
 }
