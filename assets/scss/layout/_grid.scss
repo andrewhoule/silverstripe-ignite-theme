@@ -55,7 +55,7 @@
       @include stack;
 
       &:not(:last-child) {
-        @include rem(margin-bottom, $spacing-fixed-sm);
+        @include rem(margin-bottom, $gap-fixed-sm);
       }
     }
   }
