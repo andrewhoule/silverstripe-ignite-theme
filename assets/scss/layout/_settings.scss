@@ -81,5 +81,5 @@ $maxwidth-sm: $maxwidth * .8;
 $maxwidth-lg: $maxwidth * 1.2;
 $maxwidth-xl: $maxwidth * 1.4;
 $base-font-size: 16px;
-$primary-font: 'font-family: arial, helvetica, sans-serif';
-$secondary-font: 'font-family: georgia, times, serif';
+$primary-font: unquote('arial, helvetica, sans-serif');
+$secondary-font: unquote('georgia, times, serif');
