@@ -160,19 +160,10 @@ select {
     width: 100%;
   }
 
-  &.checkbox {
-    input {
-      &.checkbox {
-        @include rem(margin, 6px 6px 0 0);
-        float: left;
-      }
-    }
-
-    label {
-      &.right {
-        float: left;
-      }
-    }
+  &.checkboxset,
+  &.optionset {
+    @extend %clearfix;
+    width: 100%;
   }
 
   &.mathspamprotector {
@@ -187,23 +178,32 @@ select {
   }
 }
 
-.optionset,
-.checkboxset {
-  @include rem(padding, 0 $gap-fixed-xs $gap-fixed-sm $gap-fixed-xs);
-  clear: both;
-  display: block;
-  width: 100%;
-
-  li {
-    list-style: none;
-  }
-
-  input {
-    @include rem(margin, 4px $gap-fixed-xs 0 0);
-    border: 0;
+ul {
+  &.optionset,
+  &.checkboxset {
+    @extend %clearfix;
+    @include rem(padding, 0 0 $gap-fixed-sm 0);
     display: block;
-    float: left;
-    padding: 0;
+    width: 100%;
+
+    li {
+      list-style: none;
+    }
+
+    input {
+      @include rem(margin, 4px 8px 0 0);
+      border: 0;
+      display: block;
+      float: left;
+      padding: 0;
+      width: auto;
+    }
+
+    label {
+      &.right {
+        float: left;
+      }
+    }
   }
 }
 
