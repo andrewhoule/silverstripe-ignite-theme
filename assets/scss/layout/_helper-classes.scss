@@ -35,10 +35,6 @@
 .flexbox {
   .flex {
     @include display-flex(flex);
-
-    &--center-y {
-      @include align-items(center);
-    }
   }
 
   .flex__center-y {
@@ -49,7 +45,7 @@
     @include justify-content(center);
   }
 
-  .flex__last-item--omega {
+  .flex__push-last {
     > * {
       &:last-child {
         margin-left: auto;
@@ -57,7 +53,7 @@
     }
   }
 
-  .flex__items--fill {
+  .flex__items-fill {
     > * {
       @include flex(1 0 0);
       white-space: nowrap;
@@ -72,12 +68,6 @@
 
     > * {
       display: inline-block;
-    }
-
-    &--center-y {
-      > * {
-        vertical-align: middle;
-      }
     }
   }
 
@@ -95,7 +85,7 @@
     }
   }
 
-  .flex__last-item--omega {
+  .flex__push-last {
     > * {
       &:not(:last-child) {
         float: left;
@@ -113,13 +103,13 @@
 %clearfix {
   *zoom: 1;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     display: table;
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }

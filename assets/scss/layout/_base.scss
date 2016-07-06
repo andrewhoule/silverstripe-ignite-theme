@@ -10,20 +10,16 @@ html {
 * {
   @include box-sizing(inherit);
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     @include box-sizing(inherit);
   }
 }
 
 // Vanity Styles
 
+::-moz-selection
 ::selection {
-  background: $primarycolor;
-  color: $white;
-}
-
-::-moz-selection {
   background: $primarycolor;
   color: $white;
 }
@@ -71,7 +67,7 @@ table {
     border-bottom: 1px solid $primarycolor-dark;
     border-right: 1px solid $primarycolor-dark;
     color: $white;
-    font-family: $secondary-font;
+    font-family: $serif-font;
     font-weight: 700;
     text-align: left;
 
@@ -232,7 +228,7 @@ img {
 .caption {
   @include rem(font-size, 16px);
   @include rem(line-height, 22px);
-  font-family: $secondary-font;
+  font-family: $serif-font;
   margin: 0;
   text-align: left;
   width: 100%;

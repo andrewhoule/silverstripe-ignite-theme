@@ -63,8 +63,8 @@ $white: #fff;
 
 // Functionality / Structure
 
-$transitionduration: .4s;
-$borderradius: .1875rem;
+$transition-duration: .4s;
+$border-radius: 5px;
 $gap: 5%;
 $gap-xs: $gap * .5;
 $gap-sm: $gap * .75;
@@ -81,5 +81,5 @@ $maxwidth-sm: $maxwidth * .8;
 $maxwidth-lg: $maxwidth * 1.2;
 $maxwidth-xl: $maxwidth * 1.4;
 $base-font-size: 16px;
-$primary-font: unquote('arial, helvetica, sans-serif');
-$secondary-font: unquote('georgia, times, serif');
+$sans-serif-font: unquote('arial, helvetica, sans-serif');
+$serif-font: unquote('georgia, times, serif');

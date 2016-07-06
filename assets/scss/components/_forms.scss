@@ -10,7 +10,7 @@
   background: $offsetcolor;
   border: 1px solid $offsetcolor-verystrong;
   color: $textcolor;
-  font-family: $primary-font;
+  font-family: $sans-serif-font;
   height: auto;
   margin: 0;
   outline: none;
@@ -28,7 +28,7 @@
   @include rem(padding, 0 0 $gap-fixed-xs 0);
   clear: both;
   color: $textcolor-strong;
-  font-family: $primary-font;
+  font-family: $sans-serif-font;
   font-weight: 700;
   margin: 0;
 }
@@ -46,6 +46,10 @@ form {
         @include rem(line-height, 21px);
         font-weight: 400;
       }
+    }
+
+    &.right {
+      @include rem(font-size, 16px);
     }
   }
 
@@ -96,6 +100,7 @@ fieldset {
   &.form-step {
     margin: 0;
     padding: 0;
+    width: 100%;
   }
 }
 
@@ -111,6 +116,12 @@ input {
 
   &:focus {
     @include input-focus-styles;
+  }
+
+  &.checkbox {
+    @include rem(margin-right, 10px);
+    float: left;
+    width: inherit;
   }
 }
 
@@ -244,7 +255,7 @@ label {
 .mathspamprotector {
   label {
     &.left {
-      &:after {
+      &::after {
         color: $alertcolor;
         content: ' *';
         font-weight: 400;
@@ -266,7 +277,7 @@ label {
   text-align: center;
   width: 100%;
 
-  &:before {
+  &::before {
     @include ctr(x);
     @include rem(top, -9px);
     @include rem(margin-left, -9px);
