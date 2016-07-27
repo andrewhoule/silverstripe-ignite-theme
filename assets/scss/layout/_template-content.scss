@@ -1,0 +1,192 @@
+
+.template-content {
+
+  strong {
+    color: $textcolor-medstrong;
+  }
+
+  // List Styles
+
+  ul,
+  ol {
+    @include rem(margin, 0 0 $gap $gap-lg);
+    padding: 0;
+
+    > li {
+      @include rem(margin-bottom, 5px);
+      list-style-position: outside;
+
+      > ul,
+      > ol {
+        @include rem(margin-top, 10px);
+      }
+    }
+  }
+
+  ul {
+    > li {
+      list-style: disc;
+    }
+  }
+
+  ol > {
+    li {
+      list-style: decimal;
+    }
+  }
+
+  // Table Styles
+
+  table {
+    @include rem(margin, 0 0 $gap 0);
+    border: 0;
+    width: 100%;
+
+    th {
+      @include rem(padding, 10px 15px);
+      background: $primarycolor;
+      border-bottom: 1px solid $primarycolor-dark;
+      border-right: 1px solid $primarycolor-dark;
+      color: $white;
+      font-family: $secondary-font;
+      font-weight: 700;
+      text-align: left;
+
+      a {
+        color: $white;
+
+        &:hover {
+          color: $primarycolor-verylight;
+          text-decoration: underline;
+        }
+      }
+
+      small {
+        color: $primarycolor-verylight;
+      }
+    }
+
+    tbody {
+      th {
+        background: $offsetcolor-subtle;
+        border-bottom: 1px solid $offsetcolor-strong;
+        border-right: 0;
+        color: $textcolor;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    tr {
+      td {
+        @include rem(padding, 10px 15px);
+        border-bottom: 1px solid $offsetcolor;
+        color: $textcolor;
+        vertical-align: top;
+      }
+
+      &:nth-child(even) {
+        background: $offsetcolor-verysubtle;
+      }
+
+      &:nth-child(odd) {
+        background: $white;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    ul {
+      @include rem(margin, 2px 0 0 0);
+      padding: 0;
+
+      li {
+        @include rem(margin, 0 0 3px 0);
+        list-style-type: none;
+        padding: 0;
+      }
+    }
+
+    tfoot {
+      td {
+        background: $darkcolor;
+        color: $textcolor-reversed;
+      }
+    }
+  }
+
+  // Quote Styles
+
+  blockquote {
+    @include rem(margin, 0 0 $gap-sm 0);
+    @include rem(padding, 5px $gap 0 $gap);
+    @include rem(min-height, 35px);
+    @include rem(font-size, 21px);
+    @include rem(line-height, 28px);
+    border: 0;
+    color: $textcolor;
+    font-family: $serif-font;
+    font-style: italic;
+    font-weight: 400;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+
+    p {
+      display: inline-block;
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+    }
+
+    &::before,
+    &::after {
+      @include rem(height, 35px);
+      @include rem(width, 44px);
+      display: block;
+      font-family: $serif-font;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      content: '\201C';
+    }
+
+    &::after {
+      content: '\201D';
+    }
+  }
+
+  q {
+    font-family: $serif-font;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  figcaption,
+  cite {
+    @include rem(font-size, 14px);
+    @include rem(line-height, 20px);
+    @include rem(margin, 0 0 $gap 0);
+    color: $textcolor-subtle;
+    display: block;
+    font-family: $sans-serif-font;
+    font-style: normal;
+    font-weight: 300;
+    text-align: right;
+
+    &::before {
+      content: '\2014\00a0';
+      display: inline-block;
+    }
+  }
+}

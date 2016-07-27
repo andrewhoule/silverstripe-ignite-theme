@@ -39,7 +39,7 @@ $(document).ready(function(){
    ========================================================================== */
 
 (function($) {
-  $( 'p:empty' ).remove();
+  $('p:empty').remove();
 })(jQuery);
 
 

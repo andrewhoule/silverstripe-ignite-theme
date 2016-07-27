@@ -1,8 +1,48 @@
 
-// Helper Classes
+// Typography Classes
 
-.gutter {
-  width: $jeet-gutter + unquote('%');
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-reversed {
+  color: $white;
+}
+
+.primary-color {
+  color: $primarycolor;
+}
+
+.secondary-color {
+  color: $secondarycolor;
+}
+
+.all-caps {
+  text-transform: uppercase;
+}
+
+// Structural Classes
+
+%clearfix {
+  *zoom: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
 }
 
 .inline {
@@ -18,34 +58,22 @@
   overflow: hidden;
 }
 
-.block__full {
-  display: block;
-  width: 100%;
-}
-
-.block__full--xs {
-  @include bp(xs) {
-    display: block;
-    width: 100%;
-  }
-}
-
-// Flex Stuff
+// Flex Classes
 
 .flexbox {
   .flex {
     @include display-flex(flex);
   }
 
-  .flex__center-y {
+  .flex--center-y {
     @include align-items(center);
   }
 
-  .flex__center-x {
+  .flex--center-x {
     @include justify-content(center);
   }
 
-  .flex__push-last {
+  .flex--push-last {
     > * {
       &:last-child {
         margin-left: auto;
@@ -53,7 +81,7 @@
     }
   }
 
-  .flex__items-fill {
+  .flex--items-fill {
     > * {
       @include flex(1 0 0);
       white-space: nowrap;
@@ -71,13 +99,13 @@
     }
   }
 
-  .flex__center-y {
+  .flex--center-y {
     > * {
       vertical-align: middle;
     }
   }
 
-  .flex__center-x {
+  .flex--center-x {
     text-align: center;
 
     > * {
@@ -85,7 +113,7 @@
     }
   }
 
-  .flex__push-last {
+  .flex--push-last {
     > * {
       &:not(:last-child) {
         float: left;
@@ -95,21 +123,5 @@
         float: right;
       }
     }
-  }
-}
-
-// Clearfix
-
-%clearfix {
-  *zoom: 1;
-
-  &::before,
-  &::after {
-    content: '';
-    display: table;
-  }
-
-  &::after {
-    clear: both;
   }
 }

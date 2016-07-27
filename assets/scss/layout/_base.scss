@@ -1,6 +1,4 @@
 
-// Base
-
 // Border Box for all
 
 html {
@@ -10,146 +8,35 @@ html {
 * {
   @include box-sizing(inherit);
 
-  &::before,
-  &::after {
+  &:before,
+  &:after {
     @include box-sizing(inherit);
   }
 }
 
 // Vanity Styles
 
-::-moz-selection
 ::selection {
   background: $primarycolor;
   color: $white;
 }
 
-// Base Lists
+::-moz-selection {
+  background: $primarycolor;
+  color: $white;
+}
+
+// Base List Styles
 
 ul,
 ol {
-  @include rem(margin, 0 0 $gap-fixed $gap-fixed-lg);
+  margin: 0;
   padding: 0;
 
   > li {
-    @include rem(margin-bottom, 5px);
-    list-style-position: outside;
-
-    > ul,
-    > ol {
-      @include rem(margin-top, 10px);
-    }
+    list-style: none;
   }
 }
-
-ul {
-  > li {
-    list-style: disc;
-  }
-}
-
-ol > {
-  li {
-    list-style: decimal;
-  }
-}
-
-// Base Table Styles
-
-table {
-  @include rem(margin, 0 0 $gap-fixed 0);
-  border: 0;
-  width: 100%;
-
-  th {
-    @include rem(padding, 10px 15px);
-    background: $primarycolor;
-    border-bottom: 1px solid $primarycolor-dark;
-    border-right: 1px solid $primarycolor-dark;
-    color: $white;
-    font-family: $serif-font;
-    font-weight: 700;
-    text-align: left;
-
-    a {
-      color: $white;
-
-      &:hover {
-        color: $primarycolor-verylight;
-        text-decoration: underline;
-      }
-    }
-
-    small {
-      color: $primarycolor-verylight;
-    }
-  }
-
-  tbody {
-    th {
-      background: $offsetcolor-subtle;
-      border-bottom: 1px solid $offsetcolor-strong;
-      border-right: 0;
-      color: $textcolor;
-
-      &:last-child {
-        border-right: 0;
-      }
-    }
-  }
-
-  tr {
-    td {
-      @include rem(padding, 10px 15px);
-      border-bottom: 1px solid $offsetcolor;
-      color: $textcolor;
-      vertical-align: top;
-    }
-
-    &:nth-child(even) {
-      background: $offsetcolor-verysubtle;
-    }
-
-    &:nth-child(odd) {
-      background: $white;
-    }
-
-    &:last-child {
-      border-bottom: 0;
-    }
-  }
-
-  ul {
-    @include rem(margin, 2px 0 0 0);
-    padding: 0;
-
-    li {
-      @include rem(margin, 0 0 3px 0);
-      list-style-type: none;
-      padding: 0;
-    }
-  }
-
-  tfoot {
-    td {
-      background: $darkcolor;
-      color: $textcolor-reversed;
-    }
-  }
-}
-
-// Breaks
-
-hr {
-  @extend %clearfix;
-  @include rem(margin, $gap-fixed 0);
-  background: $offsetcolor;
-  border: 0;
-  display: block;
-  height: 1px;
-  width: 100%;
-}
-
 
 // Embeds
 
@@ -157,7 +44,6 @@ object,
 embed {
   height: 100%;
 }
-
 
 // Base Image Styles / SS Image Styles
 
@@ -168,34 +54,34 @@ img {
   max-width: 100%;
 
   &.left {
-    @include rem(margin, 0 $gap-fixed $gap-fixed 0);
+    @include rem(margin, 0 $gap $gap 0);
     float: left;
   }
 
   &.right {
-    @include rem(margin, 0 0 $gap-fixed $gap-fixed);
+    @include rem(margin, 0 0 $gap $gap);
     float: right;
   }
 
   &.leftAlone,
   &.left-alone {
-    @include rem(margin, 0 0 $gap-fixed 0);
+    @include rem(margin, 0 0 $gap 0);
     display: block;
     float: none;
   }
 
   &.center {
-    @include rem(margin, 0 auto $gap-fixed auto);
+    @include rem(margin, 0 auto $gap auto);
     display: block;
   }
 }
 
 .captionImage {
-  @include rem(margin-bottom, $gap-fixed);
+  @include rem(margin-bottom, $gap);
   max-width: 100%;
 
   img {
-    @include rem(margin-bottom, $gap-fixed-xs);
+    @include rem(margin-bottom, $gap-xs);
   }
 
   &.center {
@@ -211,24 +97,24 @@ img {
   }
 
   &.right {
-    @include rem(margin-left, $gap-fixed);
+    @include rem(margin-left, $gap);
     float: right;
   }
 
   &.left {
-    @include rem(margin-right, $gap-fixed);
+    @include rem(margin-right, $gap);
     float: left;
   }
 
   &.leftAlone {
-    @include rem(margin-right, $gap-fixed);
+    @include rem(margin-right, $gap);
   }
 }
 
 .caption {
   @include rem(font-size, 16px);
   @include rem(line-height, 22px);
-  font-family: $serif-font;
+  font-family: $secondary-font;
   margin: 0;
   text-align: left;
   width: 100%;

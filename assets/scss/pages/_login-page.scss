@@ -2,7 +2,7 @@
 // Login Page
 
 #ForgotPassword {
-  @include rem(padding, 4px 0 0 $gap-fixed-xs);
+  @include rem(padding, 4px 0 0 $gap-xs);
   color: $textcolor-subtle;
   float: left;
 

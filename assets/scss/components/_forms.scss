@@ -25,7 +25,7 @@
 @mixin label-styles {
   @include rem(font-size, 18px);
   @include rem(line-height, 25px);
-  @include rem(padding, 0 0 $gap-fixed-xs 0);
+  @include rem(padding, 0 0 $gap-xs 0);
   clear: both;
   color: $textcolor-strong;
   font-family: $sans-serif-font;
@@ -34,7 +34,7 @@
 }
 
 form {
-  @include rem(margin, 0 0 $gap-fixed 0);
+  @include rem(margin, 0 0 $gap 0);
   display: block;
 
   label {
@@ -63,7 +63,7 @@ form {
   ol {
     @include rem(font-size, 16px);
     @include rem(line-height, 22px);
-    @include rem(padding, 0 0 $gap-fixed-sm $gap-fixed);
+    @include rem(padding, 0 0 $gap-sm $gap);
     margin: 0;
 
     li {
@@ -83,8 +83,8 @@ form {
   .FormHeading {
     @include rem(font-size, 22px);
     @include rem(line-height, 29px);
-    @include rem(margin, $gap-fixed-xs 0 $gap-fixed-sm);
-    @include rem(padding, $gap-fixed-xs 0);
+    @include rem(margin, $gap-xs 0 $gap-sm);
+    @include rem(padding, $gap-xs 0);
     border-bottom: 1px solid $offsetcolor;
     border-top: 1px solid $offsetcolor;
     clear: both;
@@ -149,7 +149,7 @@ select {
 }
 
 .field {
-  @include rem(margin, 0 -2px $gap-fixed-sm -2px);
+  @include rem(margin, 0 -2px $gap-sm -2px);
   @include rem(padding, 0 7.5px);
   @include bp(md) {
     margin-right: 0;
@@ -193,7 +193,7 @@ ul {
   &.optionset,
   &.checkboxset {
     @extend %clearfix;
-    @include rem(padding, 0 0 $gap-fixed-sm 0);
+    @include rem(padding, 0 0 $gap-sm 0);
     display: block;
     width: 100%;
 
@@ -265,7 +265,7 @@ label {
 }
 
 .required {
-  @include rem(padding, $gap-fixed-xs $gap-fixed-sm);
+  @include rem(padding, $gap-xs $gap-sm);
   @include rem(font-size, 16px);
   @include rem(line-height, 22px);
   @include rem(top, -2px);
@@ -301,8 +301,8 @@ label {
 .success {
   @include rem(font-size, 18px);
   @include rem(line-height, 23px);
-  @include rem(padding, $gap-fixed-sm);
-  @include rem(margin, 0 0 $gap-fixed-sm 0);
+  @include rem(padding, $gap-sm);
+  @include rem(margin, 0 0 $gap-sm 0);
   background: $successcolor-dark;
   border: 3px solid $successcolor-meddark;
   color: $white;

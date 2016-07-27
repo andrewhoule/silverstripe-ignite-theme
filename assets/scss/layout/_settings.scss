@@ -1,6 +1,4 @@
 
-// Settings
-
 // Colors
 
 $primarycolor: #444;
@@ -65,16 +63,16 @@ $white: #fff;
 
 $transition-duration: .4s;
 $border-radius: 5px;
-$gap: 5%;
-$gap-xs: $gap * .5;
-$gap-sm: $gap * .75;
-$gap-lg: $gap * 2;
-$gap-xl: $gap * 3;
-$gap-fixed: 30px;
-$gap-fixed-xs: $gap-fixed * .4;
-$gap-fixed-sm: $gap-fixed * .7;
-$gap-fixed-lg: $gap-fixed * 1.5;
-$gap-fixed-xl: $gap-fixed * 2;
+$gap: 30px;
+$gap-xs: $gap * .4;
+$gap-sm: $gap * .7;
+$gap-lg: $gap * 1.5;
+$gap-xl: $gap * 2;
+$gap-fluid-: 5%;
+$gap-fluid-xs: $gap * .5;
+$gap-fluid-sm: $gap * .75;
+$gap-fluid-lg: $gap * 2;
+$gap-fluid-xl: $gap * 3;
 $maxwidth: 1200px;
 $maxwidth-xs: $maxwidth * .4;
 $maxwidth-sm: $maxwidth * .8;
