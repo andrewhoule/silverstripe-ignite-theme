@@ -8,19 +8,15 @@ html {
 * {
   @include box-sizing(inherit);
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     @include box-sizing(inherit);
   }
 }
 
 // Vanity Styles
 
-::selection {
-  background: $primarycolor;
-  color: $white;
-}
-
+::selection,
 ::-moz-selection {
   background: $primarycolor;
   color: $white;
@@ -114,7 +110,7 @@ img {
 .caption {
   @include rem(font-size, 16px);
   @include rem(line-height, 22px);
-  font-family: $secondary-font;
+  font-family: $serif-font;
   margin: 0;
   text-align: left;
   width: 100%;

@@ -4,7 +4,7 @@
 .btn {
   @include rem(font-size, $base-font-size);
   @include rem(padding, 20px 30px);
-  @include transition-duration($transitionduration);
+  @include transition-duration($transition-duration);
   border: 1px solid transparent;
   color: $textcolor;
   cursor: pointer;
@@ -66,7 +66,7 @@
 
   &__ghost {
     background-color: transparent;
-    border-color; $primarycolor;
+    border-color: $primarycolor;
     color: $primarycolor;
 
     &:hover {
