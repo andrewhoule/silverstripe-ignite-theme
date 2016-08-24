@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 
 /* ==========================================================================
    Adding logic for SS images on responsive design. AKA Breathing room.
@@ -8,22 +6,31 @@ $(document).ready(function(){
 (function($) {
   function imageBreathingRoom() {
     var colsize = $('.main-content').width();
-    $('.main-content img').each(function() { 
-      if(($(this).width() + 300) >= colsize ) {
-        $(this).addClass('left-alone');
-        if($(this).parent().hasClass('captionImage')) {
-          $(this).parent().addClass('left-alone');
+    var leftClass = 'left-alone';
+    var captionImageClass = 'captionImage';
+    var $this
+
+    $this = $(this);
+
+    $('.main-content img').each(function() {
+      if(($this.width() + 300) >= colsize ) {
+        $this.addClass(leftClass);
+        if($this.parent().hasClass('captionImage')) {
+          $this.parent().addClass(leftClass);
         }
-      }
-      else {
-        $(this).removeClass('left-alone');
-        if($(this).parent().hasClass('captionImage')) {
-          $(this).parent().removeClass('left-alone');
+      } else {
+        $this.removeClass(leftClass);
+        if($this.parent().hasClass('captionImage')) {
+          $this.parent().removeClass(leftClass);
         }
       }
     });
   }
-  imageBreathingRoom();
+
+  $(document).ready(function(){
+    imageBreathingRoom();
+  });
+
   var resizeTimer;
   $(window).resize(function() {
     clearTimeout(resizeTimer);
@@ -39,8 +46,7 @@ $(document).ready(function(){
    ========================================================================== */
 
 (function($) {
-  $('p:empty').remove();
+  $(document).ready(function(){
+    $('p:empty').remove();
+  });
 })(jQuery);
-
-
-}); // End doc ready

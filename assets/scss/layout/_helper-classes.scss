@@ -92,7 +92,7 @@
 .no-flexbox {
   .flex {
     display: block;
-    width: 100%;
+    overflow: hidden;
 
     > * {
       display: inline-block;
@@ -114,6 +114,8 @@
   }
 
   .flex--push-last {
+    width: 100%;
+    
     > * {
       &:not(:last-child) {
         float: left;
