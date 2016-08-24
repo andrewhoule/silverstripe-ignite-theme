@@ -113,7 +113,9 @@ gulp.task('modernizr', function() {
     .pipe(modernizr({
       options: [
         'setClasses',
-        'test/css/flexbox'
+        'test/css/flexbox',
+        'test/touchevents',
+        'test/css/animations'
       ]
     }))
     .pipe(uglify())
