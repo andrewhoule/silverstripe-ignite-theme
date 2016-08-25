@@ -3,38 +3,39 @@
    Variable Declarations
    ========================================================================== */
 
-var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    livereload = require('gulp-livereload'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    imageop = require('gulp-image-optimization');
-    svgstore = require('gulp-svgstore');
-    svgmin = require('gulp-svgmin');
-    cheerio = require('gulp-cheerio');
-    rename = require('gulp-rename');
-    modernizr = require('gulp-modernizr');
-    sasslint = require('gulp-sass-lint');
-    paths = {
-      scripts: 'assets/js/**/*.js',
-      styles: 'assets/scss/**/*.scss',
-      images: [
-        'assets/img/**/*.png',
-        'assets/img/**/*.jpg',
-        'assets/img/**/*.jpeg',
-        'assets/img/**/*.gif'
-      ],
-      icons: 'assets/icons/**/*.svg',
-      templates: 'templates/**/*.ss'
-    };
+var cheerio = require('gulp-cheerio');
+var concat = require('gulp-concat');
+var gulp = require('gulp');
+var imageop = require('gulp-image-optimization');
+var jshint = require('gulp-jshint');
+var livereload = require('gulp-livereload');
+var modernizr = require('gulp-modernizr');
+var paths = {
+  scripts: 'assets/js/**/*.js',
+  styles: 'assets/scss/**/*.scss',
+  images: [
+    'assets/img/**/*.png',
+    'assets/img/**/*.jpg',
+    'assets/img/**/*.jpeg',
+    'assets/img/**/*.gif'
+  ],
+  icons: 'assets/icons/**/*.svg',
+  templates: 'templates/**/*.ss'
+};
+var rename = require('gulp-rename');
+var sass = require('gulp-ruby-sass');
+var sasslint = require('gulp-sass-lint');
+var sourcemaps = require('gulp-sourcemaps');
+var svgmin = require('gulp-svgmin');
+var svgstore = require('gulp-svgstore');
+var uglify = require('gulp-uglify');
 
 
 /* ==========================================================================
    Tasks
    ========================================================================== */
 
-/* Build/Minify CSS from SASS */
+/* Build/Minify CSS from SASS Task */
 
 gulp.task('styles', function() {
   return sass(paths.styles, { compass: true, sourcemap: true, style: 'compressed' })
@@ -46,7 +47,7 @@ gulp.task('styles', function() {
     .pipe(livereload());
 });
 
-/* Minify JS */
+/* Minify JS Task */
 
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
@@ -56,7 +57,16 @@ gulp.task('scripts', function() {
     .pipe(livereload());
 });
 
-/* Optimize Images */
+/* JS Hint Task */
+
+gulp.task('jshint', function() {
+  return gulp
+    .src(paths.scripts)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
+/* Optimize Images Task */
 
 gulp.task('images', function() {
   return gulp.src(paths.images)
@@ -69,7 +79,7 @@ gulp.task('images', function() {
     .pipe(livereload());
 });
 
-/* Build and Minify SVG Sprite */
+/* Build and Minify SVG Sprite Task */
 
 gulp.task('icons', function () {
   return gulp
@@ -106,7 +116,7 @@ gulp.task('sasslint', function() {
     .pipe(sasslint.failOnError());
 });
 
-/* Customize Modernizr */
+/* Customize Modernizr Task */
 
 gulp.task('modernizr', function() {
   gulp.src(paths.scripts)
@@ -132,8 +142,7 @@ gulp.task('modernizr', function() {
 gulp.task('watch', function() {
   livereload.listen();
   gulp.watch(paths.styles, ['styles','sasslint']);
-  gulp.watch(paths.styles, ['styles']);
-  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.scripts, ['scripts','jshint']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.icons, ['icons']);
   gulp.watch(paths.templates, ['templates']);
