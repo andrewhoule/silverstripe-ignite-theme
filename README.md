@@ -10,8 +10,9 @@ This is a bare essentials HTML5/SCSS/jQuery responsive theme. It's meant as a st
 
 ## Giving Credit Where It's Due
 * Normalize CSS - http://necolas.github.com/normalize.css/
-* Respond JS - https://github.com/scottjehl/Respond
+* Respond JS - https://github.com/scottjehl/Respond/
 * Jeet - http://jeet.gs/
+* Bourbon - http://bourbon.io/
 
 ## Installation
 * Download and add to your theme folder. Then rename and point to the new theme.
