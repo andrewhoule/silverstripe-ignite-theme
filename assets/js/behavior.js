@@ -8,7 +8,7 @@
     var colsize = $('.main-content').width();
     var leftClass = 'left-alone';
     var captionImageClass = 'captionImage';
-    var $this
+    var $this;
 
     $this = $(this);
 

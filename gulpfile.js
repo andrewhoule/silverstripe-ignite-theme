@@ -51,7 +51,7 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
-    .pipe(concat('main.js'))
+    .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(gulp.dest('js'))
     .pipe(livereload());
