@@ -81,6 +81,17 @@
     }
   }
 
+  .flex--push-last-y {
+    @include flex-direction(column);
+    height: 100%;
+
+    > * {
+      &:last-child {
+        margin-top: auto;
+      }
+    }
+  }
+
   .flex--items-fill {
     > * {
       @include flex(1 0 0);
@@ -115,7 +126,7 @@
 
   .flex--push-last {
     width: 100%;
-    
+
     > * {
       &:not(:last-child) {
         float: left;
