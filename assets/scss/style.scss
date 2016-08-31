@@ -1,17 +1,17 @@
 
 // Third Party Base Stuff
 
-@import 'compass';
+@import '../../components/bourbon/app/assets/stylesheets/bourbon';
 @import '../../components/normalize-scss/normalize';
 @import '../../components/jeet/scss/jeet/jeet';
 
 // Settings / Typography / Base Stuff
 
 @import 'layout/_settings';
+@import 'layout/_helper-mixins';
 @import 'layout/_base';
 @import 'layout/_breakpoints';
 @import 'layout/_typography';
-@import 'layout/_helper-mixins';
 @import 'layout/_helper-classes';
 @import 'layout/_structure';
 @import 'layout/_template-content';

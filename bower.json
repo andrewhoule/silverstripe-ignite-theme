@@ -14,7 +14,8 @@
   "dependencies": {
     "jquery": "~1.*",
     "normalize-scss": "~3.0.1",
-    "jeet": "~6.1.2",
-    "svg4everybody": "^2.1.0"
+    "svg4everybody": "^2.1.0",
+    "bourbon": "^4.2.7",
+    "jeet": "jeet.gs#^6.1.4"
   }
 }

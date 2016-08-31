@@ -62,7 +62,7 @@
 
 .flexbox {
   .flex {
-    @include display-flex(flex);
+    @include display(flex);
   }
 
   .flex--center-y {

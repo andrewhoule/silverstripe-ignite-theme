@@ -71,7 +71,7 @@
 }
 
 @mixin circle {
-  @include border-radius(50%);
+  border-radius: 50%;
 }
 
 @mixin opacity($opacity) {
@@ -82,15 +82,15 @@
 @mixin absolutecenter($axis: 'both') {
   position: absolute;
   @if $axis == 'y' {
-    @include translateY(-50%);
+    @include transform(translateY(-50%));
     top: 50%;
   }
   @if $axis == 'x' {
-    @include translateX(-50%);
+    @include transform(translateX(-50%));
     left: 50%;
   }
   @if $axis == 'both' {
-    @include translate(-50%, -50%);
+    @include transform(translate(-50%, -50%));
     left: 50%;
     top: 50%;
   }

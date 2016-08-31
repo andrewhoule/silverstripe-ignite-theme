@@ -5,10 +5,10 @@
   @include rem(font-size, 16px);
   @include rem(line-height, 23px);
   @include rem(padding, 6px);
-  @include border-radius(0);
-  @include box-shadow(none);
   background: $offsetcolor;
   border: 1px solid $offsetcolor-verystrong;
+  border-radius: 0;
+  box-shadow: none;
   color: $textcolor;
   font-family: $sans-serif-font;
   height: auto;
