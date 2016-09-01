@@ -58,26 +58,4 @@ $successcolor-light: lighten($successcolor, 20%);
 $successcolor-medlight: lighten($successcolor, 35%);
 $successcolor-verylight: lighten($successcolor, 55%);
 $white: #fff;
-
-// Functionality / Structure
-
-$transition-duration: .4s;
-$border-radius: 5px;
-$gap: 30px;
-$gap-xs: $gap * .4;
-$gap-sm: $gap * .7;
-$gap-lg: $gap * 1.5;
-$gap-xl: $gap * 2;
-$gap-fluid-: 5%;
-$gap-fluid-xs: $gap * .5;
-$gap-fluid-sm: $gap * .75;
-$gap-fluid-lg: $gap * 2;
-$gap-fluid-xl: $gap * 3;
-$maxwidth: 1200px;
-$maxwidth-xs: $maxwidth * .4;
-$maxwidth-sm: $maxwidth * .8;
-$maxwidth-lg: $maxwidth * 1.2;
-$maxwidth-xl: $maxwidth * 1.4;
-$base-font-size: 16px;
-$sans-serif-font: unquote('arial, helvetica, sans-serif');
-$serif-font: unquote('georgia, times, serif');
+$black: #000;

@@ -1,16 +1,21 @@
 
+// Base Typography
+
+$sans-serif-font: unquote('arial, helvetica, sans-serif');
+$serif-font: unquote('georgia, times, serif');
+
 // Border Box for all
 
 html {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 * {
-  @include box-sizing(inherit);
+  box-sizing: inherit;
 
   &::before,
   &::after {
-    @include box-sizing(inherit);
+    box-sizing: inherit;
   }
 }
 
