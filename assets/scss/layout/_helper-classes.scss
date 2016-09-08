@@ -29,6 +29,18 @@
   text-transform: uppercase;
 }
 
+// Hide / Show Class
+
+.hide {
+  display: none;
+}
+
+.hide--on-md {
+  @include bp(md) {
+    display: none;
+  }
+}
+
 // Structural Classes
 
 %clearfix {

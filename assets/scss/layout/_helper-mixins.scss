@@ -14,7 +14,7 @@
 }
 
 @mixin rem($property, $values) {
-  $font-size: $base-font-size;
+  $font-size: 16px;
   $px-values: ();
   $rem-values: ();
   @each $value in $values {
