@@ -5,9 +5,13 @@
 @import '../../components/normalize-scss/normalize';
 @import '../../components/jeet/scss/jeet/jeet';
 
-// Settings / Typography / Base Stuff
+// Settings
 
-@import 'layout/_settings';
+@import 'settings/_colors';
+@import 'settings/_dimensions';
+
+// Typography / Base Stuff
+
 @import 'layout/_helper-mixins';
 @import 'layout/_base';
 @import 'layout/_breakpoints';
@@ -23,6 +27,9 @@
 @import 'components/_pagination';
 
 // Sitewide Chrome
+
+@import 'chrome/_header';
+@import 'chrome/_footer';
 
 // Pages
 

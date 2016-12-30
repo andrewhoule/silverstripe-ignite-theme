@@ -70,10 +70,6 @@
   }
 }
 
-@mixin circle {
-  border-radius: 50%;
-}
-
 @mixin opacity($opacity) {
   filter: alpha(opacity=($opacity * 100));
   opacity: $opacity;
@@ -101,7 +97,7 @@
 }
 
 @mixin unabsolutecenter {
-  @include translate(0, 0);
+  @include transform(translate(0, 0));
   left: inherit;
   position: inherit;
   top: inherit;

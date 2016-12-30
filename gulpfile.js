@@ -38,7 +38,7 @@ var uglify = require('gulp-uglify');
 /* Build/Minify CSS from SASS Task */
 
 gulp.task('styles', function() {
-  return sass(paths.styles, { compass: true, sourcemap: true, style: 'compressed' })
+  return sass(paths.styles, { sourcemap: true, style: 'compressed' })
     .pipe(sourcemaps.write('maps', {
       includeContent: false,
       sourceRoot: 'source'

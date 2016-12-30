@@ -127,6 +127,7 @@ input {
 
 textarea {
   @include input-styles;
+  vertical-align: top;
   width: 100%;
 
   &:focus {
