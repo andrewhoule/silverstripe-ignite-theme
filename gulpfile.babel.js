@@ -1,72 +1,78 @@
 
+"use strict";
+
 /* ==========================================================================
-   Variable Declarations
+   Declarations
    ========================================================================== */
 
-var cheerio = require('gulp-cheerio');
-var concat = require('gulp-concat');
-var gulp = require('gulp');
-var imageop = require('gulp-image-optimization');
-var jshint = require('gulp-jshint');
-var livereload = require('gulp-livereload');
-var modernizr = require('gulp-modernizr');
-var paths = {
-  scripts: 'assets/js/**/*.js',
-  styles: 'assets/scss/**/*.scss',
+/* Requirements */
+
+let cheerio = require('gulp-cheerio');
+let concat = require('gulp-concat');
+let gulp = require('gulp');
+let imageop = require('gulp-image-optimization');
+let jshint = require('gulp-jshint');
+let livereload = require('gulp-livereload');
+let modernizr = require('gulp-modernizr');
+let rename = require('gulp-rename');
+let sass = require('gulp-sass');
+let sasslint = require('gulp-sass-lint');
+let sourcemaps = require('gulp-sourcemaps');
+let svgmin = require('gulp-svgmin');
+let svgstore = require('gulp-svgstore');
+let uglify = require('gulp-uglify');
+
+/* Paths */
+
+let destDir = 'dest';
+let sourceDir = 'source';
+let paths = {
+  scripts: `${sourceDir}/js/**/*.js`,
+  styles: `${sourceDir}/scss/**/*.scss`,
   images: [
-    'assets/img/**/*.png',
-    'assets/img/**/*.jpg',
-    'assets/img/**/*.jpeg',
-    'assets/img/**/*.gif'
+    `${sourceDir}/img/**/*.png`,
+    `${sourceDir}/img/**/*.jpg`,
+    `${sourceDir}/img/**/*.jpeg`,
+    `${sourceDir}/img/**/*.gif`
   ],
-  icons: 'assets/icons/**/*.svg',
+  icons: `${sourceDir}/icons/**/*.svg`,
   templates: 'templates/**/*.ss'
 };
-var rename = require('gulp-rename');
-var sass = require('gulp-ruby-sass');
-var sasslint = require('gulp-sass-lint');
-var sourcemaps = require('gulp-sourcemaps');
-var svgmin = require('gulp-svgmin');
-var svgstore = require('gulp-svgstore');
-var uglify = require('gulp-uglify');
 
 
 /* ==========================================================================
    Tasks
    ========================================================================== */
 
-/* Build/Minify CSS from SASS Task */
+/* SASS Task */
 
 gulp.task('styles', function() {
-  return sass(paths.styles, { sourcemap: true, style: 'compressed' })
-    .pipe(sourcemaps.write('maps', {
-      includeContent: false,
-      sourceRoot: 'source'
-    }))
-    .pipe(gulp.dest('css'))
+  return gulp.src(paths.styles)
+    .pipe(sourcemaps.init())
+    .pipe(sasslint({ options: { 'config-file': '.sass-lint.yml' } }))
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError())
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(sourcemaps.write('maps'))
+    .pipe(gulp.dest(`${destDir}/css`))
     .pipe(livereload());
 });
 
-/* Minify JS Task */
+/* JS Task */
 
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
+    .pipe(sourcemaps.init())
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
     .pipe(concat('app.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('js'))
+    .pipe(sourcemaps.write('maps'))
+    .pipe(gulp.dest(`${destDir}/js`))
     .pipe(livereload());
 });
 
-/* JS Hint Task */
-
-gulp.task('jshint', function() {
-  return gulp
-    .src(paths.scripts)
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
-});
-
-/* Optimize Images Task */
+/* Images Task */
 
 gulp.task('images', function() {
   return gulp.src(paths.images)
@@ -75,11 +81,11 @@ gulp.task('images', function() {
         progressive: true,
         interlaced: true
     }))
-    .pipe(gulp.dest('img'))
+    .pipe(gulp.dest(`${destDir}/img`))
     .pipe(livereload());
 });
 
-/* Build and Minify SVG Sprite Task */
+/* SVG Sprite Task */
 
 gulp.task('icons', function () {
   return gulp
@@ -94,7 +100,7 @@ gulp.task('icons', function () {
       parserOptions: { xmlMode: true }
     }))
     .pipe(rename({basename: 'icons'}))
-    .pipe(gulp.dest('img'))
+    .pipe(gulp.dest(`${destDir}/img`))
     .pipe(livereload());
 });
 
@@ -104,16 +110,6 @@ gulp.task('templates', function() {
   return gulp
     .src(paths.templates)
     .pipe(livereload());
-});
-
-/* SASS Lint Task */
-
-gulp.task('sasslint', function() {
-  return gulp
-    .src(paths.styles)
-    .pipe(sasslint({ options: { 'config-file': '.sass-lint.yml' } }))
-    .pipe(sasslint.format())
-    .pipe(sasslint.failOnError());
 });
 
 /* Customize Modernizr Task */
@@ -129,7 +125,7 @@ gulp.task('modernizr', function() {
       ]
     }))
     .pipe(uglify())
-    .pipe(gulp.dest('assets/js'))
+    .pipe(gulp.dest(`${sourceDir}/js`))
   });
 
 
@@ -141,8 +137,8 @@ gulp.task('modernizr', function() {
 
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch(paths.styles, ['styles','sasslint']);
-  gulp.watch(paths.scripts, ['scripts','jshint']);
+  gulp.watch(paths.styles, ['styles']);
+  gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.icons, ['icons']);
   gulp.watch(paths.templates, ['templates']);

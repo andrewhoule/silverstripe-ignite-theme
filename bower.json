@@ -1,10 +1,4 @@
 {
-  "name": "projectnamehere",
-  "version": "0.0.1",
-  "authors": [
-    "Author Name and Email Here"
-  ],
-  "homepage": "homeurlhere",
   "private": true,
   "ignore": [
     "**/.*",

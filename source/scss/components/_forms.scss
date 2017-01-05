@@ -5,7 +5,10 @@
   @include rem(font-size, 16px);
   @include rem(line-height, 23px);
   @include rem(padding, 6px);
-  background: $offsetcolor;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $offsetcolor;
   border: 1px solid $offsetcolor-verystrong;
   border-radius: 0;
   box-shadow: none;
@@ -17,8 +20,7 @@
 }
 
 @mixin input-focus-styles {
-  background: $white;
-  border: 1px solid $darkcolor;
+  box-shadow: 0 0 6px $primarycolor;
   outline: 0 none;
 }
 
@@ -40,6 +42,7 @@ form {
   label {
     &.left {
       @include label-styles;
+      display: block;
 
       small {
         @include rem(font-size, 14px);
@@ -114,7 +117,9 @@ input {
   @include input-styles;
   width: 100%;
 
-  &:focus {
+  &:focus,
+  &:active,
+  &:target {
     @include input-focus-styles;
   }
 
