@@ -9,6 +9,7 @@
     "babel": "^6.5.2",
     "babel-core": "^6.5.2",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-cheerio": "^0.6.2",
     "gulp-concat": "^2.6.0",
     "gulp-image-optimization": "^0.1.3",

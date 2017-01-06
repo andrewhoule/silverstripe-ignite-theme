@@ -7,6 +7,7 @@
 
 /* Requirements */
 
+let autoprefixer = require('gulp-autoprefixer');
 let cheerio = require('gulp-cheerio');
 let concat = require('gulp-concat');
 let gulp = require('gulp');
@@ -24,7 +25,7 @@ let uglify = require('gulp-uglify');
 
 /* Paths */
 
-let destDir = 'dest';
+let buildDir = 'build';
 let sourceDir = 'source';
 let paths = {
   scripts: `${sourceDir}/js/**/*.js`,
@@ -53,8 +54,11 @@ gulp.task('styles', function() {
     .pipe(sasslint.format())
     .pipe(sasslint.failOnError())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(sourcemaps.write({includeContent: false}))
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(autoprefixer())
     .pipe(sourcemaps.write('maps'))
-    .pipe(gulp.dest(`${destDir}/css`))
+    .pipe(gulp.dest(`${buildDir}/css`))
     .pipe(livereload());
 });
 
@@ -68,7 +72,7 @@ gulp.task('scripts', function() {
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write('maps'))
-    .pipe(gulp.dest(`${destDir}/js`))
+    .pipe(gulp.dest(`${buildDir}/js`))
     .pipe(livereload());
 });
 
@@ -81,7 +85,7 @@ gulp.task('images', function() {
         progressive: true,
         interlaced: true
     }))
-    .pipe(gulp.dest(`${destDir}/img`))
+    .pipe(gulp.dest(`${buildDir}/img`))
     .pipe(livereload());
 });
 
@@ -100,7 +104,7 @@ gulp.task('icons', function () {
       parserOptions: { xmlMode: true }
     }))
     .pipe(rename({basename: 'icons'}))
-    .pipe(gulp.dest(`${destDir}/img`))
+    .pipe(gulp.dest(`${buildDir}/img`))
     .pipe(livereload());
 });
 
