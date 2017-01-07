@@ -15,6 +15,7 @@ let imageop = require('gulp-image-optimization');
 let jshint = require('gulp-jshint');
 let livereload = require('gulp-livereload');
 let modernizr = require('gulp-modernizr');
+let plumber = require('gulp-plumber');
 let rename = require('gulp-rename');
 let sass = require('gulp-sass');
 let sasslint = require('gulp-sass-lint');
@@ -49,15 +50,16 @@ let paths = {
 
 gulp.task('styles', function() {
   return gulp.src(paths.styles)
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sasslint({ options: { 'config-file': '.sass-lint.yml' } }))
     .pipe(sasslint.format())
     .pipe(sasslint.failOnError())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(sourcemaps.write({includeContent: false}))
-    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(autoprefixer())
-    .pipe(sourcemaps.write('maps'))
+    .pipe(sourcemaps.write('maps', {
+      includeContent: false
+    }))
     .pipe(gulp.dest(`${buildDir}/css`))
     .pipe(livereload());
 });
@@ -66,6 +68,7 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
@@ -119,7 +122,8 @@ gulp.task('templates', function() {
 /* Customize Modernizr Task */
 
 gulp.task('modernizr', function() {
-  gulp.src(paths.scripts)
+  return gulp
+    .src(paths.scripts)
     .pipe(modernizr({
       options: [
         'setClasses',
@@ -130,7 +134,7 @@ gulp.task('modernizr', function() {
     }))
     .pipe(uglify())
     .pipe(gulp.dest(`${sourceDir}/js`))
-  });
+});
 
 
 /* ==========================================================================
