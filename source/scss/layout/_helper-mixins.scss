@@ -70,11 +70,6 @@
   }
 }
 
-@mixin opacity($opacity) {
-  filter: alpha(opacity=($opacity * 100));
-  opacity: $opacity;
-}
-
 @mixin absolutecenter($axis: 'both') {
   position: absolute;
   @if $axis == 'y' {
