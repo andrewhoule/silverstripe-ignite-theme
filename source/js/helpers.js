@@ -4,40 +4,42 @@
    ========================================================================== */
 
 (function($) {
+
+  // Function for better aesthetics on responsive SS images
   function imageBreathingRoom() {
-    var colsize = $('.main-content').width();
-    var leftClass = 'left-alone';
+
+    // Vars
+    var templateContentClass = 'template-content';
+    var colSize = $('.' + templateContentClass).width();
+    var noFloatClass = 'no-float';
     var captionImageClass = 'captionImage';
-    var $this;
 
-    $this = $(this);
-
-    $('.main-content img').each(function() {
-      if(($this.width() + 300) >= colsize ) {
-        $this.addClass(leftClass);
-        if($this.parent().hasClass('captionImage')) {
-          $this.parent().addClass(leftClass);
+    // Deal with each image in template content
+    $('.' + templateContentClass + ' img').each(function() {
+      if(($(this).width() + 300) >= colSize ) {
+        $(this).addClass(noFloatClass);
+        if($(this).parent().hasClass(captionImageClass)) {
+          $(this).parent().addClass(noFloatClass);
         }
       } else {
-        $this.removeClass(leftClass);
-        if($this.parent().hasClass('captionImage')) {
-          $this.parent().removeClass(leftClass);
+        $(this).removeClass(noFloatClass);
+        if($(this).parent().hasClass(captionImageClass)) {
+          $(this).parent().removeClass(noFloatClass);
         }
       }
     });
   }
 
-  $(document).ready(function(){
+  // Do stuff on doc ready
+  $(document).ready(function() {
     imageBreathingRoom();
   });
 
-  var resizeTimer;
+  // Do stuff on window resize
   $(window).resize(function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      imageBreathingRoom();
-    }, 200);
+    imageBreathingRoom();
   });
+
 })(jQuery);
 
 
