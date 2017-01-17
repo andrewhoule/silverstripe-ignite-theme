@@ -21,8 +21,7 @@ html {
 
 // Vanity Styles
 
-::selection,
-::-moz-selection {
+::selection {
   background: $primarycolor;
   color: $white;
 }

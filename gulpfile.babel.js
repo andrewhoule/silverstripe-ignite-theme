@@ -7,22 +7,22 @@
 
 /* Requirements */
 
-let autoprefixer = require('gulp-autoprefixer');
-let cheerio = require('gulp-cheerio');
-let concat = require('gulp-concat');
-let gulp = require('gulp');
-let imageop = require('gulp-image-optimization');
-let jshint = require('gulp-jshint');
-let livereload = require('gulp-livereload');
-let modernizr = require('gulp-modernizr');
-let plumber = require('gulp-plumber');
-let rename = require('gulp-rename');
-let sass = require('gulp-sass');
-let sasslint = require('gulp-sass-lint');
-let sourcemaps = require('gulp-sourcemaps');
-let svgmin = require('gulp-svgmin');
-let svgstore = require('gulp-svgstore');
-let uglify = require('gulp-uglify');
+import autoprefixer from 'gulp-autoprefixer';
+import cheerio from 'gulp-cheerio';
+import concat from 'gulp-concat';
+import gulp from 'gulp';
+import imageop from 'gulp-image-optimization';
+import jshint from 'gulp-jshint';
+import livereload from 'gulp-livereload';
+import modernizr from 'gulp-modernizr';
+import plumber from 'gulp-plumber';
+import rename from 'gulp-rename';
+import sass from 'gulp-sass';
+import sasslint from 'gulp-sass-lint';
+import sourcemaps from 'gulp-sourcemaps';
+import svgmin from 'gulp-svgmin';
+import svgstore from 'gulp-svgstore';
+import uglify from 'gulp-uglify';
 
 /* Paths */
 

@@ -25,12 +25,12 @@
 
   a {
     @include rem(padding, 6px 12px);
-    @include transition-duration($transition-duration);
-    background: $primarycolor;
+    background-color: $primarycolor;
     border-radius: 3px;
     color: $textcolor-subtle;
     display: block;
     text-decoration: none;
+    transition-duration: $transition-duration;
 
     &:hover {
       color: $textcolor-medstrong;

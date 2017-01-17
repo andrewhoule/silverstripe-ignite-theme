@@ -4,7 +4,6 @@
 .btn {
   @include rem(font-size, $base-font-size);
   @include rem(padding, 20px 30px);
-  @include transition-duration($transition-duration);
   border: 1px solid transparent;
   color: $textcolor;
   cursor: pointer;
@@ -12,6 +11,7 @@
   line-height: 1;
   margin-bottom: 0;
   text-align: center;
+  transition-duration: $transition-duration;
   vertical-align: middle;
   white-space: nowrap;
 
