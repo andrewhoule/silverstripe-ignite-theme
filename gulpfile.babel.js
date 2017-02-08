@@ -48,7 +48,7 @@ let paths = {
 
 /* SASS Task */
 
-gulp.task('styles', function() {
+gulp.task('styles', () => {
   return gulp.src(paths.styles)
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -66,7 +66,7 @@ gulp.task('styles', function() {
 
 /* JS Task */
 
-gulp.task('scripts', function() {
+gulp.task('scripts', () => {
   return gulp.src(paths.scripts)
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -81,7 +81,7 @@ gulp.task('scripts', function() {
 
 /* Images Task */
 
-gulp.task('images', function() {
+gulp.task('images', () => {
   return gulp.src(paths.images)
     .pipe(imageop({
         optimizationLevel: 5,
@@ -94,7 +94,7 @@ gulp.task('images', function() {
 
 /* SVG Sprite Task */
 
-gulp.task('icons', function () {
+gulp.task('icons', () => {
   return gulp
     .src(paths.icons)
     .pipe(svgmin())
@@ -113,7 +113,7 @@ gulp.task('icons', function () {
 
 /* Template Tasks */
 
-gulp.task('templates', function() {
+gulp.task('templates', () => {
   return gulp
     .src(paths.templates)
     .pipe(livereload());
@@ -121,7 +121,7 @@ gulp.task('templates', function() {
 
 /* Customize Modernizr Task */
 
-gulp.task('modernizr', function() {
+gulp.task('modernizr', () => {
   return gulp
     .src(paths.scripts)
     .pipe(modernizr({
@@ -143,7 +143,7 @@ gulp.task('modernizr', function() {
 
 /* Watch */
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   livereload.listen();
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.scripts, ['scripts']);

@@ -1,8 +1,10 @@
 
-// Base Typography
+// Reset Stuff
 
-$sans-serif-font: unquote('arial, helvetica, sans-serif');
-$serif-font: unquote('georgia, times, serif');
+* {
+  margin: 0;    
+  padding: 0;  
+}
 
 // Border Box for all
 
@@ -52,82 +54,4 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
-
-  &.left {
-    @include rem(margin, 0 $gap $gap 0);
-    float: left;
-  }
-
-  &.right {
-    @include rem(margin, 0 0 $gap $gap);
-    float: right;
-  }
-
-  &.leftAlone,
-  &.left-alone {
-    @include rem(margin, 0 0 $gap 0);
-    display: block;
-    float: none;
-  }
-
-  &.center {
-    @include rem(margin, 0 auto $gap auto);
-    display: block;
-  }
-
-  &.no-float {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.captionImage {
-  @include rem(margin-bottom, $gap);
-  max-width: 100%;
-
-  img {
-    @include rem(margin-bottom, $gap-xs);
-  }
-
-  &.center {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100% !important;
-
-    .caption {
-      @include rem(margin, 0 auto);
-      text-align: center;
-      width: 90%;
-    }
-  }
-
-  &.right {
-    @include rem(margin-left, $gap);
-    float: right;
-  }
-
-  &.left {
-    @include rem(margin-right, $gap);
-    float: left;
-  }
-
-  &.leftAlone {
-    @include rem(margin-right, $gap);
-  }
-
-  &.no-float {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.caption {
-  @include rem(font-size, 16px);
-  @include rem(line-height, 22px);
-  font-family: $serif-font;
-  margin: 0;
-  text-align: left;
-  width: 100%;
 }

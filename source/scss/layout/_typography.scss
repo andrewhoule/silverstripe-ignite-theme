@@ -1,5 +1,6 @@
 
-// Typography
+$sans-serif: arial, helvetica, sans-serif;
+$serif: georgia, times, serif;
 
 html {
   font-size: 100%; // Document level font size
@@ -8,9 +9,9 @@ html {
 body {
   @include rem(font-size, $base-font-size);
   color: $textcolor;
-  font-family: $sans-serif-font;
+  font-family: $sans-serif;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.4;
   text-rendering: optimizeLegibility;
 }
 
@@ -28,7 +29,7 @@ h5,
 h6 {
   @include rem(margin, 0 0 $gap-sm 0);
   color: $textcolor-medstrong;
-  font-family: $serif-font;
+  font-family: $serif;
   font-weight: 700;
 
   small {

@@ -48,28 +48,6 @@
   @return darken($color, (1-$percentage)*5%);
 }
 
-@mixin rgba($type, $color, $percentage, $shade: ligthen) {
-  @if $shade == lighten {
-    @if $type == color {
-      color: solid-lighten($color, $percentage);
-      color: rgba($color, $percentage);
-    }
-    @if $type == bg {
-      background-color: solid-lighten($color, $percentage);
-      background-color: rgba($color, $percentage);
-    }
-  } @else {
-    @if $type == color {
-      color: solid-darken($color, $percentage);
-      color: rgba($color, $percentage);
-    }
-    @if $type == bg {
-      background-color: solid-darken($color, $percentage);
-      background-color: rgba($color, $percentage);
-    }
-  }
-}
-
 @mixin absolutecenter($axis: 'both') {
   position: absolute;
   @if $axis == 'y' {
@@ -92,10 +70,10 @@
 }
 
 @mixin unabsolutecenter {
-  transform: translate(0, 0);
   left: inherit;
   position: inherit;
   top: inherit;
+  transform: translate(0, 0);
 }
 
 @mixin unctr($args...) {

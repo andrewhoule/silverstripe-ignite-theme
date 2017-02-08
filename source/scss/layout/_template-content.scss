@@ -48,7 +48,7 @@
       border-bottom: 1px solid $primarycolor-dark;
       border-right: 1px solid $primarycolor-dark;
       color: $white;
-      font-family: $serif-font;
+      font-family: $serif;
       font-weight: 700;
       text-align: left;
 
@@ -129,7 +129,7 @@
     @include rem(line-height, 28px);
     border: 0;
     color: $textcolor;
-    font-family: $serif-font;
+    font-family: $serif;
     font-style: italic;
     font-weight: 400;
     position: relative;
@@ -152,7 +152,7 @@
       @include rem(height, 35px);
       @include rem(width, 44px);
       display: block;
-      font-family: $serif-font;
+      font-family: $serif;
       position: absolute;
       z-index: -1;
     }
@@ -167,7 +167,7 @@
   }
 
   q {
-    font-family: $serif-font;
+    font-family: $serif;
     font-style: italic;
     font-weight: 400;
   }
@@ -179,7 +179,7 @@
     @include rem(margin, 0 0 $gap 0);
     color: $textcolor-subtle;
     display: block;
-    font-family: $sans-serif-font;
+    font-family: $sans-serif;
     font-style: normal;
     font-weight: 300;
     text-align: right;
