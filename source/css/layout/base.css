@@ -1,12 +1,12 @@
 
-// Reset Stuff
+/* Reset Stuff */
 
 * {
-  margin: 0;    
-  padding: 0;  
+  margin: 0;
+  padding: 0;
 }
 
-// Border Box for all
+/* Border Box for all */
 
 html {
   box-sizing: border-box;
@@ -21,14 +21,14 @@ html {
   }
 }
 
-// Vanity Styles
+/* Vanity Styles */
 
 ::selection {
   background: $primarycolor;
   color: $white;
 }
 
-// Base List Styles
+/* Base List Styles */
 
 ul,
 ol {
@@ -40,18 +40,18 @@ ol {
   }
 }
 
-// Embeds
+/* Embeds */
 
 object,
 embed {
   height: 100%;
 }
 
-// Base Image Styles / SS Image Styles
+/* Base Image Styles / SS Image Styles */
 
 img {
-  -ms-interpolation-mode: bicubic;
   display: block;
   height: auto;
+  -ms-interpolation-mode: bicubic;
   max-width: 100%;
 }

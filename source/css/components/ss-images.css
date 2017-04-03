@@ -1,25 +1,25 @@
 
 img {
   &.left {
-    @include rem(margin, 0 $gap $gap 0);
     float: left;
+    margin: 0 var(--gap) var(--gap) 0;
   }
 
   &.right {
-    @include rem(margin, 0 0 $gap $gap);
     float: right;
+    margin: 0 0 var(--gap) var(--gap);
   }
 
   &.leftAlone,
   &.left-alone {
-    @include rem(margin, 0 0 $gap 0);
     display: block;
     float: none;
+    margin: 0 0 var(--gap);
   }
 
   &.center {
-    @include rem(margin, 0 auto $gap auto);
     display: block;
+    margin: 0 auto var(--gap) auto;
   }
 
   &.no-float {
@@ -30,11 +30,11 @@ img {
 }
 
 .captionImage {
-  @include rem(margin-bottom, $gap);
+  margin-bottom: var(--gap);
   max-width: 100%;
 
   img {
-    @include rem(margin-bottom, $gap-xs);
+    margin-bottom: var(--gap-xs);
   }
 
   &.center {
@@ -43,24 +43,24 @@ img {
     width: 100% !important;
 
     .caption {
-      @include rem(margin, 0 auto);
+      margin: 0 auto;
       text-align: center;
       width: 90%;
     }
   }
 
   &.right {
-    @include rem(margin-left, $gap);
     float: right;
+    margin-left: var(--gap);
   }
 
   &.left {
-    @include rem(margin-right, $gap);
     float: left;
+    margin-right: var(--gap);
   }
 
   &.leftAlone {
-    @include rem(margin-right, $gap);
+    margin-right: var(--gap);
   }
 
   &.no-float {
@@ -71,9 +71,7 @@ img {
 }
 
 .caption {
-  @include rem(font-size, 16px);
-  @include rem(line-height, 22px);
-  font-family: $serif;
+  font-family: 'Lora';
   margin: 0;
   text-align: left;
   width: 100%;

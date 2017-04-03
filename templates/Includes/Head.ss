@@ -23,12 +23,7 @@
   <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
   <title><% if ID == "1" %>$SiteConfig.Title<% if $SiteConfig.Tagline %> | $SiteConfig.Tagline<% end_if %><% else %>$MenuTitle | $SiteConfig.Title<% end_if %></title>
   <!-- CSS -->
-  <link rel="stylesheet" href="$Themedir/css/style.css">
-  <!-- JS -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="$Themedir/build/bundle.css">
   <!-- Icons -->
   <link rel="shortcut icon" href="{$AbsoluteBaseURL}favicon.ico">
 </head>

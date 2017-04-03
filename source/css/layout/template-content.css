@@ -1,0 +1,173 @@
+
+
+.template-content {
+
+  strong {
+    color: var(--textcolor-medstrong);
+  }
+
+  /* List Styles */
+
+  ul,
+  ol {
+    margin: 0 0 var(--gap) var(--gap-lg);
+    padding: 0;
+
+    > li {
+      list-style-position: outside;
+      margin-bottom: 5px;
+
+      > ul,
+      > ol {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  ul {
+    > li {
+      list-style: disc;
+    }
+  }
+
+  ol > {
+    li {
+      list-style: decimal;
+    }
+  }
+
+  /* Table Styles */
+
+  table {
+    border: 0;
+    margin: 0 0 var(--gap) 0;
+    width: 100%;
+
+    th {
+      background-color: var(--primarycolor);
+      border-bottom: 1px solid var(--primarycolor-dark);
+      border-right: 1px solid var(--primarycolor-dark);
+      color: #fff;
+      font-family: 'Lora';
+      font-weight: 700;
+      padding: 10px 15px;
+      text-align: left;
+
+      a {
+        color: #fff;
+
+        &:hover {
+          color: var(--primarycolor-verylight);
+          text-decoration: underline;
+        }
+      }
+
+      small {
+        color: var(--primarycolor-verylight);
+      }
+    }
+
+    tbody {
+      th {
+        background-color: var(--offsetcolor-subtle);
+        border-bottom: 1px solid var(--offsetcolor-strong);
+        border-right: 0;
+        color: var(--textcolor);
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    tr {
+      td {
+        border-bottom: 1px solid var(--offsetcolor);
+        color: var(--textcolor);
+        padding: 10px 15px;
+        vertical-align: top;
+      }
+
+      &:nth-child(even) {
+        background-color: var(--offsetcolor-verysubtle);
+      }
+
+      &:nth-child(odd) {
+        background-color: #fff;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    ul {
+      margin: 2px 0;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+        margin: 0 0 3px;
+        padding: 0;
+      }
+    }
+
+    tfoot {
+      td {
+        background-color: var(--darkcolor);
+        color: #fff;
+      }
+    }
+  }
+
+  /* Quote Styles */
+
+  blockquote {
+    border: 0;
+    color: var(--textcolor);
+    font-family: 'Lora';
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 0 0 var(--gap-sm) 0;
+    padding: 5px var(--gap) 0 var(--gap);
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+
+    p {
+      display: inline-block;
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  q {
+    font-family: 'Lora';
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  figcaption,
+  cite {
+    color: var(--textcolor-subtle);
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    margin: 0 0 var(--gap) 0;
+    text-align: right;
+
+    &::before {
+      content: '\2014\00a0';
+      display: inline-block;
+    }
+  }
+}
+

@@ -1,0 +1,7 @@
+
+@custom-media --xxl (min-width: 93.75rem); /* 1500px */
+@custom-media --xl (min-width: 75rem); /* 1200px */
+@custom-media --lg (min-width: 56.25rem); /* 900px */
+@custom-media --md (min-width: 48rem); /* 768px */
+@custom-media --sm (min-width: 37.5rem); /* 600px */
+@custom-media --xs (min-width: 25rem); /* 400px */

@@ -1,0 +1,43 @@
+
+:root {
+  --textcolor: #555;
+  --textcolor-subtle: color(var(--textcolor) tint(30%));
+  --textcolor-medsubtle: color(var(--textcolor) tint(60%));
+  --textcolor-verysubtle: color(var(--textcolor) tint(90%));
+  --textcolor-strong: color(var(--textcolor) shade(30%));
+  --textcolor-medstrong: color(var(--textcolor) shade(60%));
+  --textcolor-verystrong: color(var(--textcolor) shade(90%));
+  --primarycolor: #4f2683;
+  --primarycolor-dark: color(var(--primarycolor) shade(30%));
+  --primarycolor-meddark: color(var(--primarycolor) shade(60%));
+  --primarycolor-verydark: color(var(--primarycolor) shade(90%));
+  --primarycolor-light: color(var(--primarycolor) tint(10%));
+  --primarycolor-medlight: color(var(--primarycolor) tint(35%));
+  --primarycolor-verylight: color(var(--primarycolor) tint(60%));
+  --secondarycolor: #f54c01;
+  --secondarycolor-dark: color(var(--secondarycolor) shade(30%));
+  --secondarycolor-meddark: color(var(--secondarycolor) shade(60%));
+  --secondarycolor-verydark: color(var(--secondarycolor) shade(90%));
+  --secondarycolor-light: color(var(--secondarycolor) tint(30%));
+  --secondarycolor-medlight: color(var(--secondarycolor) tint(60%));
+  --secondarycolor-verylight: color(var(--secondarycolor) tint(90%));
+  --offsetcolor: #ccc;
+  --offsetcolor-subtle: color(var(--offsetcolor) tint(30%));
+  --offsetcolor-medsubtle: color(var(--offsetcolor) tint(60%));
+  --offsetcolor-verysubtle: color(var(--offsetcolor) tint(90%));
+  --offsetcolor-strong: color(var(--offsetcolor) shade(20%));
+  --offsetcolor-medstrong: color(var(--offsetcolor) shade(40%));
+  --offsetcolor-verystrong: color(var(--offsetcolor) shade(60%));
+  --darkcolor: #222;
+  --darkcolor-light: color(var(--darkcolor) tint(20%));
+  --darkcolor-medlight: color(var(--darkcolor) tint(40%));
+  --darkcolor-verylight: color(var(--darkcolor) tint(60%));
+  --darkcolor-dark: color(var(--darkcolor) shade(20%));
+  --darkcolor-meddark: color(var(--darkcolor) shade(40%));
+  --darkcolor-verydark: color(var(--darkcolor) shade(60%));
+  --alertcolor: #c40000;
+  --alertcolor-dark: #b00000;
+  --successcolor: #00b548;
+  --successcolor-dark: color(var(--successcolor) shade(30%));
+  --successcolor-meddark: color(var(--successcolor) shade(60%));
+}
