@@ -1,23 +1,25 @@
 
-.btn {
-  border: 2px solid transparent;
-  border-radius: var(--border-radius);
-  color: var(--textcolor);
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 1;
-  margin-bottom: 0;
-  padding: 16px 30px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: background-color var(--transition-duration), color var(--transition-duration), letter-spacing var(--transition-duration);
-  vertical-align: middle;
-  white-space: nowrap;
+:root {
+  --btn-styles: {
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    color: var(--textcolor);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 16px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color var(--transition-duration), color var(--transition-duration), letter-spacing var(--transition-duration);
+    vertical-align: middle;
+    white-space: nowrap;
+  };
 
-  &--primary {
+  --primary-btn-styles: {
     background-color: var(--primarycolor);
     color: #fff;
 
@@ -25,6 +27,14 @@
       background-color: var(--primarycolor-dark);
       color: #fff;
     }
+  }
+}
+
+.btn {
+  @apply (--btn-styles);
+
+  &--primary {
+    @apply (--primary-btn-styles);
   }
 
   &--secondary {

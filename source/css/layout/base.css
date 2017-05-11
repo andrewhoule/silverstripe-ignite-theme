@@ -24,8 +24,8 @@ html {
 /* Vanity Styles */
 
 ::selection {
-  background: $primarycolor;
-  color: $white;
+  background: var(--primarycolor);
+  color: #fff;
 }
 
 /* Base List Styles */
