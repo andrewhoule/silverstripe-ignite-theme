@@ -40,6 +40,7 @@
 
   table {
     border: 0;
+    border-collapse: collapse;
     margin: 0 0 var(--gap) 0;
     width: 100%;
 
@@ -64,19 +65,6 @@
 
       small {
         color: var(--primarycolor-verylight);
-      }
-    }
-
-    tbody {
-      th {
-        background-color: var(--offsetcolor-subtle);
-        border-bottom: 1px solid var(--offsetcolor-strong);
-        border-right: 0;
-        color: var(--textcolor);
-
-        &:last-child {
-          border-right: 0;
-        }
       }
     }
 

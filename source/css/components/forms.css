@@ -119,10 +119,9 @@ input {
     @apply --input-focus-styles;
   }
 
-  &[type='checkbox'] {
-    float: left;
-    margin: 6px 10px 0 0;
-    width: auto;
+  &.checkbox {
+    margin-right: var(--gap-xs);
+    width: inherit;
   }
 }
 
@@ -177,6 +176,11 @@ select {
   &.checkboxset,
   &.optionset {
     width: 100%;
+  }
+
+  &.checkbox {
+    align-items: center;
+    display: flex;
   }
 }
 
@@ -235,7 +239,7 @@ ul {
 label {
   &.right {
     margin: 0;
-    padding: 0 0 5px;
+    padding: 0;
     text-align: left;
   }
 }

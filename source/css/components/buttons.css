@@ -1,6 +1,7 @@
 
 :root {
   --btn-styles: {
+    appearance: none;
     border: 2px solid transparent;
     border-radius: var(--border-radius);
     color: var(--textcolor);
@@ -14,7 +15,9 @@
     padding: 16px 30px;
     text-align: center;
     text-transform: uppercase;
-    transition: background-color var(--transition-duration), color var(--transition-duration), letter-spacing var(--transition-duration);
+    transition:
+      background-color var(--transition-duration),
+      color var(--transition-duration);
     vertical-align: middle;
     white-space: nowrap;
   };
@@ -66,22 +69,12 @@
   &--full {
     display: block;
     width: 100%;
-
-    &:hover {
-      letter-spacing: 4px;
-    }
   }
 
   &--inline-on-md {
     @media (--md) {
       display: inline-block;
       width: auto;
-    }
-
-    &:hover {
-      @media (--md) {
-        letter-spacing: 1px;
-      }
     }
   }
 

@@ -61,7 +61,9 @@ module.exports = {
                   styleLint,
                   apply,
                   nested,
-                  pxToRem,
+                  pxToRem({
+                    replace: false
+                  }),
                   colorFunction(),
                   fontMagician({
                     variants: {
