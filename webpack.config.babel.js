@@ -24,7 +24,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, '/build/'),
-    publicPath: '/',
+    publicPath: './',
     filename: 'bundle.js'
   },
 
@@ -32,10 +32,12 @@ module.exports = {
     loaders: [
       {
         test: /\.(png|jpg|gif)$/,
-        use: [
-          'url-loader'
-        ]
+        loader: 'file-loader',
+        options: {
+          name: 'img/[hash].[ext]',
+        },
       },
+
       {
         test: /\.svg$/,
         exclude: /(node_modules)/,
@@ -43,6 +45,15 @@ module.exports = {
           'file-loader'
         ]
       },
+
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]',
+        },
+      },
+
       {
         test: /\.css$/,
         use: extractTextPlugin.extract({
@@ -97,6 +108,7 @@ module.exports = {
           ]
         })
       },
+      
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
