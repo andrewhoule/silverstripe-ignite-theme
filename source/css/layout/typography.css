@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  color: var(--textcolor);
+  color: var(--text-color);
   font-family: 'Lato';
   font-size: var(--base-font-size);
   font-weight: 400;
@@ -24,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--textcolor-medstrong);
+  color: var(--text-color-medstrong);
   font-family: 'Lora';
   font-weight: 700;
   line-height: 1.3;
@@ -56,12 +56,12 @@ h6 {
 }
 
 a {
-  color: var(--primarycolor);
+  color: var(--primary-color);
   outline: none;
   text-decoration: none;
 
   &:hover {
-    color: var(--secondarycolor);
+    color: var(--secondary-color);
   }
 }
 
@@ -74,7 +74,7 @@ small {
 }
 
 code {
-  color: var(--textcolor-subtle);
+  color: var(--text-color-subtle);
   font-family: Consolas, 'Liberation Mono', Courier, monospace;
   font-weight: 400;
 }

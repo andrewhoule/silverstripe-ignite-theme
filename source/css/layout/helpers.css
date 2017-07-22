@@ -18,11 +18,11 @@
 }
 
 .primary-color {
-  color: var(--primarycolor);
+  color: var(--primary-color);
 }
 
 .secondary-color {
-  color: var(--secondarycolor);
+  color: var(--secondary-color);
 }
 
 .all-caps {

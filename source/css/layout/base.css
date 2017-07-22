@@ -24,7 +24,7 @@ html {
 /* Vanity Styles */
 
 ::selection {
-  background: var(--primarycolor);
+  background: var(--primary-color);
   color: #fff;
 }
 

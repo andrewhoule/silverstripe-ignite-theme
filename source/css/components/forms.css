@@ -4,11 +4,11 @@
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    background-color: var(--offsetcolor);
-    border: 1px solid var(--offsetcolor-verystrong);
+    background-color: var(--offset-color);
+    border: 1px solid var(--offset-color-verystrong);
     border-radius: 0;
     box-shadow: none;
-    color: var(--textcolor);
+    color: var(--text-color);
     font-size: 16px;
     height: auto;
     line-height: 1.3;
@@ -18,13 +18,13 @@
   };
 
   --input-focus-styles {
-    box-shadow: 0 0 6px var(--primarycolor);
+    box-shadow: 0 0 6px var(--primary-color);
     outline: 0 none;
   };
 
   --label-styles {
     clear: both;
-    color: var(--textcolor-strong);
+    color: var(--text-color-strong);
     font-size: 18px;
     font-weight: 700;
     line-height: 1.3;
@@ -80,8 +80,8 @@ form {
 
   h2,
   .FormHeading {
-    border-bottom: 1px solid var(--offsetcolor);
-    border-top: 1px solid var(--offsetcolor);
+    border-bottom: 1px solid var(--offset-color);
+    border-top: 1px solid var(--offset-color);
     clear: both;
     font-size: 22px;
     line-height: 1.3;
@@ -137,7 +137,7 @@ textarea {
 
 select {
   -webkit-appearance: menulist-button;
-  border: 1px solid var(--offsetcolor-verystrong);
+  border: 1px solid var(--offset-color-verystrong);
   font-size: 14px;
   height: 34px;
   line-height: 1.3;
@@ -250,7 +250,7 @@ label {
   label {
     &.left {
       &::after {
-        color: var(--alertcolor);
+        color: var(--alert-color);
         content: ' *';
         font-weight: 400;
       }
@@ -259,7 +259,7 @@ label {
 }
 
 .required {
-  background-color: var(--alertcolor-dark);
+  background-color: var(--alert-color-dark);
   color: #fff;
   display: block;
   font-size: 16px;
@@ -272,7 +272,7 @@ label {
   width: 100%;
 
   &::before {
-    border-bottom: 9px solid var(--alertcolor-dark);
+    border-bottom: 9px solid var(--alert-color-dark);
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
     content: '';
@@ -289,7 +289,7 @@ label {
 
 .message {
   &.error {
-    color: var(--alertcolor-dark);
+    color: var(--alert-color-dark);
     display: block;
     font-size: 16px;
     font-weight: 700;
@@ -298,8 +298,8 @@ label {
 }
 
 .success {
-  background-color: var(--successcolor-dark);
-  border: 3px solid var(--successcolor-meddark);
+  background-color: var(--success-color-dark);
+  border: 3px solid var(--success-color-meddark);
   color: #fff;
   display: block;
   font-size: 18px;
@@ -310,7 +310,7 @@ label {
 }
 
 .form-text {
-  color: var(--textcolor);
+  color: var(--text-color);
 }
 
 .action {

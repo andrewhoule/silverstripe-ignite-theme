@@ -10,23 +10,23 @@
 
     &.active {
       a {
-        background-color: var(--primarycolor);
+        background-color: var(--primary-color);
         color: #fff;
       }
     }
   }
 
   a {
-    background-color: var(--primarycolor);
+    background-color: var(--primary-color);
     border-radius: var(--border-radius);
-    color: var(--textcolor-subtle);
+    color: var(--text-color-subtle);
     display: block;
     padding: 6px 12px;
     text-decoration: none;
     transition-duration: $transition-duration;
 
     &:hover {
-      color: var(--textcolor-medstrong);
+      color: var(--text-color-medstrong);
     }
   }
 }

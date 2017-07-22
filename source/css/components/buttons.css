@@ -4,7 +4,7 @@
     appearance: none;
     border: 2px solid transparent;
     border-radius: var(--border-radius);
-    color: var(--textcolor);
+    color: var(--text-color);
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -23,11 +23,11 @@
   };
 
   --primary-btn-styles: {
-    background-color: var(--primarycolor);
+    background-color: var(--primary-color);
     color: #fff;
 
     &:hover {
-      background-color: var(--primarycolor-dark);
+      background-color: var(--primary-color-dark);
       color: #fff;
     }
   }
@@ -41,23 +41,23 @@
   }
 
   &--secondary {
-    background-color: var(--secondarycolor);
+    background-color: var(--secondary-color);
     color: #fff;
 
     &:hover {
-      background-color: var(--secondarycolor-dark);
+      background-color: var(--secondary-color-dark);
       color: #fff;
     }
   }
 
   &--offset {
-    background-color: var(--offsetcolor-medsubtle);
-    color: var(--textcolor);
+    background-color: var(--offset-color-medsubtle);
+    color: var(--text-color);
     font-weight: 400;
 
     &:hover {
-      background-color: var(--offsetcolor);
-      color: var(--textcolor);
+      background-color: var(--offset-color);
+      color: var(--text-color);
     }
   }
 
@@ -80,11 +80,11 @@
 
   &--ghost {
     background-color: transparent;
-    border-color: var(--darkcolor);
-    color: var(--darkcolor);
+    border-color: var(--dark-color);
+    color: var(--dark-color);
 
     &:hover {
-      background-color: var(--darkcolor);
+      background-color: var(--dark-color);
       border-color: transparent;
       color: #fff;
     }

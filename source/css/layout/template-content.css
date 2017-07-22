@@ -3,7 +3,7 @@
 .template-content {
 
   strong {
-    color: var(--textcolor-medstrong);
+    color: var(--text-color-medstrong);
   }
 
   /* List Styles */
@@ -45,9 +45,9 @@
     width: 100%;
 
     th {
-      background-color: var(--primarycolor);
-      border-bottom: 1px solid var(--primarycolor-dark);
-      border-right: 1px solid var(--primarycolor-dark);
+      background-color: var(--primary-color);
+      border-bottom: 1px solid var(--primary-color-dark);
+      border-right: 1px solid var(--primary-color-dark);
       color: #fff;
       font-family: 'Lora';
       font-weight: 700;
@@ -58,26 +58,26 @@
         color: #fff;
 
         &:hover {
-          color: var(--primarycolor-verylight);
+          color: var(--primary-color-verylight);
           text-decoration: underline;
         }
       }
 
       small {
-        color: var(--primarycolor-verylight);
+        color: var(--primary-color-verylight);
       }
     }
 
     tr {
       td {
-        border-bottom: 1px solid var(--offsetcolor);
-        color: var(--textcolor);
+        border-bottom: 1px solid var(--offset-color);
+        color: var(--text-color);
         padding: 10px 15px;
         vertical-align: top;
       }
 
       &:nth-child(even) {
-        background-color: var(--offsetcolor-verysubtle);
+        background-color: var(--offset-color-verysubtle);
       }
 
       &:nth-child(odd) {
@@ -102,7 +102,7 @@
 
     tfoot {
       td {
-        background-color: var(--darkcolor);
+        background-color: var(--dark-color);
         color: #fff;
       }
     }
@@ -112,7 +112,7 @@
 
   blockquote {
     border: 0;
-    color: var(--textcolor);
+    color: var(--text-color);
     font-family: 'Lora';
     font-size: 21px;
     font-style: italic;
@@ -143,7 +143,7 @@
 
   figcaption,
   cite {
-    color: var(--textcolor-subtle);
+    color: var(--text-color-subtle);
     display: block;
     font-size: 14px;
     font-style: normal;
