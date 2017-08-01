@@ -1,4 +1,6 @@
 'use strict';
 
-// Styles
-import styles from './css/app.css';
+// CSS
+import './css/app.css';
+
+// JS
