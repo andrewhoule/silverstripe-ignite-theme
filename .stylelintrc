@@ -1,4 +1,7 @@
 {
+  "plugins": [
+    "stylelint-order"
+  ],
   "rules": {
     "at-rule-empty-line-before": "never",
     "at-rule-name-case": "lower",
@@ -34,7 +37,6 @@
     } ],
     "declaration-block-no-redundant-longhand-properties": true,
     "declaration-block-no-shorthand-property-overrides": true,
-    "declaration-block-properties-order": "alphabetical",
     "declaration-block-semicolon-newline-after": "always-multi-line",
     "declaration-block-semicolon-space-after": "always-single-line",
     "declaration-block-semicolon-space-before": "never",
@@ -79,6 +81,11 @@
     "no-missing-end-of-source-newline": true,
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-alphabetical-order": true,
     "property-case": "lower",
     "property-no-unknown": true,
     "rule-empty-line-before": null,
