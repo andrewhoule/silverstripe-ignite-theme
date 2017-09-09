@@ -137,15 +137,18 @@ module.exports = {
       disable: false,
       allChunks: true
     }),
+
     new browserSync({
       host: 'localhost',
       port: 3000,
       proxy: 'http://localdomain.local',
       notify: false
     }),
+
     new svgSpritemapPlugin({
-      src: './source/icons/**/*.svg',
-      filename: 'icons.svg'
+      filename: 'icons.svg',
+      prefix: '',
+      src: './source/icons/**/*.svg'
     })
   ]
 }

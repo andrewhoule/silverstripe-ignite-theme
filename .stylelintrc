@@ -3,7 +3,6 @@
     "stylelint-order"
   ],
   "rules": {
-    "at-rule-empty-line-before": "never",
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always-single-line",
     "at-rule-semicolon-newline-after": "always",
@@ -67,7 +66,6 @@
     "media-feature-colon-space-before": "never",
     "media-feature-name-case": "lower",
     "media-feature-name-no-unknown": true,
-    "media-feature-no-missing-punctuation": null,
     "media-feature-parentheses-space-inside": "never",
     "media-feature-range-operator-space-after": "always",
     "media-feature-range-operator-space-before": "always",

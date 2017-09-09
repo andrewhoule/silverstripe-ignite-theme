@@ -188,26 +188,25 @@ ul {
   &.optionset,
   &.checkboxset {
     display: block;
+    margin: 0;
     padding: 0 0 var(--gap-sm) 0;
     width: 100%;
 
     li {
+      align-items: center;
+      display: flex;
       list-style: none;
     }
 
     input {
-      border: 0;
-      display: block;
-      float: left;
-      margin: 4px 8px 0 0;
+      margin: 0 8px;
       padding: 0;
-      width: auto;
     }
+  }
 
-    label {
-      &.right {
-        float: left;
-      }
+  &.checkboxset {
+    input {
+      appearance: checkbox;
     }
   }
 }
