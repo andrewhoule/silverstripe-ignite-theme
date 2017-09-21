@@ -1,18 +1,18 @@
 
-import apply from 'postcss-apply';
-import browserSync from 'browser-sync-webpack-plugin';
-import colorFunction from 'postcss-color-function';
-import cssImport from 'postcss-import';
-import cssNano from 'cssnano';
-import cssNext from 'postcss-cssnext';
-import extractTextPlugin from 'extract-text-webpack-plugin';
-import fontMagician from 'postcss-font-magician';
-import nested from 'postcss-nested';
-import path from 'path';
-import pxToRem from 'postcss-pxtorem';
-import styleLint from 'stylelint';
-import svgSpritemapPlugin from 'svg-spritemap-webpack-plugin';
-import webpack from 'webpack';
+const apply = require('postcss-apply');
+const browserSync = require('browser-sync-webpack-plugin');
+const colorFunction = require('postcss-color-function');
+const cssImport = require('postcss-import');
+const cssNano = require('cssnano');
+const cssNext = require('postcss-cssnext');
+const extractTextPlugin = require('extract-text-webpack-plugin');
+const fontMagician = require('postcss-font-magician');
+const nested = require('postcss-nested');
+const path = require('path');
+const pxToRem = require('postcss-pxtorem');
+const styleLint = require('stylelint');
+const svgSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
 

@@ -2,7 +2,6 @@
 :root {
   --base-font-size: 17px;
   --border-radius: 4px;
-  --header-height: 60px;
   --gap: 30px;
   --gap-sm: calc(var(--gap) * .8);
   --gap-xs: calc(var(--gap) * .4);
