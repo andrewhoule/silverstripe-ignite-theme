@@ -1,5 +1,5 @@
 {
-    "name": "andrewhoule/ignite",
+    "name": "andrewhoule/silverstripe-ignite-theme",
     "description": "SilverStripe Ignite Theme (Starter Silverstripe HTML/PostCSS/Webpack Tooling Base)",
     "type": "silverstripe-theme",
     "keywords": ["silverstripe", "theme"],
