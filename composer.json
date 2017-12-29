@@ -1,0 +1,17 @@
+{
+    "name": "andrewhoule/silverstripe-ignite-theme",
+    "description": "SilverStripe Ignite Theme (Starter Silverstripe HTML/PostCSS/Webpack Tooling Base)",
+    "type": "silverstripe-theme",
+    "keywords": ["silverstripe", "theme"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Andrew Houle",
+            "homepage": "https://andrewhoule.me"
+        }
+    ],
+    "require": {
+        "composer/installers": "*",
+        "silverstripe/framework": ">=3.5"
+    }
+}

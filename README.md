@@ -1,4 +1,4 @@
-Barebones Silverstripe HTML/PostCSS/Webpack Tooling Base
+Starter Silverstripe HTML/PostCSS/Webpack Tooling Base
 ====================
 
 ## Author
@@ -6,7 +6,7 @@ Barebones Silverstripe HTML/PostCSS/Webpack Tooling Base
 * http://andrewhoule.me
 
 ## About
-This is a bare essentials HTML/PostCSS/Webpack tooling base. It's meant as a starter kit, and a base to your tooling workflow, but not a full fledged theme. It has some base styles and functionality that are relevant to a Silverstripe site. It includes webpack configuration tasks for PostCSS, SVG sprites, babel, and browsersync.
+This is a bare essentials HTML/PostCSS/Webpack tooling base. It's meant as a starter kit, and a base to your tooling workflow, but not a full fledged theme. It has some base styles and functionality that are relevant to a Silverstripe site. It includes webpack configuration tasks for PostCSS, SVG sprites, Babel, and BrowserSync.
 
 ## Installation
 * Download and add to your theme folder. Then rename and point to the new theme.
