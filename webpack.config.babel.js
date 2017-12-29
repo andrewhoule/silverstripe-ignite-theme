@@ -32,6 +32,7 @@ module.exports = {
     loaders: [
       {
         test: /\.(png|jpg|gif)$/,
+        exclude: /(node_modules)/,
         loader: 'file-loader',
         options: {
           name: 'img/[hash].[ext]',
@@ -48,6 +49,7 @@ module.exports = {
 
       {
         test: /\.(ttf|eot|woff|woff2)$/,
+        exclude: /(node_modules)/,
         loader: 'file-loader',
         options: {
           name: 'fonts/[name].[ext]',
@@ -56,6 +58,7 @@ module.exports = {
 
       {
         test: /\.css$/,
+        exclude: /(node_modules)/,
         use: extractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
