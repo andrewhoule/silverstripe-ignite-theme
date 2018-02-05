@@ -1,6 +1,5 @@
 
 :root {
-  --base-font-size: 17px;
   --border-radius: 4px;
   --gap: 30px;
   --gap-sm: calc(var(--gap) * .8);
