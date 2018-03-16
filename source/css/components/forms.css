@@ -1,8 +1,6 @@
 
 :root {
   --input-styles: {
-    -moz-appearance: none;
-    -webkit-appearance: none;
     appearance: none;
     background-color: var(--offset-color);
     border: 1px solid var(--offset-color-verystrong);
@@ -120,8 +118,10 @@ input {
   }
 
   &.checkbox {
+    appearance: checkbox;
+    height: 20px;
     margin-right: var(--gap-xs);
-    width: inherit;
+    width: 20px;
   }
 }
 
