@@ -59,7 +59,7 @@
       border-bottom: 1px solid var(--primary-color-dark);
       border-right: 1px solid var(--primary-color-dark);
       color: #fff;
-      font-family: 'Lora';
+      font-family: var(--secondary-font);
       font-weight: 700;
       padding: 10px 15px;
       text-align: left;
@@ -123,11 +123,11 @@
   blockquote {
     border: 0;
     color: var(--text-color);
-    font-family: 'Lora';
-    font-size: 21px;
+    font-family: var(--secondary-font);
+    font-size: calc(2.1rem + .1vw);
     font-style: italic;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.5;
     margin: 0 0 var(--gap-sm) 0;
     padding: 5px var(--gap) 0 var(--gap);
     position: relative;
@@ -146,7 +146,7 @@
   }
 
   q {
-    font-family: 'Lora';
+    font-family: var(--secondary-font);
     font-style: italic;
     font-weight: 400;
   }
@@ -155,10 +155,10 @@
   cite {
     color: var(--text-color-subtle);
     display: block;
-    font-size: 14px;
+    font-size: calc(1.3rem + .1vw);
     font-style: normal;
     font-weight: 300;
-    line-height: 20px;
+    line-height: 1.5;
     margin: 0 0 var(--gap) 0;
     text-align: right;
 

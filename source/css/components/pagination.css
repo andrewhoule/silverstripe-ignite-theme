@@ -6,8 +6,8 @@
 .pagination {
   align-items: center;
   display: flex;
-  font-size: 15px;
-  margin: var(--gap-lg) 0 var(--$gap-lg) 0;
+  font-size: calc(1.5rem + .1vw);
+  margin: var(--gap-lg) 0 var(--gap-lg) 0;
 }
 
 .pagination__item {

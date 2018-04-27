@@ -32,7 +32,6 @@
     "postcss-apply": "^0.8.0",
     "postcss-color-function": "^4.0.1",
     "postcss-cssnext": "^3.1.0",
-    "postcss-font-magician": "^2.1.0",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.1.0",
     "postcss-nested": "^3.0.0",

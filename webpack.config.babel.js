@@ -6,7 +6,6 @@ const cssImport = require('postcss-import');
 const cssNano = require('cssnano');
 const cssNext = require('postcss-cssnext');
 const extractTextPlugin = require('extract-text-webpack-plugin');
-const fontMagician = require('postcss-font-magician');
 const nested = require('postcss-nested');
 const path = require('path');
 const pxToRem = require('postcss-pxtorem');
@@ -79,26 +78,6 @@ module.exports = {
                     replace: false
                   }),
                   colorFunction(),
-                  fontMagician({
-                    variants: {
-                      'Lato': {
-                        '300': [],
-                        '300 italic': [],
-                        '400': [],
-                        '400 italic': [],
-                        '700': [],
-                        '700 italic': [],
-                        '900': []
-                      },
-                      'Lora': {
-                        '400': [],
-                        '400 italic': [],
-                        '700': [],
-                        '700 italic': []
-                      }
-                    },
-                    foundries: ['google']
-                  }),
                   cssNext({
                     browsers: ['last 2 versions']
                   }),

@@ -71,7 +71,7 @@ img {
 }
 
 .caption {
-  font-family: 'Lora';
+  font-family: var(--secondary-font);
   margin: 0;
   text-align: left;
   width: 100%;
