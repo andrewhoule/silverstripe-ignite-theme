@@ -37,7 +37,10 @@
   --dark-color-verydark: color(var(--dark-color) shade(60%));
   --alert-color: #c40000;
   --alert-color-dark: #b00000;
+  --alert-color-meddark: color(var(--alert-color) shade(40%));
+  --alert-color-verydark: color(var(--alert-color) shade(60%));
   --success-color: #00b548;
   --success-color-dark: color(var(--success-color) shade(30%));
   --success-color-meddark: color(var(--success-color) shade(60%));
+  --success-color-verydark: color(var(--success-color) shade(60%));
 }
