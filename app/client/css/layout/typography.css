@@ -1,8 +1,4 @@
 
-html {
-  font-size: 62.5%;
-}
-
 body {
   color: var(--text-color);
   font-family: var(--primary-font);
@@ -15,7 +11,7 @@ body {
 p,
 pre,
 address {
-  margin: 0 0 var(--gap) 0;
+  margin: 0 0 var(--gap);
 }
 
 h1,

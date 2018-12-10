@@ -21,12 +21,6 @@ img {
     display: block;
     margin: 0 auto var(--gap) auto;
   }
-
-  &.no-float {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 .captionImage {

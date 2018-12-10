@@ -1,5 +1,5 @@
-<footer class="site-info" role="contentinfo">
+<footer class="footer" role="contentinfo">
 
-</footer><!-- .site-info -->
+</footer><!-- .footer -->
 
-<script src="$Themedir/build/bundle.js"></script>
+<script src="dist/bundle.js"></script>

@@ -6,6 +6,12 @@
   padding: 0;
 }
 
+/* Baseline size to make rem sizing easier */
+
+html {
+  font-size: 62.5%;
+}
+
 /* Border Box for all */
 
 html {

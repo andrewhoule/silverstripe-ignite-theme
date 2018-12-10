@@ -8,6 +8,7 @@
 
 @import 'layout/base';
 @import 'layout/breakpoints';
+@import 'layout/forms';
 @import 'layout/helpers';
 @import 'layout/structure';
 @import 'layout/template-content';
@@ -16,6 +17,5 @@
 /* Components */
 
 @import 'components/buttons';
-@import 'components/forms';
 @import 'components/pagination';
 @import 'components/ss-images';

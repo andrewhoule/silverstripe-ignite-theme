@@ -25,11 +25,11 @@
 
     > li {
       list-style-position: outside;
-      margin-bottom: 5px;
+      margin-bottom: .5rem;
 
       > ul,
       > ol {
-        margin-top: 10px;
+        margin-top: 1rem;
       }
     }
   }
@@ -51,17 +51,17 @@
   table {
     border: 0;
     border-collapse: collapse;
-    margin: 0 0 var(--gap) 0;
+    margin: 0 0 var(--gap);
     width: 100%;
 
     th {
       background-color: var(--primary-color);
-      border-bottom: 1px solid var(--primary-color-dark);
-      border-right: 1px solid var(--primary-color-dark);
+      border-bottom: .1rem solid var(--primary-color-dark);
+      border-right: .1rem solid var(--primary-color-dark);
       color: #fff;
       font-family: var(--secondary-font);
       font-weight: 700;
-      padding: 10px 15px;
+      padding: 1rem 1.5rem;
       text-align: left;
 
       a {
@@ -80,9 +80,9 @@
 
     tr {
       td {
-        border-bottom: 1px solid var(--offset-color);
+        border-bottom: .1rem solid var(--offset-color);
         color: var(--text-color);
-        padding: 10px 15px;
+        padding: 1rem 1.5rem;
         vertical-align: top;
       }
 
@@ -100,12 +100,12 @@
     }
 
     ul {
-      margin: 2px 0;
+      margin: .2rem 0;
       padding: 0;
 
       li {
         list-style-type: none;
-        margin: 0 0 3px;
+        margin: 0 0 .3rem;
         padding: 0;
       }
     }
@@ -128,8 +128,8 @@
     font-style: italic;
     font-weight: 400;
     line-height: 1.5;
-    margin: 0 0 var(--gap-sm) 0;
-    padding: 5px var(--gap) 0 var(--gap);
+    margin: 0 0 var(--gap-sm);
+    padding: .5rem var(--gap) 0;
     position: relative;
     text-align: center;
     width: 100%;
