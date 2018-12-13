@@ -1,9 +1,8 @@
-
 :root {
   --input-styles: {
     appearance: none;
     background-color: #fff;
-    border: .1rem solid var(--offset-color-medstrong);
+    border: 0.1rem solid var(--offset-color-medstrong);
     border-radius: 0;
     box-shadow: none;
     color: var(--text-color);
@@ -13,14 +12,14 @@
     line-height: 1.3;
     margin: 0;
     outline: none;
-    padding: .8rem;
-  };
+    padding: 0.8rem;
+  }
 
   --input-focus-styles {
-    border: .1rem solid var(--secondary-color);
+    border: 0.1rem solid var(--secondary-color);
     box-shadow: none;
     outline: 0 none;
-  };
+  }
 
   --label-styles {
     color: var(--text-color-strong);
@@ -29,7 +28,7 @@
     line-height: 1.3;
     margin: 0 !important;
     padding: 0 0 var(--gap-xxs) 0;
-  };
+  }
 
   --alert-box-styles {
     border-radius: var(--border-radius);
@@ -40,17 +39,17 @@
     strong {
       color: #fff;
     }
-  };
+  }
 
   --success-box-styles: {
     background-color: var(--success-color-dark);
-    border: .4rem solid var(--success-color-verydark);
-  };
+    border: 0.4rem solid var(--success-color-verydark);
+  }
 
   --error-box-styles: {
     background-color: var(--alert-color-dark);
-    border: .4rem solid var(--alert-color-verydark);
-  };
+    border: 0.4rem solid var(--alert-color-verydark);
+  }
 }
 
 form {
@@ -86,7 +85,7 @@ form {
     padding: 0 0 var(--gap-sm) var(--gap);
 
     li {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
 
       &:last-child {
         margin-bottom: 0;
@@ -100,8 +99,8 @@ form {
 
   h2,
   .FormHeading {
-    border-bottom: .1rem solid var(--offset-color);
-    border-top: .1rem solid var(--offset-color);
+    border-bottom: 0.1rem solid var(--offset-color);
+    border-top: 0.1rem solid var(--offset-color);
     font-size: 2.2rem;
     line-height: 1.3;
     margin: var(--gap-xs) 0 var(--gap-sm);
@@ -159,7 +158,7 @@ textarea {
 
 select {
   appearance: menulist-button;
-  border: .1rem solid var(--offset-color-verystrong);
+  border: 0.1rem solid var(--offset-color-verystrong);
   font-size: 1.4rem;
   height: 3.4rem;
   line-height: 1.3;
@@ -197,7 +196,7 @@ ul {
     }
 
     input {
-      margin: 0 .8rem;
+      margin: 0 0.8rem;
       padding: 0;
     }
   }

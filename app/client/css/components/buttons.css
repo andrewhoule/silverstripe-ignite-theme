@@ -1,26 +1,24 @@
-
 :root {
   --btn-styles: {
     appearance: none;
-    border: .2rem solid transparent;
+    border: 0.2rem solid transparent;
     border-radius: var(--border-radius);
     color: var(--text-color);
     cursor: pointer;
     display: inline-block;
-    font-size: calc(1.3rem + .1vw);
+    font-size: calc(1.3rem + 0.1vw);
     font-weight: 700;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     line-height: 1;
     margin-bottom: 0;
     padding: 1.8rem 3rem;
     text-align: center;
     text-transform: uppercase;
-    transition:
-      background-color var(--transition-dur),
+    transition: background-color var(--transition-dur),
       color var(--transition-dur);
     vertical-align: middle;
     white-space: nowrap;
-  };
+  }
 
   --primary-btn-styles: {
     background-color: var(--primary-color);
@@ -62,7 +60,7 @@
   }
 
   &--sm {
-    font-size: calc(1.1rem + .1vw);
+    font-size: calc(1.1rem + 0.1vw);
     padding: 1rem 1.8rem;
   }
 

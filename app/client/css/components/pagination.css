@@ -1,12 +1,11 @@
-
 :root {
-  --pagination-gap: .6rem;
+  --pagination-gap: 0.6rem;
 }
 
 .pagination {
   align-items: center;
   display: flex;
-  font-size: calc(1.5rem + .1vw);
+  font-size: calc(1.5rem + 0.1vw);
   margin: var(--gap-lg) 0 var(--gap-lg) 0;
 }
 
@@ -30,9 +29,9 @@
   border-radius: var(--border-radius);
   color: var(--text-color-subtle);
   display: block;
-  padding: .6rem 1.2rem;
+  padding: 0.6rem 1.2rem;
   text-decoration: none;
-  transition-duration: $transition-duration;
+  transition-duration: var(--transition-dur);
 
   &:hover {
     color: var(--primary-color);

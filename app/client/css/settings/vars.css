@@ -1,19 +1,18 @@
-
 :root {
-  --border-radius: .4rem;
+  --border-radius: 0.4rem;
   --gap: 3rem;
-  --gap-sm: calc(var(--gap) * .8);
-  --gap-xs: calc(var(--gap) * .6);
-  --gap-xxs: calc(var(--gap) * .4);
+  --gap-sm: calc(var(--gap) * 0.8);
+  --gap-xs: calc(var(--gap) * 0.6);
+  --gap-xxs: calc(var(--gap) * 0.4);
   --gap-lg: calc(var(--gap) * 1.5);
   --gap-xl: calc(var(--gap) * 2);
   --gap-xxl: calc(var(--gap) * 2.5);
   --max-width: 120rem;
-  --max-width-sm: calc(var(--max-width) * .8);
-  --max-width-xs: calc(var(--max-width) * .6);
+  --max-width-sm: calc(var(--max-width) * 0.8);
+  --max-width-xs: calc(var(--max-width) * 0.6);
   --max-width-lg: calc(var(--max-width) * 1.2);
   --max-width-xl: calc(var(--max-width) * 1.4);
-  --primary-font: 'Arial', sans-serif;
-  --secondary-font: 'Georgia', serif;
-  --transition-dur: .2s;
+  --primary-font: "Arial", sans-serif;
+  --secondary-font: "Georgia", serif;
+  --transition-dur: 0.2s;
 }

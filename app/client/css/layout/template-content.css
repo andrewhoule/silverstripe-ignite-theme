@@ -1,6 +1,4 @@
-
 .template-content {
-
   /* Typography */
 
   h1,
@@ -25,7 +23,7 @@
 
     > li {
       list-style-position: outside;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
 
       > ul,
       > ol {
@@ -56,8 +54,8 @@
 
     th {
       background-color: var(--primary-color);
-      border-bottom: .1rem solid var(--primary-color-dark);
-      border-right: .1rem solid var(--primary-color-dark);
+      border-bottom: 0.1rem solid var(--primary-color-dark);
+      border-right: 0.1rem solid var(--primary-color-dark);
       color: #fff;
       font-family: var(--secondary-font);
       font-weight: 700;
@@ -80,7 +78,7 @@
 
     tr {
       td {
-        border-bottom: .1rem solid var(--offset-color);
+        border-bottom: 0.1rem solid var(--offset-color);
         color: var(--text-color);
         padding: 1rem 1.5rem;
         vertical-align: top;
@@ -100,12 +98,12 @@
     }
 
     ul {
-      margin: .2rem 0;
+      margin: 0.2rem 0;
       padding: 0;
 
       li {
         list-style-type: none;
-        margin: 0 0 .3rem;
+        margin: 0 0 0.3rem;
         padding: 0;
       }
     }
@@ -124,12 +122,12 @@
     border: 0;
     color: var(--text-color);
     font-family: var(--secondary-font);
-    font-size: calc(2.1rem + .1vw);
+    font-size: calc(2.1rem + 0.1vw);
     font-style: italic;
     font-weight: 400;
     line-height: 1.5;
     margin: 0 0 var(--gap-sm);
-    padding: .5rem var(--gap) 0;
+    padding: 0.5rem var(--gap) 0;
     position: relative;
     text-align: center;
     width: 100%;
@@ -155,7 +153,7 @@
   cite {
     color: var(--text-color-subtle);
     display: block;
-    font-size: calc(1.3rem + .1vw);
+    font-size: calc(1.3rem + 0.1vw);
     font-style: normal;
     font-weight: 300;
     line-height: 1.5;
@@ -163,9 +161,8 @@
     text-align: right;
 
     &::before {
-      content: '\2014\00a0';
+      content: "\2014\00a0";
       display: inline-block;
     }
   }
 }
-

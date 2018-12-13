@@ -1,21 +1,20 @@
-
 /* Settings */
 
-@import 'settings/colors';
-@import 'settings/vars';
+@import "settings/colors";
+@import "settings/vars";
 
 /* Typography / Base Stuff */
 
-@import 'layout/base';
-@import 'layout/breakpoints';
-@import 'layout/forms';
-@import 'layout/helpers';
-@import 'layout/structure';
-@import 'layout/template-content';
-@import 'layout/typography';
+@import "layout/base";
+@import "layout/breakpoints";
+@import "layout/forms";
+@import "layout/helpers";
+@import "layout/structure";
+@import "layout/template-content";
+@import "layout/typography";
 
 /* Components */
 
-@import 'components/buttons';
-@import 'components/pagination';
-@import 'components/ss-images';
+@import "components/buttons";
+@import "components/pagination";
+@import "components/ss-images";
