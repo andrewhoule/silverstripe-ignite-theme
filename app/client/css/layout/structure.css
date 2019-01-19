@@ -26,8 +26,8 @@
     background-color: #fff;
   }
 
-  &--offset-color {
-    background-color: var(--offset-color-medsubtle);
+  &--neutral-color {
+    background-color: var(--neutral-color-lighter);
   }
 
   &--primary-color {

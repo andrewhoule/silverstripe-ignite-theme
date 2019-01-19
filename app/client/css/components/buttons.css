@@ -49,12 +49,12 @@
   }
 
   &--offset {
-    background-color: var(--offset-color-medsubtle);
+    background-color: var(--neutral-color-lighter);
     color: var(--text-color);
     font-weight: 400;
 
     &:hover {
-      background-color: var(--offset-color);
+      background-color: var(--neutral-color);
       color: var(--text-color);
     }
   }

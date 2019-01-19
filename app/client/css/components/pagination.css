@@ -25,9 +25,9 @@
 }
 
 .pagination__link {
-  background-color: var(--offset-color-subtle);
+  background-color: var(--neutral-color-light);
   border-radius: var(--border-radius);
-  color: var(--text-color-subtle);
+  color: var(--text-color-light);
   display: block;
   padding: 0.6rem 1.2rem;
   text-decoration: none;

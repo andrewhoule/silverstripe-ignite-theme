@@ -2,7 +2,7 @@
   --input-styles: {
     appearance: none;
     background-color: #fff;
-    border: 0.1rem solid var(--offset-color-medstrong);
+    border: 0.1rem solid var(--neutral-color-medstrong);
     border-radius: 0;
     box-shadow: none;
     color: var(--text-color);
@@ -43,12 +43,12 @@
 
   --success-box-styles: {
     background-color: var(--success-color-dark);
-    border: 0.4rem solid var(--success-color-verydark);
+    border: 0.4rem solid var(--success-color-darkest);
   }
 
   --error-box-styles: {
     background-color: var(--alert-color-dark);
-    border: 0.4rem solid var(--alert-color-verydark);
+    border: 0.4rem solid var(--alert-color-darkest);
   }
 }
 
@@ -99,8 +99,8 @@ form {
 
   h2,
   .FormHeading {
-    border-bottom: 0.1rem solid var(--offset-color);
-    border-top: 0.1rem solid var(--offset-color);
+    border-bottom: 0.1rem solid var(--neutral-color);
+    border-top: 0.1rem solid var(--neutral-color);
     font-size: 2.2rem;
     line-height: 1.3;
     margin: var(--gap-xs) 0 var(--gap-sm);
@@ -158,7 +158,7 @@ textarea {
 
 select {
   appearance: menulist-button;
-  border: 0.1rem solid var(--offset-color-verystrong);
+  border: 0.1rem solid var(--neutral-color-verystrong);
   font-size: 1.4rem;
   height: 3.4rem;
   line-height: 1.3;

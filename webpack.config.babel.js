@@ -16,7 +16,7 @@ module.exports = {
     hints: false
   },
 
-  devtool: "eval-source-map",
+  devtool: "cheap-module-eval-source-map",
 
   entry: "./app/client/app.js",
 
@@ -65,7 +65,7 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              sourceMap: "inline",
+              sourceMap: true,
               plugins: () => [
                 cssImport(),
                 styleLint,
@@ -123,6 +123,11 @@ module.exports = {
       filename: "icons.svg",
       prefix: "",
       src: "./app/client/icons/**/*.svg"
+    }),
+
+    new webpack.SourceMapDevToolPlugin({
+      filename: "[file].map",
+      exclude: ["/vendor/"]
     })
   ]
 };
