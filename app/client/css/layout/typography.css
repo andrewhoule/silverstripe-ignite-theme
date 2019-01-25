@@ -73,3 +73,8 @@ code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: 400;
 }
+
+button {
+  cursor: pointer;
+  font-family: var(--primary-font);
+}

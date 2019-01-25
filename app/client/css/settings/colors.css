@@ -42,4 +42,8 @@
   --success-color-dark: color(var(--success-color) shade(30%));
   --success-color-darker: color(var(--success-color) shade(60%));
   --success-color-darkest: color(var(--success-color) shade(60%));
+  --warning-color: #ffc107;
+  --warning-color-dark: color(var(--warning-color) shade(30%));
+  --warning-color-meddark: color(var(--warning-color) shade(40%));
+  --warning-color-verydark: color(var(--warning-color) shade(60%));
 }

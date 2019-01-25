@@ -1,6 +1,6 @@
 :root {
   --border-radius: 0.4rem;
-  --gap: 3rem;
+  --gap: 3.5rem;
   --gap-sm: calc(var(--gap) * 0.8);
   --gap-xs: calc(var(--gap) * 0.6);
   --gap-xxs: calc(var(--gap) * 0.4);
