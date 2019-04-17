@@ -3,5 +3,5 @@
   "rules": {
     "babel/new-cap": 0,
     "indent": [2, 2]
-  },
+  }
 }

@@ -11,7 +11,7 @@
   }
 
   strong {
-    color: var(--text-color-medstrong);
+    color: var(--text-color-darker);
   }
 
   /* List Styles */

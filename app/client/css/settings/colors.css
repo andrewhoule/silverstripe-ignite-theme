@@ -3,9 +3,9 @@
   --text-color-light: color(var(--text-color) tint(30%));
   --text-color-lighter: color(var(--text-color) tint(60%));
   --text-color-lightest: color(var(--text-color) tint(90%));
-  --text-color-strong: color(var(--text-color) shade(30%));
-  --text-color-medstrong: color(var(--text-color) shade(60%));
-  --text-color-verystrong: color(var(--text-color) shade(90%));
+  --text-color-dark: color(var(--text-color) shade(30%));
+  --text-color-darker: color(var(--text-color) shade(60%));
+  --text-color-darkest: color(var(--text-color) shade(90%));
   --primary-color: #00afd6;
   --primary-color-dark: color(var(--primary-color) shade(30%));
   --primary-color-darker: color(var(--primary-color) shade(60%));
@@ -24,9 +24,9 @@
   --neutral-color-light: color(var(--neutral-color) tint(30%));
   --neutral-color-lighter: color(var(--neutral-color) tint(60%));
   --neutral-color-lightest: color(var(--neutral-color) tint(90%));
-  --neutral-color-strong: color(var(--neutral-color) shade(20%));
-  --neutral-color-medstrong: color(var(--neutral-color) shade(40%));
-  --neutral-color-verystrong: color(var(--neutral-color) shade(60%));
+  --neutral-color-dark: color(var(--neutral-color) shade(20%));
+  --neutral-color-darker: color(var(--neutral-color) shade(40%));
+  --neutral-color-darkest: color(var(--neutral-color) shade(60%));
   --dark-color: #222;
   --dark-color-light: color(var(--dark-color) tint(20%));
   --dark-color-lighter: color(var(--dark-color) tint(40%));
