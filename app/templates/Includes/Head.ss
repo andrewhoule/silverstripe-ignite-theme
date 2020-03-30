@@ -16,7 +16,7 @@
   <meta name="twitter:title" content="$MenuTitle">
   <meta name="twitter:description" content="<% if $MetaDescription %>$MetaDescription<% else %>$SiteConfig.Title - $SiteConfig.Tagline<% end_if %>">
   <meta name="twitter:url" content="$AbsoluteLink">
-  <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><% if ID == "1" %>$SiteConfig.Title<% if $SiteConfig.Tagline %> | $SiteConfig.Tagline<% end_if %><% else %>$MenuTitle | $SiteConfig.Title<% end_if %></title>
 
   <!-- CSS -->

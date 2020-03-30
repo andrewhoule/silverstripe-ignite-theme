@@ -4,53 +4,24 @@ const colorFunction = require("postcss-color-function");
 const cssImport = require("postcss-import");
 const cssNano = require("cssnano");
 const cssNext = require("postcss-cssnext");
-const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const nested = require("postcss-nested");
-const path = require("path");
+const common = require("./webpack.common.js");
+const merge = require("webpack-merge");
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const styleLint = require("stylelint");
-const svgSpritemapPlugin = require("svg-spritemap-webpack-plugin");
 const webpack = require("webpack");
 
-module.exports = {
+module.exports = merge(common, {
+  mode: "development",
+
   performance: {
     hints: false
   },
 
   devtool: "cheap-module-eval-source-map",
 
-  entry: "./app/client/app.js",
-
-  output: {
-    path: path.join(__dirname, "public/dist/"),
-    filename: "bundle.js"
-  },
-
   module: {
     rules: [
-      {
-        test: /\.(ico|png|jpg|gif)$/,
-        exclude: /(node_modules)/,
-        loader: "file-loader",
-        options: {
-          name: "img/[hash].[ext]"
-        }
-      },
-
-      {
-        test: /\.svg$/,
-        exclude: /(node_modules)/,
-        use: ["file-loader"]
-      },
-
-      {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        exclude: /(node_modules)/,
-        loader: "file-loader",
-        options: {
-          name: "fonts/[name].[ext]"
-        }
-      },
-
       {
         test: /\.css$/,
         use: [
@@ -82,47 +53,16 @@ module.exports = {
             }
           }
         ]
-      },
-
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules)/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              sourceMaps: "inline"
-            }
-          },
-          {
-            loader: "eslint-loader",
-            options: {
-              configFile: "./.eslintrc"
-            }
-          }
-        ]
       }
     ]
   },
 
   plugins: [
-    new miniCssExtractPlugin({
-      filename: "bundle.css",
-      disable: false,
-      allChunks: true
-    }),
-
     new browserSync({
       host: "localhost",
       port: 3000,
-      proxy: "http://sitename.local",
+      proxy: "http://yourdomain.local",
       notify: false
-    }),
-
-    new svgSpritemapPlugin({
-      filename: "icons.svg",
-      prefix: "",
-      src: "./app/client/icons/**/*.svg"
     }),
 
     new webpack.SourceMapDevToolPlugin({
@@ -130,4 +70,4 @@ module.exports = {
       exclude: ["/vendor/"]
     })
   ]
-};
+});

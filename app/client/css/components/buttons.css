@@ -88,3 +88,58 @@
     }
   }
 }
+
+/* Buttons Group */
+
+.btns-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--gap-xxs) / 2 * -1);
+
+  &--centered {
+    justify-content: center;
+  }
+
+  &--centered-on-xl {
+    justify-content: center;
+
+    @media (--xl) {
+      justify-content: flex-start;
+    }
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &--full-on-mobile {
+    > * {
+      width: 100%;
+
+      @media (--md) {
+        width: inherit;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: var(--gap-xs);
+
+        @media (--md) {
+          margin-bottom: inherit;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+
+      @media (--md) {
+        width: inherit;
+      }
+    }
+  }
+
+  > * {
+    margin-bottom: var(--gap-xxs);
+    padding: 0 calc(var(--gap-xxs) / 2);
+  }
+}
