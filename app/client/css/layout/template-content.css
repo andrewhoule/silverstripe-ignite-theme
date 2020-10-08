@@ -1,4 +1,7 @@
 .template-content {
+  min-width: 100%;
+  word-break: break-word;
+
   /* Typography */
 
   h1,

@@ -16,5 +16,6 @@
 /* Components */
 
 @import "components/buttons";
+@import "components/embeds";
 @import "components/pagination";
 @import "components/ss-images";

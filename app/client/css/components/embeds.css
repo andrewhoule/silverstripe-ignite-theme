@@ -1,0 +1,19 @@
+.embed {
+  margin-bottom: var(--gap);
+}
+
+.embed--responsive {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: inherit !important;
+
+  iframe {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

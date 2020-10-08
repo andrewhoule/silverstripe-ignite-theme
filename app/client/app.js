@@ -1,8 +1,15 @@
-'use strict';
-
 // CSS
-import './css/app.css';
+import "./css/app.css";
 
 // JS
-import './js/forms';
-import './js/formValidation';
+import { PolyfillNodeListForEach } from "./js/utils/polyfills";
+import { ResponsiveEmbeds } from "./js/components/embeds";
+import { WrapFields } from "./js/components/forms";
+
+// Polyfills
+PolyfillNodeListForEach();
+
+// Components and the like
+WrapFields();
+// ^ Needs to be first in this list
+ResponsiveEmbeds();

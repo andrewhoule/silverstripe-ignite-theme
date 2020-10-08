@@ -1,9 +1,9 @@
 /silverstripe-cache/
 /.env
 /vendor/
+/themes/simple/
 /resources/
 /public/resources/
-/public/assets/
 
 .DS_Store
 /node_modules/
