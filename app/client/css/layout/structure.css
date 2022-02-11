@@ -16,10 +16,11 @@
   }
 
   &--xl-on-md {
+    padding: var(--gap) 0;
+
     @media (--md) {
       padding: var(--gap-xl) 0;
     }
-    padding: var(--gap) 0;
   }
 
   &--white-color {
@@ -46,14 +47,15 @@
 /* Wrapper Stuff */
 
 .wrapper {
-  @media (--md) {
-    padding: 0 var(--gap-xl);
-  }
   margin: 0 auto;
   max-width: var(--max-width);
   padding: 0 var(--gap);
   position: relative;
   width: 100%;
+
+  @media (--md) {
+    padding: 0 var(--gap-xl);
+  }
 
   &--sm {
     max-width: var(--max-width-sm);

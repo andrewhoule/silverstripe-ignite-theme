@@ -20,8 +20,15 @@
   <title><% if ID == "1" %>$SiteConfig.Title<% if $SiteConfig.Tagline %> | $SiteConfig.Tagline<% end_if %><% else %>$MenuTitle | $SiteConfig.Title<% end_if %></title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="dist/bundle.css">
+  <% if $IsLive %>
+    <link rel="stylesheet" href="dist/index.css?v=1">
+  <% else %>
+    <link rel="stylesheet" href="dist/index.css?v=$Now">
+  <% end_if %>
 
   <!-- Icons -->
-  <link rel="shortcut icon" href="{$AbsoluteBaseURL}favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>

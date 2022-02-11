@@ -16,8 +16,10 @@ img {
     margin: 0 0 var(--gap);
   }
 
-  &.center {
+  &.center,
+  &.centered {
     display: block;
+    float: none;
     margin: 0 auto var(--gap) auto;
   }
 }
@@ -30,7 +32,8 @@ img {
     margin-bottom: var(--gap-xs);
   }
 
-  &.center {
+  &.center,
+  &.centered {
     margin-left: auto;
     margin-right: auto;
     width: 100% !important;

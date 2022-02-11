@@ -9,7 +9,7 @@
     "at-rule-semicolon-newline-after": "always",
     "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-after": "always",
-    "block-closing-brace-newline-before": "always-multi-line",
+    "block-closing-brace-newline-before": null,
     "block-closing-brace-space-before": "always-single-line",
     "block-no-empty": true,
     "block-opening-brace-newline-after": "always-multi-line",
@@ -21,19 +21,19 @@
     "comment-no-empty": true,
     "comment-whitespace-inside": "always",
     "custom-property-empty-line-before": [ "always", {
-      except: [
+      "except": [
         "after-custom-property",
-        "first-nested",
+        "first-nested"
       ],
-      ignore: [
+      "ignore": [
         "after-comment",
-        "inside-single-line-block",
-      ],
+        "inside-single-line-block"
+      ]
     } ],
     "declaration-bang-space-after": "never",
     "declaration-bang-space-before": "always",
     "declaration-block-no-duplicate-properties": [ true, {
-      ignore: ["consecutive-duplicates-with-different-values"],
+      "ignore": ["consecutive-duplicates-with-different-values"]
     } ],
     "declaration-block-no-redundant-longhand-properties": true,
     "declaration-block-no-shorthand-property-overrides": true,
@@ -41,7 +41,6 @@
     "declaration-block-semicolon-space-after": "always-single-line",
     "declaration-block-semicolon-space-before": "never",
     "declaration-block-single-line-max-declarations": 1,
-    "declaration-block-trailing-semicolon": "always",
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
     "declaration-empty-line-before": "never",
@@ -56,12 +55,10 @@
     "function-name-case": "lower",
     "function-parentheses-newline-inside": "always-multi-line",
     "function-parentheses-space-inside": "never-single-line",
-    "function-whitespace-after": "always",
-    "indentation": 2,
     "keyframe-declaration-no-important": true,
     "length-zero-no-unit": true,
     "max-empty-lines": 4,
-    "max-nesting-depth": 4,
+    "max-nesting-depth": 8,
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
     "media-feature-name-case": "lower",
@@ -108,9 +105,7 @@
     "string-no-newline": true,
     "string-quotes": "double",
     "unit-case": "lower",
-    "unit-no-unknown": true,
     "value-list-comma-space-after": "always-single-line",
-    "value-list-comma-space-before": "never",
-    "value-list-max-empty-lines": 0,
+    "value-list-comma-space-before": "never"
   }
 }
