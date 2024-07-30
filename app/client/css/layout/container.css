@@ -1,0 +1,54 @@
+.container {
+  color: var(--body-color);
+  margin: auto;
+  max-width: var(--container-max-width, var(--max-width));
+  padding: var(--container-padding--top-override, var(--container-padding--top)) var(--container-padding--x-override, var(--container-padding--x)) var(--container-padding--bottom-override, var(--container-padding--bottom));
+  position: relative;
+  width: 100%;
+
+  &::before {
+    background-color: var(--container-background-color, var(--color--white));
+    content: "";
+    height: 100%;
+    left: calc(50%);
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: calc(100vw + 2px);
+    z-index: -1;
+  }
+
+  &--green,
+  &--red,
+  &--transparent-on-dark {
+    --body-color: var(--color--white);
+    --link-color: var(--color--white);
+    --link-color--hover: var(--color--light-mint);
+    --selection-background-color: var(--color--white);
+    --selection-color: var(--color--green);
+  }
+
+  &--green {
+    --container-background-color: var(--color--green);
+  }
+
+  &--light-gray {
+    --container-background-color: var(--color--light-gray);
+  }
+
+  &--red {
+    --container-background-color: var(--color--red);
+  }
+
+  &--transparent-on-dark {
+    --container-background-color: transparent;
+  }
+}
+
+.container--sm {
+  --container-max-width: var(--max-width--sm);
+}
+
+.container--lg {
+  --container-max-width: var(--max-width--lg);
+}

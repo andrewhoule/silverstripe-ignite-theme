@@ -5,12 +5,6 @@
   padding: 0;
 }
 
-/* Baseline size to make rem sizing easier */
-
-html {
-  font-size: 62.5%;
-}
-
 /* Border Box for all */
 
 html {
@@ -26,11 +20,19 @@ html {
   }
 }
 
+/* No Horizontal Scrolling */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Vanity Styles */
 
 ::selection {
-  background: var(--primary-color);
-  color: #fff;
+  background: var(--selection-background-color, var(--color--blue));
+  color: var(--selection-color, var(--color--white));
 }
 
 /* Base List Styles */
@@ -53,6 +55,11 @@ embed {
 }
 
 /* Base Image Styles / SS Image Styles */
+
+figure {
+  margin: 0;
+  padding: 0;
+}
 
 img {
   display: block;

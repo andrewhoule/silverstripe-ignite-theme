@@ -1,0 +1,45 @@
+:root {
+  --btn {
+    align-items: center;
+    background-color: var(--btn-background-color, transparent);
+    border: var(--border-width) solid transparent;
+    border-radius: var(--btn-border-radius, 0);
+    color: var(--btn-color, var(--color--blue));
+    cursor: var(--btn-cursor, pointer);
+    display: inline-flex;
+    font-family: var(--btn-font-family, var(--font-family--primary));
+    font-size: var(--btn-font-size, var(--font-size--p));
+    font-weight: var(--btn-font-weight, 600);
+    height: var(--btn-height, auto);
+    justify-content: center;
+    letter-spacing: var(--btn-letter-spacing, 2px);
+    line-height: var(--btn-line-height, 1);
+    padding: var(--btn-padding, 0);
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: var(--btn-text-transform, uppercase);
+    transition: background-color var(--transition-dur), border-color var(--transition-dur), color var(--transition-dur);
+    white-space: nowrap;
+    width: var(--btn-width, auto);
+
+    &:hover {
+      color: var(--btn-color--hover, var(--color--yellow));
+    }
+  }
+
+  --btn--pill {
+    --btn-background-color: var(--color--blue);
+    --btn-color: var(--color--yellow);
+    --btn-border-radius: 30px;
+    --btn-padding: var(--gap-static--xs) var(--gap-static--sm);
+  }
+}
+
+.btn {
+  @apply (--btn);
+
+  &--pill {
+    @apply (--btn--pill);
+  }
+}

@@ -1,6 +1,6 @@
 const HandleSSImg = () => {
   const captionClass = "captionImage";
-  const colClass = "template-content";
+  const colClass = "rich-text";
   const centerClass = "centered";
   const imgBuffer = 250;
 

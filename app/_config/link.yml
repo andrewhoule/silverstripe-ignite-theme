@@ -1,0 +1,7 @@
+---
+Name: link
+---
+
+SilverStripe\LinkField\Models\Link:
+  extensions:
+    - Extensions\LinkExtension

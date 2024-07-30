@@ -1,21 +1,32 @@
 :root {
-  --border-radius: 0.4rem;
-  --gap-xxxs: 0.8rem;
-  --gap-xxs: 1.6rem;
-  --gap-unit: 3.2rem;
-  --gap-xxs: calc(0.25 * var(--gap-unit)); /* 8px */
-  --gap-xs: calc(0.5 * var(--gap-unit)); /* 16px */
-  --gap-sm: calc(0.75 * var(--gap-unit)); /* 24px */
-  --gap: calc(1.25 * var(--gap-unit)); /* 40px */
-  --gap-lg: calc(2 * var(--gap-unit)); /* 64px */
-  --gap-xl: calc(3.25 * var(--gap-unit)); /* 104px */
-  --gap-xxl: calc(5.25 * var(--gap-unit)); /* 168px */
-  --max-width: 150rem;
-  --max-width-sm: calc(var(--max-width) * 0.8);
-  --max-width-xs: calc(var(--max-width) * 0.6);
-  --max-width-lg: calc(var(--max-width) * 1.2);
-  --max-width-xl: calc(var(--max-width) * 1.4);
-  --primary-font: "Arial", sans-serif;
-  --secondary-font: "Georgia", serif;
+  --border-radius: 10px;
+  --border-width: 2px;
+  --container-padding--bottom: clamp(40px, -1.34rem + 8vw, 120px);
+  --container-padding--top: clamp(40px, -1.34rem + 8vw, 120px);
+  --container-padding--x: clamp(20px, 0.2rem + 4vw, 80px);
+  --content-width--sm: 1200px;
+  --content-width: 1760px;
+  --content-width--lg: 2200px;
+  --gap--xxxs: clamp(2.5px, calc(0.15625rem + ((1vw - 7.68px) * 0.5187)), 5px);
+  --gap--xxs: clamp(5px, calc(0.3125rem + ((1vw - 7.68px) * 1.0373)), 10px);
+  --gap--xs: clamp(10px, calc(0.625rem + ((1vw - 7.68px) * 2.0747)), 20px);
+  --gap--sm: clamp(20px, calc(1.25rem + ((1vw - 7.68px) * 2.0747)), 30px);
+  --gap: clamp(30px, calc(1.875rem + ((1vw - 7.68px) * 4.1494)), 50px);
+  --gap--lg: clamp(50px, calc(3.125rem + ((1vw - 7.68px) * 4.1494)), 70px);
+  --gap--xl: clamp(70px, calc(4.375rem + ((1vw - 7.68px) * 6.2241)), 100px);
+  --gap--xxl: clamp(100px, calc(6.25rem + ((1vw - 7.68px) * 8.2988)), 140px);
+  --gap-static--xxxs: 5px;
+  --gap-static--xxs: 10px;
+  --gap-static--xs: 15px;
+  --gap-static--sm: 25px;
+  --gap-static: 40px;
+  --gap-static--lg: 50px;
+  --gap-static--xl: 60px;
+  --link-color: var(--color--blue);
+  --link-color--hover: var(--color--green);
+  --max-width--sm: calc(var(--container-padding--left) * 2 + var(--content-width--sm));
+  --max-width: calc(var(--container-padding--left) * 2 + var(--content-width));
+  --max-width--lg: calc(var(--container-padding--left) * 2 + var(--content-width--lg));
+  --minimum-click-area: 42px;
   --transition-dur: 0.2s;
 }

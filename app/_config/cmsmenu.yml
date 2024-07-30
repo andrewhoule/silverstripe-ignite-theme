@@ -1,0 +1,58 @@
+---
+Name: cmsmenu
+---
+
+# SilverStripe\SiteConfig\SiteConfig:
+#   cms_logo: '_resources/app/cms/img/logo-mark.png'
+#   cms_logo_width: 60
+
+# SilverStripe\Admin\LeftAndMain:
+#   extra_requirements_css:
+#     - app/cms/css/leftandmain.css
+
+#   cms_background: '#01304A'
+#   cms_active_background: '#8B6733'
+#   cms_active_color: '#FCF7ED'
+#   cms_border_color: '#001019'
+#   cms_color: '#FCF7ED'
+
+#   menu_groups:
+#     Pages:
+#       priority: 8
+#       items:
+#         - SilverStripe-CMS-Controllers-CMSPagesController
+
+#     News:
+#       priority: 7
+#       items:
+#         - Admins-NewsAdmin
+
+#     Events:
+#       priority: 6
+#       items:
+#         - Admins-EventsAdmin
+
+#     Categories:
+#       priority: 5
+#       items:
+#         - Admins-CategoriesAdmin
+
+#     Submissions:
+#       priority: 4
+#       items:
+#         - Admins-SubmissionsAdmin
+
+#     Files:
+#       priority: 3
+#       items:
+#         - SilverStripe-AssetAdmin-Controller-AssetAdmin
+
+#     Security:
+#       priority: 2
+#       items:
+#         - SilverStripe-Admin-SecurityAdmin
+
+#     Settings:
+#       priority: 1
+#       items:
+#         - SilverStripe-SiteConfig-SiteConfigLeftAndMain

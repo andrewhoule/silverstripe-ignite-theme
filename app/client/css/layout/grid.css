@@ -1,0 +1,59 @@
+:root {
+  --grid-column: 1 / -1;
+  --grid-gap: var(--gap-static--lg) var(--gap-static--m);
+  --grid-template-columns: 1fr;
+
+  @media (--md) {
+    --grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.grid {
+  align-items: var(--grid-align-items, inherit);
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: var(--grid-template-columns);
+
+  > * {
+    grid-column: var(--grid-column--override, var(--grid-column));
+  }
+
+  &--2-cols {
+    > * {
+      @media (--md) {
+        --grid-column: span 6;
+      }
+    }
+  }
+
+  &--3-cols {
+    > * {
+      @media (--md) {
+        --grid-column: span 6;
+      }
+
+      @media (--lg) {
+        --grid-column: span 4;
+      }
+    }
+  }
+
+  &--stacked-on-tablet {
+    @media (--md) {
+      --grid-column: 1 / -1;
+      --grid-template-columns: 1fr;
+    }
+
+    @media (--lg) {
+      --grid-template-columns: repeat(12, 1fr);
+
+      &.grid--2-cols {
+        --grid-column: span 6;
+      }
+
+      &.grid--3-cols {
+        --grid-column: span 4;
+      }
+    }
+  }
+}

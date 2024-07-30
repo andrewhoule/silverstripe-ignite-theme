@@ -14,26 +14,26 @@
 
   &--active {
     .pagination__link {
-      background-color: var(--primary-color);
-      color: #fff;
+      background-color: var(--color--blue);
+      color: var(--color--white);
 
       &:hover {
-        color: #fff;
+        color: var(--color--white);
       }
     }
   }
 }
 
 .pagination__link {
-  background-color: var(--neutral-color-light);
+  background-color: var(--color--fog);
   border-radius: var(--border-radius);
-  color: var(--text-color-light);
+  color: var(--color--light-gray);
   display: block;
   padding: 0.6rem 1.2rem;
   text-decoration: none;
   transition-duration: var(--transition-dur);
 
   &:hover {
-    color: var(--primary-color);
+    color: var(--color--blue);
   }
 }

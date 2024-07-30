@@ -1,0 +1,40 @@
+.asymmetrical-columns {
+  align-items: var(--asymmetrical-columns-align-items, inherit);
+  display: grid;
+  gap: var(--asymmetrical-columns-gap, var(--gap-static));
+  grid-template-columns: 1fr;
+
+  @media (--lg) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  > * {
+    &:nth-child(1) {
+      @media (--lg) {
+        margin-right: var(--asymmetrical-columns-first-child-margin-right--on-lg, var(--gap));
+      }
+    }
+
+    &:nth-child(2) {
+      @media (--lg) {
+        grid-column: span 8;
+      }
+    }
+  }
+
+  &--wide-left {
+    > * {
+      &:nth-child(1) {
+        @media (--lg) {
+          grid-column: span 8;
+        }
+      }
+
+      &:nth-child(2) {
+        @media (--lg) {
+          grid-column: span 4;
+        }
+      }
+    }
+  }
+}

@@ -21,14 +21,15 @@
 
   <!-- CSS -->
   <% if $IsLive %>
-    <link rel="stylesheet" href="dist/index.css?v=1">
+    <link rel="stylesheet" href="dist/app.css?v=1">
   <% else %>
-    <link rel="stylesheet" href="dist/index.css?v=$Now">
+    <link rel="stylesheet" href="dist/app.css?v=$Now">
   <% end_if %>
 
   <!-- Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" href="favicon.svg">
+  <link rel="mask-icon" href="mask-icon.svg" color="#01304A">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#01304A">
+  <link rel="manifest" href="manifest.json">
 </head>

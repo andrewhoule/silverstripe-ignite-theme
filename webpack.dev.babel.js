@@ -18,7 +18,7 @@ const config = merge(common, {
     new browserSync({
       host: "localhost",
       port: 3000,
-      proxy: "http://yourdomain.local",
+      proxy: "https://yoursite.ddev.site",
       notify: false
     }),
 

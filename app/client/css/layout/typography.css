@@ -1,7 +1,7 @@
 body {
-  color: var(--text-color);
-  font-family: var(--primary-font);
-  font-size: 1.6rem;
+  color: var(--body-color, var(--color--gray));
+  font-family: var(--font-family--primary);
+  font-size: var(--font-size--p);
   font-weight: 400;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
@@ -10,7 +10,7 @@ body {
 p,
 pre,
 address {
-  margin: 0 0 var(--gap);
+  margin: 0;
 }
 
 h1,
@@ -19,68 +19,44 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-color-darker);
-  font-family: var(--secondary-font);
+  color: var(--color--graphite);
+  font-family: var(--font-family--secondary);
   font-weight: 700;
   line-height: 1.4;
   margin: 0;
 }
 
 h1 {
-  font-size: 2.8rem;
-
-  @media (--md) {
-    font-size: 3.2rem;
-  }
+  font-size: var(--font-size--h1);
 }
 
 h2 {
-  font-size: 2.4rem;
-
-  @media (--md) {
-    font-size: 2.8rem;
-  }
+  font-size: var(--font-size--h2);
 }
 
 h3 {
-  font-size: 2.1rem;
-
-  @media (--md) {
-    font-size: 2.8rem;
-  }
+  font-size: var(--font-size--h3);
 }
 
 h4 {
-  font-size: 1.8rem;
-
-  @media (--md) {
-    font-size: 2.1rem;
-  }
+  font-size: var(--font-size--h4);
 }
 
 h5 {
-  font-size: 1.6rem;
-
-  @media (--md) {
-    font-size: 1.8rem;
-  }
+  font-size: var(--font-size--h5);
 }
 
 h6 {
-  font-size: 1.5rem;
-
-  @media (--md) {
-    font-size: 1.6rem;
-  }
+  font-size: var(--font-size--h6);
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--link-color);
   outline: none;
   text-decoration: none;
 
   &:hover {
-    color: var(--secondary-color);
+    color: var(--link-color--hover);
   }
 }
 
@@ -89,16 +65,16 @@ strong {
 }
 
 small {
-  font-size: calc(1.3rem + 0.1vw);
+  font-size: var(--font-size--p-sm);
 }
 
 code {
-  color: var(--text-color-light);
+  color: var(--color--light-gray);
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: 400;
 }
 
 button {
   cursor: pointer;
-  font-family: var(--primary-font);
+  font-family: var(--font-family--primary);
 }

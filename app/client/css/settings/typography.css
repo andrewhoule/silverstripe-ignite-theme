@@ -1,0 +1,19 @@
+/* Font sizes created here - https://clamp.font-size.app/ */
+/* Min viewport 768px / Max Viewport 1500px */
+
+:root {
+  --font-family--primary: "Arial", sans-serif;
+  --font-family--secondary: "Georgia", serif;
+  --font-size--h1: clamp(3rem, 2.2131rem + 1.6393vw, 3.75rem); /* 48 / 60 */
+  --font-size--h2: clamp(2.25rem, 1.4631rem + 1.6393vw, 3rem); /* 36 / 48 */
+  --font-size--h3: clamp(1.75rem, 1.3517rem + 0.8299vw, 2rem); /* 28 / 32 */
+  --font-size--h4: clamp(1.375rem, 1.1127rem + 0.5464vw, 1.625rem); /* 22 / 26 */
+  --font-size--h5: clamp(1rem, 0.8008rem + 0.4149vw, 1.125rem); /* 16 / 18 */
+  --font-size--h6: clamp(0.875rem, 0.6758rem + 0.4149vw, 1rem); /* 14 / 16 */
+  --font-size--p-xxl: clamp(2rem, 1.0041rem + 2.0747vw, 2.625rem); /* 32 / 42 */
+  --font-size--p-xl: clamp(1.25rem, 0.9877rem + 0.5464vw, 1.5rem); /* 20 / 24 */
+  --font-size--p-lg: clamp(1.1875rem, 1.0564rem + 0.2732vw, 1.3125rem); /* 19 / 21 */
+  --font-size--p: clamp(1.0625rem, 0.9314rem + 0.2732vw, 1.1875rem); /* 17 / 19 */
+  --font-size--p-sm: clamp(0.9375rem, 0.8064rem + 0.2732vw, 1.0625rem); /* 15 / 17 */
+  --font-size--p-xs: clamp(0.8125rem, 0.7469rem + 0.1366vw, 0.875rem); /* 13 / 14 */
+}

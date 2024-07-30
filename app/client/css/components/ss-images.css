@@ -67,7 +67,7 @@ img {
 }
 
 .caption {
-  font-family: var(--secondary-font);
+  font-family: var(--font-family--secondary);
   margin: 0;
   text-align: left;
   width: 100%;

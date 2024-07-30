@@ -4,16 +4,15 @@ import postCssCustomMedia from "postcss-custom-media";
 import postCssNested from "postcss-nested";
 import postCssImport from "postcss-import";
 import path from "path";
-import svgSpritemap from "svg-spritemap-webpack-plugin";
 
 const __dirname = path.resolve();
 
 const config = {
-  entry: "./app/client/index.js",
+  entry: "./app/client/app.js",
 
   output: {
     path: path.join(__dirname, "public/dist/"),
-    filename: "index.js"
+    filename: "app.js"
   },
 
   module: {
@@ -31,8 +30,8 @@ const config = {
               postcssOptions: {
                 plugins: [
                   postCssImport,
-                  postCssNested,
                   postCssApply,
+                  postCssNested,
                   postCssCustomMedia,
                 ]
               }
@@ -58,16 +57,7 @@ const config = {
 
   plugins: [
     new miniCssExtract({
-      filename: "index.css",
-    }),
-
-    new svgSpritemap("./app/client/icons/**/*.svg", {
-      output: {
-        filename: "icons.svg"
-      },
-      sprite: {
-        prefix: ""
-      }
+      filename: "app.css",
     }),
   ]
 };

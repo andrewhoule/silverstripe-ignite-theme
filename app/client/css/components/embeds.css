@@ -1,12 +1,6 @@
 .embed {
-  margin-bottom: var(--gap);
-}
-
-.embed--responsive {
-  height: 0;
-  padding-bottom: 56.25%;
   position: relative;
-  width: inherit !important;
+  width: 100%;
 
   iframe {
     display: block;
