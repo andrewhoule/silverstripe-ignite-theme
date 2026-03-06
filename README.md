@@ -21,6 +21,9 @@ This project includes a DDEV setup for local Silverstripe 6 development.
 * Install DDEV and Docker.
 
 ### First-time setup
+* Update .ddev/config.yaml to name of project
+* Update webpack.ddev.babel.js to proxy based on that name
+* Copy .env.example to .env
 * `ddev start`
 * `ddev composer install`
 * `ddev exec vendor/bin/sake dev/build flush=all`
