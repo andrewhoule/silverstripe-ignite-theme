@@ -18,7 +18,7 @@ const config = merge(common, {
     new browserSync({
       host: "localhost",
       port: 3000,
-      proxy: "https://yoursite.ddev.site",
+      proxy: "https://ignite-ss.ddev.site",
       notify: false
     }),
 
@@ -28,7 +28,10 @@ const config = merge(common, {
     }),
 
     new eslint(),
-    new stylelint(),
+    new stylelint({
+      cache: false,
+      configFile: ".stylelintrc",
+    }),
   ]
 });
 

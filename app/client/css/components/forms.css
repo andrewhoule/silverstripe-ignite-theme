@@ -50,7 +50,7 @@ fieldset {
 
 .fields {
   display: grid;
-  grid-gap: var(--gap--xs) var(--gap--xxs);
+  gap: var(--gap--xs) var(--gap--xxs);
   grid-template-columns: 1fr;
 
   @media (--md) {
@@ -75,7 +75,7 @@ input {
   }
 
   &.checkbox {
-    appearance: checkbox;
+    appearance: auto;
     height: auto;
     margin-right: var(--gap--xxs);
     width: auto;
@@ -117,7 +117,6 @@ select {
 }
 
 ul {
-
   &.optionset,
   &.checkboxset {
     display: block;
@@ -139,7 +138,7 @@ ul {
 
   &.checkboxset {
     input {
-      appearance: checkbox;
+      appearance: auto;
     }
   }
 }
@@ -151,7 +150,6 @@ ul {
 }
 
 .editable-area {
-
   .checkboxsetfield,
   .optionset {
     margin: 0;

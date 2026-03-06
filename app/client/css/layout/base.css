@@ -1,18 +1,11 @@
-/* Reset Stuff */
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* Border Box for all */
-
 html {
   box-sizing: border-box;
 }
 
 * {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 
   &::before,
   &::after {
@@ -20,22 +13,16 @@ html {
   }
 }
 
-/* No Horizontal Scrolling */
-
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-/* Vanity Styles */
-
 ::selection {
   background: var(--selection-background-color, var(--color--blue));
   color: var(--selection-color, var(--color--white));
 }
-
-/* Base List Styles */
 
 ul,
 ol {
@@ -47,14 +34,10 @@ ol {
   }
 }
 
-/* Embeds */
-
 object,
 embed {
   height: 100%;
 }
-
-/* Base Image Styles / SS Image Styles */
 
 figure {
   margin: 0;
@@ -67,8 +50,6 @@ img {
   -ms-interpolation-mode: bicubic;
   max-width: 100%;
 }
-
-/* Buttons */
 
 button {
   background-color: transparent;

@@ -2,9 +2,9 @@
 
 namespace Extensions;
 
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 
-class LinkExtension extends DataExtension
+class LinkExtension extends Extension
 {
 
     public function getTargetAttr()

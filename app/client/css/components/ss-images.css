@@ -24,6 +24,13 @@ img {
   }
 }
 
+.caption {
+  font-family: var(--font-family--secondary);
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+
 .captionImage {
   margin-bottom: var(--gap);
   max-width: 100%;
@@ -64,11 +71,4 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-.caption {
-  font-family: var(--font-family--secondary);
-  margin: 0;
-  text-align: left;
-  width: 100%;
 }

@@ -1,17 +1,46 @@
 {
-    "name": "andrewhoule/silverstripe-ignite-theme",
-    "description": "SilverStripe Ignite Theme (Starter Silverstripe HTML/PostCSS/Webpack Tooling Base)",
-    "type": "silverstripe-theme",
-    "keywords": ["silverstripe", "theme"],
+    "name": "andrewhoule/ignite-silverstripe",
+    "description": "Silverstripe 6 Starter Kit - HTML/PostCSS/Webpack Tooling Base",
+    "type": "project",
+    "keywords": [
+        "silverstripe",
+        "theme"
+    ],
     "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Andrew Houle",
-            "homepage": "https://andrewhoule.me"
+            "homepage": "https://craftandfunction.com"
         }
     ],
     "require": {
         "composer/installers": "*",
-        "silverstripe/framework": ">=4"
+        "silverstripe/framework": "^6",
+        "silverstripe/recipe-cms": "^6",
+        "silverstripe/recipe-plugin": "^2",
+        "dnadesign/silverstripe-elemental": "^6",
+        "silverstripe/linkfield": "^5"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true
+        }
+    },
+    "extra": {
+        "project-files-installed": [
+            ".htaccess",
+            "app/.htaccess",
+            "app/_config/mimevalidator.yml",
+            "app/_config/mysite.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "web.config"
+        ]
     }
 }
