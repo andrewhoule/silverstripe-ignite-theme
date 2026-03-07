@@ -18,8 +18,10 @@
         "silverstripe/framework": "^6",
         "silverstripe/recipe-cms": "^6",
         "silverstripe/recipe-plugin": "^2",
+        "silverstripe/login-forms": "^6",
         "dnadesign/silverstripe-elemental": "^6",
-        "silverstripe/linkfield": "^5"
+        "silverstripe/linkfield": "^5",
+        "wilr/silverstripe-googlesitemaps": "^4.0"
     },
     "config": {
         "allow-plugins": {
